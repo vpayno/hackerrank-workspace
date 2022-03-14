@@ -1,0 +1,51 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-branch
+/home/vpayno/.pyenv/versions/3.10.2/lib/python3.10/site-packages/_pytest/nodes.py:664: PytestWarning: PylamaItem is an Item subclass and should not be a collector, however its bases File are collectors.
+Please split the Collectors and the Item into separate node types.
+Pytest Doc example: https://docs.pytest.org/en/latest/example/nonpython.html
+example pull request on a plugin: https://github.com/asmeurer/pytest-flakes/pull/40/
+  warnings.warn(
+============================= test session starts ==============================
+platform linux -- Python 3.10.2, pytest-7.0.0, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.2/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-01-hello_world/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-01-hello_world
+plugins: anyio-3.5.0, pylama-8.3.7, typeguard-2.13.3, cov-3.0.0, hypothesis-6.36.1, subprocess-1.4.0
+collecting ... collected 5 items
+
+src/test/test_hello_world.py::test_class_init PASSED                     [ 20%]
+src/test/test_hello_world.py::test_class_str PASSED                      [ 40%]
+src/test/test_hello_world.py::test_method_without_input[Hello pytest!-Let's run some tests!-expected0] PASSED [ 60%]
+src/test/test_hello_world.py::test_method_with_input[Hello pytest!-Let's run some tests!-expected0] PASSED [ 80%]
+src/test/test_hello_world.py::test_script[Let's run some tests!-expected0] PASSED [100%]
+
+---------- coverage: platform linux, python 3.10.2-final-0 -----------
+Name                           Stmts   Miss Branch BrPart  Cover
+----------------------------------------------------------------
+src/challenge/__init__.py          0      0      0      0   100%
+src/challenge/hello_world.py      18      0      4      0   100%
+src/test/__init__.py               0      0      0      0   100%
+src/test/test_hello_world.py      40      0      7      0   100%
+----------------------------------------------------------------
+TOTAL                             58      0     11      0   100%
+
+
+============================== 5 passed in 0.89s ===============================
+
+real	0m2.897s
+user	0m2.874s
+sys	0m0.524s
+
+Running: spackle
+Name                           Stmts   Miss Branch BrPart  Cover   Missing
+--------------------------------------------------------------------------
+src/challenge/__init__.py          0      0      0      0   100%
+src/challenge/hello_world.py      18      0      4      0   100%
+src/test/__init__.py               0      0      0      0   100%
+src/test/test_hello_world.py      40      0      7      0   100%
+--------------------------------------------------------------------------
+TOTAL                             58      0     11      0   100%
+
+real	0m0.230s
+user	0m0.194s
+sys	0m0.036s
+
