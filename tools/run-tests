@@ -1,0 +1,356 @@
+#!/bin/bash
+
+shopt -s nullglob
+
+declare project_language
+
+declare -a PYTHON_FILES=( *[.]py )
+declare -a PYTHON_MODULES
+
+declare directory
+
+if [[ ${#PYTHON_FILES[@]} -gt 0 ]]; then
+	project_language="python"
+elif [[ -f Cargo.toml ]]; then
+	project_language="rust"
+elif [[ -f go.mod ]]; then
+	project_language="golang"
+elif [[ -f pom.xml ]]; then
+	project_language="java"
+elif [[ -f spec/spec_helper.rb ]]; then
+	project_language="ruby"
+fi
+
+for directory in ./*; do
+	[[ -d ${directory} ]] || continue
+	[[ -f ${directory}/__init__.py ]] || continue
+	PYTHON_MODULES+=( "${directory}" )
+done
+
+python_mypy()
+{
+	echo Running: mypy "$@" "${PYTHON_MODULES[@]}"
+	time mypy "$@" "${PYTHON_MODULES[@]}"
+	printf "\n"
+} # python_mypy()
+
+python_pyre()
+{
+	if [[ ! -f .pyre_configuration ]]; then
+		pyre init <<< "."
+
+		# python -c 'import os; import re; import site; [print(re.sub(os.environ["HOME"], "${HOME}", path)) for path in site.getsitepackages()]'
+
+		# Xshellcheck disable=SC2046
+		#jq --sort-keys . <<-EOF > .pyre_configuration
+		#{
+		#	"source_directories": [
+		#		$(printf "{ \"site-package\": \"%s\"}," $(grep --no-filename ^import ./*[.]py | sort -u | awk '{ print $NF }' | grep -v -E '^(sys|os|path)$'))
+		#		"."
+		#	],
+		#	"taint_models_path": "${HOME}/.pyenv/versions/3.9.2/lib"
+		#}
+		#EOF
+	fi
+
+	echo Running: pyre check
+	time pyre check
+	printf "\n"
+
+	echo Running: pyre analyze
+	time pyre analyze
+	printf "\n"
+} # python_pyre()
+
+python_pyright()
+{
+	local directory
+
+	for directory in "${PYTHON_MODULES[@]}"; do
+		echo Running: pyright --stats "${directory}"
+		time pyright --stats "${directory}"
+		printf "\n"
+	done
+} # python_pyright()
+
+python_pyanalyze()
+{
+	local directory
+
+	for directory in "${PYTHON_MODULES[@]}"; do
+		echo Running: pyanalyze --verbose "${directory}"
+		time pyanalyze --verbose "${directory}"
+		printf "\n"
+	done
+} # python_pyanalyze()
+
+python_pytype()
+{
+	local directory
+
+	for directory in "${PYTHON_MODULES[@]}"; do
+		echo Running: pytype "${directory}"
+		time pytype "${directory}"
+		printf "\n"
+
+		echo Running: pytype ./*[.]py
+		time pytype ./*[.]py
+		printf "\n"
+	done
+} # python_pytype()
+
+python_pytest()
+{
+	 echo Running: pytest --verbose --cov-report term --cov=. --cov-branch
+	 time pytest --verbose --cov-report term --cov=. --cov-branch
+	 printf "\n"
+
+	 echo Running: spackle
+	 time spackle
+	 printf "\n"
+ } # python_pytest()
+
+rust_clean()
+{
+	echo cargo clean
+	time cargo clean
+	printf "\n"
+
+	echo cargo clean --release
+	time cargo clean --release
+	printf "\n"
+} # rust_clean()
+
+rust_check()
+{
+	echo cargo check --release
+	time cargo check --release
+	printf "\n"
+} # rust_check()
+
+rust_clippy()
+{
+	# cargo clippy --release --fix --allow-dirty --allow-staged
+
+	echo cargo clippy --release
+	time cargo clippy --release
+	printf "\n"
+} # rust_clippy()
+
+rust_test()
+{
+	echo cargo test --release
+	time cargo test --release
+	printf "\n"
+
+	echo cargo tarpaulin --release --skip-clean --timeout=300 --command=Test
+	time cargo tarpaulin --release --skip-clean --timeout=300 --command=Test
+	printf "\n"
+} # rust_test()
+
+rust_audit()
+{
+	echo cargo audit
+	time cargo audit
+	printf "\n"
+} # rust_audit()
+
+go_clean()
+{
+	echo go clean
+	time go clean
+	printf "\n"
+} # go_clean()
+
+go_build()
+{
+	echo go build
+	time go build
+	printf "\n"
+} # go_build()
+
+go_vet()
+{
+	echo go vet
+	time go vet
+	printf "\n"
+} # go_vet()
+
+go_test()
+{
+	echo go test -v -cover
+	time go test -v -cover
+	printf "\n"
+} # go_test()
+
+go_sec()
+{
+	echo gosec -tests ./...
+	time gosec -tests ./...
+	printf "\n"
+} # go_sec()
+
+mvn_maintenance()
+{
+	mvn_update_versions
+	mvn_sort_pom
+} # mvn_maintenance()
+
+mvn_update_versions()
+{
+	echo mvn versions:use-latest-releases
+	time mvn versions:use-latest-releases
+	printf "\n"
+} # mvn_update_versions()
+
+mvn_clean()
+{
+	echo mvn clean
+	time mvn clean
+	printf "\n"
+} # mvn_clean()
+
+mvn_sort_pom()
+{
+	echo mvn com.github.ekryd.sortpom:sortpom-maven-plugin:sort -Dsort.keepBlankLines -Dsort.predefinedSortOrder=custom_1
+	time mvn com.github.ekryd.sortpom:sortpom-maven-plugin:sort -Dsort.keepBlankLines -Dsort.predefinedSortOrder=custom_1
+	printf "\n"
+} # mvn_sort_pom()
+
+mvn_get_coverage()
+{
+	sed -r -e '/Total/ s/.*([0-9]+%).*([0-9]+%).*/  Total Line Coverage: \1\nTotal Branch Coverage: \2/g' target/site/jacoco/index.html
+	printf "\n"
+} # mvn_get_coverage()
+
+mvn_test()
+{
+	echo mvn clean jacoco:prepare-agent verify jacoco:report
+	time mvn clean jacoco:prepare-agent verify jacoco:report
+	printf "\n"
+
+	mvn_get_coverage
+} # mvn_test()
+
+mvn_dep_check()
+{
+	echo mvn verify -Powasp-dependency-check
+	time mvn verify -Powasp-dependency-check
+	printf "\n"
+} # mvn_dep_check()
+
+ruby_tests()
+{
+	echo "[rspec spec --format documentation]"
+	time rspec spec --format documentation
+	printf "\n"
+} # ruby_tests()
+
+ruby_audit()
+{
+	echo "[bundle-audit check]"
+	time bundle-audit check
+	printf "\n"
+} # ruby_audit()
+
+ruby_rubocop()
+{
+	echo "[rubocop]"
+	time rubocop
+	printf "\n"
+} # ruby_rubocop()
+
+ruby_reek()
+{
+	echo "[reek]"
+	time reek
+	printf "\n"
+} # ruby_reek()
+
+ruby_critic()
+{
+	echo "[rubycritic --no-browser --format console]"
+	time rubycritic --no-browser --format console
+	printf "\n"
+} # ruby_critic()
+
+ruby_flog()
+{
+	echo "[flog --all --blame --details]"
+	time flog --all --blame --details
+	printf "\n"
+} # ruby_flog()
+
+ruby_flay()
+{
+	echo "[flay --verbose]"
+	time flay --verbose
+	printf "\n"
+} # ruby_flay()
+
+ruby_steep()
+{
+	echo "[steep check]"
+	time steep check
+	printf "\n"
+} # ruby_steep()
+
+ruby_sord()
+{
+	echo "[find . -type f -name '*.rbs' -print -exec sord --rbs {} \;]"
+	time find . -type f -name '*.rbs' -print -exec sord --rbs {} \;
+	printf "\n"
+} # ruby_sord()
+
+main()
+{
+	if [[ ${project_language} == python ]]; then
+		printf "\nRunning Python Checks and Tests...\n\n"
+
+		python_mypy "${PYTHON_FILES[@]}" |& tee run-tests-mypy.txt
+		#python_pyre |& tee run-tests-pyre.txt
+		python_pyright |& tee run-tests-pyright.txt
+		python_pyanalyze |& tee run-tests-pyanalyze.txt
+		python_pytype |& tee run-tests-pytype.txt
+		python_pytest |& tee run-tests-pytest.txt
+
+	elif [[ ${project_language} == rust ]]; then
+		printf "\nRunning Rust Checks and Tests...\n\n"
+
+		rust_clean
+		rust_check |& tee run-tests-check.txt || exit 1
+		rust_clippy |& tee run-tests-clippy.txt
+		rust_test |& tee run-tests-test.txt
+		rust_audit |& tee run-tests-audit.txt
+
+	elif [[ ${project_language} == golang ]]; then
+		printf "\nRunning Go Checks and Tests...\n\n"
+
+		go_clean
+		go_build |& tee run-tests-build.txt || exit 1
+		go_vet |& tee run-tests-vet.txt || exit 1
+		go_test |& tee run-tests-test.txt
+		go_sec |& tee run-tests-sec.txt
+
+	elif [[ ${project_language} == java ]]; then
+		printf "\nRunning Java Checks and Tests...\n\n"
+
+		mvn_clean
+		mvn_maintenance
+		mvn_test |& tee run-tests-test.txt
+		mvn_dep_check |& tee run-tests-depcheck.txt
+
+	elif [[ ${project_language} == ruby ]]; then
+		printf "\nRunning Ruby Checks and Tests...\n\n"
+
+		ruby_critic |& tee run-tests-critic.txt
+		ruby_reek |& tee run-tests-reek.txt
+		ruby_rubocop |& tee run-tests-rubocop.txt
+		ruby_audit |& tee run-tests-audit.txt
+		ruby_steep |& tee run-tests-steep.txt
+		ruby_sord |& tee run-tests-sord.txt
+		ruby_tests |& tee run-tests-tests.txt
+	fi
+} # main()
+
+time main
