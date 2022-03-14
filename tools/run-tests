@@ -4,7 +4,7 @@ shopt -s nullglob
 
 declare project_language
 
-declare -a PYTHON_FILES=( *[.]py )
+declare -a PYTHON_FILES=( src/challenge/*[.]py )
 declare -a PYTHON_MODULES
 
 declare directory
