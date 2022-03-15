@@ -22,30 +22,30 @@ src/test/test_hello_world.py::test_script[Let's run some tests!-expected0] PASSE
 Name                           Stmts   Miss Branch BrPart  Cover
 ----------------------------------------------------------------
 src/challenge/__init__.py          0      0      0      0   100%
-src/challenge/hello_world.py      18      0      4      0   100%
+src/challenge/hello_world.py      19      0      4      0   100%
 src/test/__init__.py               0      0      0      0   100%
 src/test/test_hello_world.py      40      0      7      0   100%
 ----------------------------------------------------------------
-TOTAL                             58      0     11      0   100%
+TOTAL                             59      0     11      0   100%
 
 
-============================== 5 passed in 0.89s ===============================
+============================== 5 passed in 1.27s ===============================
 
-real	0m2.897s
-user	0m2.874s
-sys	0m0.524s
+real	0m3.580s
+user	0m3.423s
+sys	0m0.659s
 
 Running: spackle
 Name                           Stmts   Miss Branch BrPart  Cover   Missing
 --------------------------------------------------------------------------
 src/challenge/__init__.py          0      0      0      0   100%
-src/challenge/hello_world.py      18      0      4      0   100%
+src/challenge/hello_world.py      19      0      4      0   100%
 src/test/__init__.py               0      0      0      0   100%
 src/test/test_hello_world.py      40      0      7      0   100%
 --------------------------------------------------------------------------
-TOTAL                             58      0     11      0   100%
+TOTAL                             59      0     11      0   100%
 
-real	0m0.230s
-user	0m0.194s
-sys	0m0.036s
+real	0m0.309s
+user	0m0.264s
+sys	0m0.045s
 

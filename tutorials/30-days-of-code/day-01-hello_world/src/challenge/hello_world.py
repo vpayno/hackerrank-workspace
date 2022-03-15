@@ -5,6 +5,7 @@ Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
 """
 
 import sys
+from typing import List, Optional
 
 
 class Challenge:
@@ -18,14 +19,14 @@ class Challenge:
         """
 
         self.greeting: str = greeting
-        self.input_string: str = None
+        self.input_string: Optional[str] = None
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         String representation of the class.
         """
 
-        output: str = None
+        output: Optional[str] = None
 
         if self.input_string:
             output = self.greeting + " " + self.input_string
@@ -34,7 +35,7 @@ class Challenge:
 
         return output
 
-    def hello_world(self, input_string=None):
+    def hello_world(self, input_string: Optional[str] = None) -> List[str]:
         """
         Read a full line of input from stdin and save it to our dynamically
         typed variable, input_string.
@@ -58,8 +59,8 @@ class Challenge:
 
 if __name__ == "__main__":  # pragma: no cover
 
-    user_input: str = None if sys.argv[1] is None else sys.argv[1]
+    user_input: Optional[str] = None if sys.argv[1] is None else sys.argv[1]
 
     challenge = Challenge()
 
-    challenge.hello_world(input_string=user_input)
+    terminal_output: List[str] = challenge.hello_world(input_string=user_input)

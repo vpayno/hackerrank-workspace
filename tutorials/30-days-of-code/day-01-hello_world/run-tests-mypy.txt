@@ -1,7 +1,7 @@
 Running: mypy src/challenge/hello_world.py src/challenge/__init__.py
 Success: no issues found in 2 source files
 
-real	0m0.287s
-user	0m0.221s
-sys	0m0.065s
+real	0m0.438s
+user	0m0.350s
+sys	0m0.088s
 
