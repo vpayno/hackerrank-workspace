@@ -1,0 +1,50 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-branch
+/home/vpayno/.pyenv/versions/3.10.2/lib/python3.10/site-packages/_pytest/nodes.py:664: PytestWarning: PylamaItem is an Item subclass and should not be a collector, however its bases File are collectors.
+Please split the Collectors and the Item into separate node types.
+Pytest Doc example: https://docs.pytest.org/en/latest/example/nonpython.html
+example pull request on a plugin: https://github.com/asmeurer/pytest-flakes/pull/40/
+  warnings.warn(
+============================= test session starts ==============================
+platform linux -- Python 3.10.2, pytest-7.0.0, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.2/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-02-data-types/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-02-data-types
+plugins: anyio-3.5.0, pylama-8.3.7, typeguard-2.13.3, cov-3.0.0, hypothesis-6.36.1, subprocess-1.4.0
+collecting ... collected 4 items
+
+src/test/test_main.py::test_class_str PASSED                             [ 25%]
+src/test/test_main.py::test_method_with_input[5-5.0-is a learning and testing site.-expected0] PASSED [ 50%]
+src/test/test_main.py::test_method_with_input[12-4.0-is the best place to learn and practice coding!-expected1] PASSED [ 75%]
+src/test/test_main.py::test_script[12\n4.0\nis the best place to learn and practice coding!-expected0] PASSED [100%]
+
+---------- coverage: platform linux, python 3.10.2-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          26      0      0      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          41      0     11      0   100%
+-------------------------------------------------------------
+TOTAL                          67      0     11      0   100%
+
+
+============================== 4 passed in 0.94s ===============================
+
+real	0m3.346s
+user	0m3.224s
+sys	0m0.637s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          26      0      0      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          41      0     11      0   100%
+-----------------------------------------------------------------------
+TOTAL                          67      0     11      0   100%
+
+real	0m0.313s
+user	0m0.079s
+sys	0m0.009s
+
