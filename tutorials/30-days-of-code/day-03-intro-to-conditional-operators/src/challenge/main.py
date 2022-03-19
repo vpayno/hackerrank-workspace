@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-HackerRank - Tutorials - 30 Days of Code - Day 04 - Intro to Conditional Statements
+HackerRank - Tutorials - 30 Days of Code - Day 03 - Intro to Conditional Statements
 
 Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
 """
@@ -8,7 +8,7 @@ Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
 
 class Challenge:
     """
-    Day 04 - Intro to Conditional Statements
+    Day 03 - Intro to Conditional Statements
     """
 
     def __init__(self):
@@ -29,13 +29,16 @@ class Challenge:
 
         if (self.number % 2) == 1:
             self.result = "Weird"
-        elif (self.number % 2) == 0:
+        else:
             if self.number in range(2, 5 + 1):
                 self.result = "Not Weird"
             elif self.number in range(6, 20 + 1):
                 self.result = "Weird"
             elif self.number > 20:
                 self.result = "Not Weird"
+            else:
+                # coverage wants an else to close out an if statement
+                pass  # pragma: no cover
 
         print(self.result)
 

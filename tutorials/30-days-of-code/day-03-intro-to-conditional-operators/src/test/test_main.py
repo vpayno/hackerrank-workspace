@@ -69,7 +69,7 @@ def test_script(number: str, expected: str):
 
     program_input: bytes = bytes(f"{number}", "utf8")
 
-    process: subprocess = subprocess.run(
+    process: subprocess.CompletedProcess = subprocess.run(
         [
             sys.executable,
             os.path.join(os.path.dirname("src/challenge/"), "main.py"),
@@ -83,7 +83,7 @@ def test_script(number: str, expected: str):
 
     print(f"  number = {number}")
     print(f"expected = {expected}")
-    print(f"   input = {program_input}")
+    print(f"   input = {program_input!r}")
     print(f"  output = {program_output}")
     print(f"{program_output} == {expected}")
 
