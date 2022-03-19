@@ -1,0 +1,12 @@
+rule infer
+  command = /home/vpayno/.pyenv/versions/3.10.2/bin/python -m pytype.single --imports_info $imports --module-name $module -V 3.10 -o $out --no-report-errors --nofail --quick $in
+  description = infer $module
+rule check
+  command = /home/vpayno/.pyenv/versions/3.10.2/bin/python -m pytype.single --imports_info $imports --module-name $module -V 3.10 -o $out --analyze-annotated --nofail --quick $in
+  description = check $module
+build /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/pyi/challenge/hello_world.pyi: check /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/src/challenge/hello_world.py
+  imports = /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/imports/challenge.hello_world.imports
+  module = challenge.hello_world
+build /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/pyi/challenge/__init__.pyi: check /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/src/challenge/__init__.py
+  imports = /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/imports/challenge.__init__.imports
+  module = challenge.__init__

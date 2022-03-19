@@ -57,7 +57,7 @@ def test_method_without_input(greeting: str, input_string: str,
                               expected: List[str]):
     """Runs the hello_world class method against all of our test data."""
     code: hello_world.Challenge = hello_world.Challenge(greeting)
-    result: str = code.hello_world(input_string)
+    result: List[str] = code.hello_world(input_string)
     assert result == expected
     assert code.__str__() == " ".join(expected)
 
@@ -68,7 +68,7 @@ def test_method_with_input(greeting: str, input_string: str,
     """Runs the hello_world class method against all of our test data."""
     code: hello_world.Challenge = hello_world.Challenge(greeting)
     with mock.patch.object(builtins, "input", lambda: input_string):
-        result: str = code.hello_world()
+        result: List[str] = code.hello_world()
     assert result == expected
     assert code.__str__() == " ".join(expected)
 
@@ -86,7 +86,7 @@ def test_script(input_string: str, expected: List[str]):
         stdout=subprocess.PIPE,
     )
     print(f"{process.stdout.decode('utf-8')} == {expected}")
-    program_output: List[str] = process.stdout.decode("utf-8")
+    program_output: str = process.stdout.decode("utf-8")
     assert expected[0] in program_output
     assert expected[1] in program_output
     assert all(e == o for e, o in zip(expected, program_output.split("\n")))

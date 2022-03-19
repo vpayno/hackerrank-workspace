@@ -1,5 +1,5 @@
 """
-HackerRank - 30 Days of Code - Day 01 - HelloWorld
+HackerRank - 30 Days of Code - Day 00 - Hello World
 
 Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
 """
@@ -10,7 +10,7 @@ from typing import List, Optional
 
 class Challenge:
     """
-    Day 01 - HelloWorld
+    Day 00 - Hello World
     """
 
     def __init__(self, greeting="Hello, World."):
@@ -29,7 +29,7 @@ class Challenge:
         output: Optional[str] = None
 
         if self.input_string:
-            output = self.greeting + " " + self.input_string
+            output = f"{self.greeting} {self.input_string}"
         else:
             output = self.greeting
 

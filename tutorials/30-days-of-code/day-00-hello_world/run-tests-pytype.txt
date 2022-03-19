@@ -1,0 +1,44 @@
+Running: pytype ./src/test
+ninja: Entering directory `/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype'
+[1/3] infer challenge.hello_world
+FAILED: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/pyi/challenge/hello_world.pyi 
+/home/vpayno/.pyenv/versions/3.10.2/bin/python -m pytype.single --imports_info /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/imports/challenge.hello_world.imports --module-name challenge.hello_world -V 3.10 -o /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/pyi/challenge/hello_world.pyi --no-report-errors --nofail --quick /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/src/challenge/hello_world.py
+Python versions > 3.7 are not yet supported.
+ninja: build stopped: subcommand failed.
+Computing dependencies
+Analyzing 2 sources with 1 local dependencies
+
+real	0m0.991s
+user	0m0.824s
+sys	0m0.171s
+
+Running: pytype
+usage: pytype [options] input [input ...]
+pytype: error: Need an input.
+
+real	0m0.381s
+user	0m0.333s
+sys	0m0.043s
+
+Running: pytype ./src/challenge
+ninja: Entering directory `/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype'
+[1/2] check challenge.hello_world
+FAILED: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/pyi/challenge/hello_world.pyi 
+/home/vpayno/.pyenv/versions/3.10.2/bin/python -m pytype.single --imports_info /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/imports/challenge.hello_world.imports --module-name challenge.hello_world -V 3.10 -o /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.pytype/pyi/challenge/hello_world.pyi --analyze-annotated --nofail --quick /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/src/challenge/hello_world.py
+Python versions > 3.7 are not yet supported.
+ninja: build stopped: subcommand failed.
+Computing dependencies
+Analyzing 2 sources with 0 local dependencies
+
+real	0m0.755s
+user	0m0.644s
+sys	0m0.113s
+
+Running: pytype
+usage: pytype [options] input [input ...]
+pytype: error: Need an input.
+
+real	0m0.374s
+user	0m0.318s
+sys	0m0.056s
+
