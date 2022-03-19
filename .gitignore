@@ -1,4 +1,8 @@
 *~
+*pyc
 .hypothesis
 __pycache__/
-*pyc
+.mypy_cache
+.pytest_cache
+.pytype/pyi/challenge/
+typings
