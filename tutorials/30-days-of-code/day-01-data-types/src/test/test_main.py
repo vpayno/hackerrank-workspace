@@ -87,7 +87,7 @@ def test_method_with_input(int2: int, double2: float, str2: str,
 def test_script(input_data: bytes, expected: List[str]):
     """Runs the main script against all of our test data."""
 
-    process: subprocess = subprocess.run(
+    process: subprocess.CompletedProcess = subprocess.run(
         [
             sys.executable,
             os.path.join(os.path.dirname("src/challenge/"), "main.py"),
@@ -98,7 +98,7 @@ def test_script(input_data: bytes, expected: List[str]):
     )
 
     print(f"{process.stdout.decode('utf-8')} == {expected}")
-    program_output: List[str] = process.stdout.decode("utf-8")
+    program_output: str = process.stdout.decode("utf-8")
 
     assert expected[0] in program_output
     assert expected[1] in program_output
