@@ -21,16 +21,19 @@ elif [[ -f spec/spec_helper.rb ]]; then
 	project_language="ruby"
 fi
 
-for directory in ./*; do
+while read -r directory; do
 	[[ -d ${directory} ]] || continue
 	[[ -f ${directory}/__init__.py ]] || continue
 	PYTHON_MODULES+=( "${directory}" )
-done
+done < <(find . -type f -name __init__.py -exec dirname {} \;)
+
+printf "PYTHON_MODULES=[%s]\n" "${PYTHON_MODULES[*]}"
+printf "\n"
 
 python_mypy()
 {
-	echo Running: mypy "$@" "${PYTHON_MODULES[@]}"
-	time mypy "$@" "${PYTHON_MODULES[@]}"
+	echo mypy ./src
+	time mypy ./src
 	printf "\n"
 } # python_mypy()
 
@@ -66,6 +69,8 @@ python_pyright()
 {
 	local directory
 
+	[[ -d typings ]] || mkdir -p typings
+
 	for directory in "${PYTHON_MODULES[@]}"; do
 		echo Running: pyright --stats "${directory}"
 		time pyright --stats "${directory}"
@@ -75,13 +80,11 @@ python_pyright()
 
 python_pyanalyze()
 {
-	local directory
+	local directory="src"
 
-	for directory in "${PYTHON_MODULES[@]}"; do
-		echo Running: pyanalyze --verbose "${directory}"
-		time pyanalyze --verbose "${directory}"
-		printf "\n"
-	done
+	echo PYTHONPATH="${directory}" pyanalyze --verbose ./"${directory}"
+	time { PYTHONPATH="${directory}" pyanalyze --verbose ./"${directory}"; }
+	printf "\n"
 } # python_pyanalyze()
 
 python_pytype()
@@ -307,11 +310,11 @@ main()
 	if [[ ${project_language} == python ]]; then
 		printf "\nRunning Python Checks and Tests...\n\n"
 
-		python_mypy "${PYTHON_FILES[@]}" |& tee run-tests-mypy.txt
+		python_mypy |& tee run-tests-mypy.txt
 		#python_pyre |& tee run-tests-pyre.txt
 		python_pyright |& tee run-tests-pyright.txt
 		python_pyanalyze |& tee run-tests-pyanalyze.txt
-		python_pytype |& tee run-tests-pytype.txt
+		# python_pytype |& tee run-tests-pytype.txt
 		python_pytest |& tee run-tests-pytest.txt
 
 	elif [[ ${project_language} == rust ]]; then
