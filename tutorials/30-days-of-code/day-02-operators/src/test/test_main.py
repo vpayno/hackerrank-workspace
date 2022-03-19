@@ -115,7 +115,7 @@ def test_script(input_data: List[str], expected: str):
     print(f"input_data = {input_data}")
     print(f"expected = {expected}")
 
-    process: subprocess = subprocess.run(
+    process: subprocess.CompletedProcess = subprocess.run(
         [
             sys.executable,
             os.path.join(os.path.dirname("src/challenge/"), "main.py"),

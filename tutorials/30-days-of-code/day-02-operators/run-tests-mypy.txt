@@ -1,7 +1,7 @@
-Running: mypy src/challenge/__init__.py src/challenge/main.py
-Success: no issues found in 2 source files
+mypy ./src
+Success: no issues found in 4 source files
 
-real	0m0.252s
-user	0m0.207s
-sys	0m0.045s
+real	0m2.375s
+user	0m1.989s
+sys	0m0.372s
 
