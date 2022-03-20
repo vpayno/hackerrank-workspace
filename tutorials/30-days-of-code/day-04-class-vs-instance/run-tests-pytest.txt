@@ -1,0 +1,64 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-branch
+============================= test session starts ==============================
+platform linux -- Python 3.10.2, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.2/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-04-class-vs-instance/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-04-class-vs-instance
+plugins: anyio-3.5.0, typeguard-2.13.3, cov-3.0.0, hypothesis-6.39.4, pylama-8.3.8, subprocess-1.4.1
+collecting ... collected 23 items
+
+src/test/test_main.py::test_class_person[-1-Age is not valid, setting age to 0.\nYou are young.] PASSED [  4%]
+src/test/test_main.py::test_class_person[0-You are young.] PASSED        [  8%]
+src/test/test_main.py::test_class_person[7-You are young.] PASSED        [ 13%]
+src/test/test_main.py::test_class_person[11-You are young.] PASSED       [ 17%]
+src/test/test_main.py::test_class_person[12-You are young.] PASSED       [ 21%]
+src/test/test_main.py::test_class_person[13-You are a teenager.] PASSED  [ 26%]
+src/test/test_main.py::test_class_person[14-You are a teenager.] PASSED  [ 30%]
+src/test/test_main.py::test_class_person[17-You are a teenager.] PASSED  [ 34%]
+src/test/test_main.py::test_class_person[18-You are old.] PASSED         [ 39%]
+src/test/test_main.py::test_class_person[19-You are old.] PASSED         [ 43%]
+src/test/test_main.py::test_class_person[29-You are old.] PASSED         [ 47%]
+src/test/test_main.py::test_method_with_input[1--1-Age is not valid, setting age to 0.\nYou are young.] PASSED [ 52%]
+src/test/test_main.py::test_method_with_input[1-0-You are young.] PASSED [ 56%]
+src/test/test_main.py::test_method_with_input[1-7-You are young.] PASSED [ 60%]
+src/test/test_main.py::test_method_with_input[1-11-You are young.] PASSED [ 65%]
+src/test/test_main.py::test_method_with_input[1-12-You are young.] PASSED [ 69%]
+src/test/test_main.py::test_method_with_input[1-13-You are a teenager.] PASSED [ 73%]
+src/test/test_main.py::test_method_with_input[1-14-You are a teenager.] PASSED [ 78%]
+src/test/test_main.py::test_method_with_input[1-17-You are a teenager.] PASSED [ 82%]
+src/test/test_main.py::test_method_with_input[1-18-You are old.] PASSED  [ 86%]
+src/test/test_main.py::test_method_with_input[1-19-You are old.] PASSED  [ 91%]
+src/test/test_main.py::test_method_with_input[1-29-You are old.] PASSED  [ 95%]
+src/test/test_main.py::test_script[4-ages0-expected0] PASSED             [100%]
+
+---------- coverage: platform linux, python 3.10.2-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          35      0     12      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          57      0     18      0   100%
+-------------------------------------------------------------
+TOTAL                          92      0     30      0   100%
+
+
+============================== 23 passed in 1.34s ==============================
+
+real	0m4.022s
+user	0m3.872s
+sys	0m0.610s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          35      0     12      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          57      0     18      0   100%
+-----------------------------------------------------------------------
+TOTAL                          92      0     30      0   100%
+
+real	0m0.270s
+user	0m0.224s
+sys	0m0.045s
+
