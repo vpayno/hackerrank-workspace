@@ -44,9 +44,9 @@ TOTAL                          92      0     30      0   100%
 
 ============================== 23 passed in 1.34s ==============================
 
-real	0m4.022s
-user	0m3.872s
-sys	0m0.610s
+real	0m3.752s
+user	0m3.593s
+sys	0m0.662s
 
 Running: spackle
 Name                        Stmts   Miss Branch BrPart  Cover   Missing
@@ -58,7 +58,7 @@ src/test/test_main.py          57      0     18      0   100%
 -----------------------------------------------------------------------
 TOTAL                          92      0     30      0   100%
 
-real	0m0.270s
-user	0m0.224s
-sys	0m0.045s
+real	0m0.299s
+user	0m0.083s
+sys	0m0.020s
 

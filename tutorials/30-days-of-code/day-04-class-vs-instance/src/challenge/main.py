@@ -11,7 +11,7 @@ class Person:
     Person with an age.
     """
 
-    def __init__(self, age):
+    def __init__(self, age: int):
 
         # The problem description says the age can be -5 <= age <= 30; But,
         # that's not tested in the 3 test cases and it gets reset to 0 here if
