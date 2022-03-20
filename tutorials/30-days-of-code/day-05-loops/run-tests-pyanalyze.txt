@@ -1,0 +1,14 @@
+PYTHONPATH=src pyanalyze --verbose ./src
+Checking file: ('./src/challenge/__init__.py', 24478)
+./src/challenge/__init__.py took 0.00 s
+Checking file: ('./src/challenge/main.py', 24478)
+./src/challenge/main.py took 0.14 s
+Checking file: ('./src/test/__init__.py', 24478)
+./src/test/__init__.py took 0.00 s
+Checking file: ('./src/test/test_main.py', 24478)
+./src/test/test_main.py took 0.27 s
+
+real	0m1.232s
+user	0m1.125s
+sys	0m0.105s
+
