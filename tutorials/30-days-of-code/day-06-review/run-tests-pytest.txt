@@ -1,0 +1,185 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-branch
+============================= test session starts ==============================
+platform linux -- Python 3.10.2, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.2/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-06-review/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-06-review
+plugins: anyio-3.5.0, typeguard-2.13.3, cov-3.0.0, hypothesis-6.39.4, pylama-8.3.8, subprocess-1.4.1
+collecting ... collected 18 items
+
+src/test/test_main.py::test_method_without_input[-1-lines0-expected0] PASSED [  5%]
+src/test/test_main.py::test_method_without_input[0-lines1-expected1] PASSED [ 11%]
+src/test/test_main.py::test_method_without_input[1-lines2-expected2] PASSED [ 16%]
+src/test/test_main.py::test_method_without_input[2-lines3-expected3] PASSED [ 22%]
+src/test/test_main.py::test_method_without_input[2-lines4-expected4] PASSED [ 27%]
+src/test/test_main.py::test_method_without_input[2-lines5-expected5] PASSED [ 33%]
+src/test/test_main.py::test_method_with_input[-1-lines0-expected0] PASSED [ 38%]
+src/test/test_main.py::test_method_with_input[0-lines1-expected1] PASSED [ 44%]
+src/test/test_main.py::test_method_with_input[1-lines2-expected2] PASSED [ 50%]
+src/test/test_main.py::test_method_with_input[2-lines3-expected3] FAILED [ 55%]
+src/test/test_main.py::test_method_with_input[2-lines4-expected4] FAILED [ 61%]
+src/test/test_main.py::test_method_with_input[2-lines5-expected5] FAILED [ 66%]
+src/test/test_main.py::test_script[-1-lines0-expected0] PASSED           [ 72%]
+src/test/test_main.py::test_script[0-lines1-expected1] PASSED            [ 77%]
+src/test/test_main.py::test_script[1-lines2-expected2] PASSED            [ 83%]
+src/test/test_main.py::test_script[2-lines3-expected3] PASSED            [ 88%]
+src/test/test_main.py::test_script[2-lines4-expected4] PASSED            [ 94%]
+src/test/test_main.py::test_script[2-lines5-expected5] PASSED            [100%]
+
+=================================== FAILURES ===================================
+__________________ test_method_with_input[2-lines3-expected3] __________________
+
+input_lines = 2, lines = ['adbecf', '0123456789']
+expected = ['abc def', '02468 13579']
+capsys = <_pytest.capture.CaptureFixture object at 0x7fe7bb3b51e0>
+
+    @pytest.mark.parametrize("input_lines,lines,expected", unit_test_data)
+    def test_method_with_input(input_lines: int, lines: List[str],
+                               expected: List[str], capsys):
+        """Runs the class method against all of our test data."""
+    
+        captured_out: List[str]
+        expected_out: List[str]
+    
+        code: main.Challenge = main.Challenge()
+    
+        with mock.patch.object(builtins, "input", lambda: str(input_lines)):
+            code.input_number()
+    
+        with mock.patch.object(builtins, "input", lambda: "\n".join(lines)):
+            code.input_string()
+    
+        assert code.input_lines == max(input_lines, 0)
+    
+        code.solve()
+    
+        captured = capsys.readouterr()  # discard previous output
+        code.print_results()
+        captured = capsys.readouterr()  # capture new output
+    
+        captured_out = captured.out.strip().split("\n")
+        expected_out = expected
+    
+        print(f"{captured_out} == {expected_out}")
+>       assert all(e == o for e, o in zip(captured_out, expected_out))
+E       assert False
+E        +  where False = all(<generator object test_method_with_input.<locals>.<genexpr> at 0x7fe7bb3f7300>)
+
+src/test/test_main.py:91: AssertionError
+----------------------------- Captured stdout call -----------------------------
+['abc', '13579 def02468', 'abc', '13579 def02468'] == ['abc def', '02468 13579']
+__________________ test_method_with_input[2-lines4-expected4] __________________
+
+input_lines = 2, lines = ['Hacker', 'Rank'], expected = ['Hce akr', 'Rn ak']
+capsys = <_pytest.capture.CaptureFixture object at 0x7fe7bb44fca0>
+
+    @pytest.mark.parametrize("input_lines,lines,expected", unit_test_data)
+    def test_method_with_input(input_lines: int, lines: List[str],
+                               expected: List[str], capsys):
+        """Runs the class method against all of our test data."""
+    
+        captured_out: List[str]
+        expected_out: List[str]
+    
+        code: main.Challenge = main.Challenge()
+    
+        with mock.patch.object(builtins, "input", lambda: str(input_lines)):
+            code.input_number()
+    
+        with mock.patch.object(builtins, "input", lambda: "\n".join(lines)):
+            code.input_string()
+    
+        assert code.input_lines == max(input_lines, 0)
+    
+        code.solve()
+    
+        captured = capsys.readouterr()  # discard previous output
+        code.print_results()
+        captured = capsys.readouterr()  # capture new output
+    
+        captured_out = captured.out.strip().split("\n")
+        expected_out = expected
+    
+        print(f"{captured_out} == {expected_out}")
+>       assert all(e == o for e, o in zip(captured_out, expected_out))
+E       assert False
+E        +  where False = all(<generator object test_method_with_input.<locals>.<genexpr> at 0x7fe7bb448890>)
+
+src/test/test_main.py:91: AssertionError
+----------------------------- Captured stdout call -----------------------------
+['Hce', 'ak akrRn', 'Hce', 'ak akrRn'] == ['Hce akr', 'Rn ak']
+__________________ test_method_with_input[2-lines5-expected5] __________________
+
+input_lines = 2, lines = ['ab', '12'], expected = ['a b', '1 2']
+capsys = <_pytest.capture.CaptureFixture object at 0x7fe7bb3b69b0>
+
+    @pytest.mark.parametrize("input_lines,lines,expected", unit_test_data)
+    def test_method_with_input(input_lines: int, lines: List[str],
+                               expected: List[str], capsys):
+        """Runs the class method against all of our test data."""
+    
+        captured_out: List[str]
+        expected_out: List[str]
+    
+        code: main.Challenge = main.Challenge()
+    
+        with mock.patch.object(builtins, "input", lambda: str(input_lines)):
+            code.input_number()
+    
+        with mock.patch.object(builtins, "input", lambda: "\n".join(lines)):
+            code.input_string()
+    
+        assert code.input_lines == max(input_lines, 0)
+    
+        code.solve()
+    
+        captured = capsys.readouterr()  # discard previous output
+        code.print_results()
+        captured = capsys.readouterr()  # capture new output
+    
+        captured_out = captured.out.strip().split("\n")
+        expected_out = expected
+    
+        print(f"{captured_out} == {expected_out}")
+>       assert all(e == o for e, o in zip(captured_out, expected_out))
+E       assert False
+E        +  where False = all(<generator object test_method_with_input.<locals>.<genexpr> at 0x7fe7bb4485f0>)
+
+src/test/test_main.py:91: AssertionError
+----------------------------- Captured stdout call -----------------------------
+['a', '2 b1', 'a', '2 b1'] == ['a b', '1 2']
+
+---------- coverage: platform linux, python 3.10.2-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          42      0     16      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          54      0     18      1    99%
+-------------------------------------------------------------
+TOTAL                          96      0     34      1    99%
+
+=========================== short test summary info ============================
+FAILED src/test/test_main.py::test_method_with_input[2-lines3-expected3] - as...
+FAILED src/test/test_main.py::test_method_with_input[2-lines4-expected4] - as...
+FAILED src/test/test_main.py::test_method_with_input[2-lines5-expected5] - as...
+========================= 3 failed, 15 passed in 4.90s =========================
+
+real	0m8.566s
+user	0m7.461s
+sys	0m1.406s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          42      0     16      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          54      0     18      1    99%   45->exit
+-----------------------------------------------------------------------
+TOTAL                          96      0     34      1    99%
+
+real	0m0.514s
+user	0m0.448s
+sys	0m0.067s
+
