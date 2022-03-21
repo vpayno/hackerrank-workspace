@@ -1,0 +1,57 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-branch
+============================= test session starts ==============================
+platform linux -- Python 3.10.2, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.2/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/prep-kit-3-months/week01/02-mini_max_sum/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/prep-kit-3-months/week01/02-mini_max_sum
+plugins: anyio-3.5.0, typeguard-2.13.3, cov-3.0.0, hypothesis-6.39.4, pylama-8.3.8, subprocess-1.4.1
+collecting ... collected 16 items
+
+src/test/test_main.py::test_method_without_input[numbers0-expected0] PASSED [  6%]
+src/test/test_main.py::test_method_without_input[numbers1-expected1] PASSED [ 12%]
+src/test/test_main.py::test_method_without_input[numbers2-expected2] PASSED [ 18%]
+src/test/test_main.py::test_method_without_input[numbers3-expected3] PASSED [ 25%]
+src/test/test_main.py::test_method_without_input[numbers4-expected4] PASSED [ 31%]
+src/test/test_main.py::test_method_with_input[numbers0-expected0] PASSED [ 37%]
+src/test/test_main.py::test_method_with_input[numbers1-expected1] PASSED [ 43%]
+src/test/test_main.py::test_method_with_input[numbers2-expected2] PASSED [ 50%]
+src/test/test_main.py::test_method_with_input[numbers3-expected3] PASSED [ 56%]
+src/test/test_main.py::test_method_with_input[numbers4-expected4] PASSED [ 62%]
+src/test/test_main.py::test_script_arguments PASSED                      [ 68%]
+src/test/test_main.py::test_script[numbers0-expected0] PASSED            [ 75%]
+src/test/test_main.py::test_script[numbers1-expected1] PASSED            [ 81%]
+src/test/test_main.py::test_script[numbers2-expected2] PASSED            [ 87%]
+src/test/test_main.py::test_script[numbers3-expected3] PASSED            [ 93%]
+src/test/test_main.py::test_script[numbers4-expected4] PASSED            [100%]
+
+---------- coverage: platform linux, python 3.10.2-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          32      0     10      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          65      0     26      0   100%
+-------------------------------------------------------------
+TOTAL                          97      0     36      0   100%
+
+
+============================== 16 passed in 2.01s ==============================
+
+real	0m4.194s
+user	0m3.988s
+sys	0m0.712s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          32      0     10      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          65      0     26      0   100%
+-----------------------------------------------------------------------
+TOTAL                          97      0     36      0   100%
+
+real	0m0.249s
+user	0m0.068s
+sys	0m0.010s
+

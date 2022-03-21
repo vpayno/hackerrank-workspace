@@ -1,39 +1,78 @@
-#!/bin/python3
+#!/usr/bin/env python
+"""
+https://www.hackerrank.com/challenges/30-review-loop/problem
 
-import math
-import os
-import random
-import re
+Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
+"""
+
 import sys
-from typing import List, Tuple
-
-#
-# Complete the 'miniMaxSum' function below.
-#
-# The function accepts INTEGER_ARRAY arr as parameter.
-#
+from typing import List, Optional, Tuple
 
 
-def miniMaxSum(arr: List[int]):
-    # Write your code here
+class Challenge:
+    """
+    Week 1 - Plus Minus
+    """
 
-    numbers: List[int] = sorted(arr)
-    slice_size: int = len(numbers) - 1
+    def __init__(self, numbers: Optional[List[int]] = None):
 
-    slice_min: List[int] = numbers[0:slice_size]
-    slice_max: List[int] = numbers[-slice_size:]
+        self.numbers: List[int] = []
+        self.slice_size: int = 0
+        self.results: Tuple[int, int] = (0, 0)
 
-    min: int = sum(slice_min)
-    max: int = sum(slice_max)
+        if numbers:
+            self.numbers = sorted(numbers)
+            self.slice_size = max(len(numbers) - 1, 0)
 
-    number: int
-    results: Tuple[int] = (min, max)
+    def min_max_sum(self):
+        """Get the minimum and maximum sum from the list of numbers."""
 
-    print(" ".join([str(number) for number in results]))
+        slice_min: List[int] = self.numbers[0:self.slice_size]
+        slice_max: List[int] = self.numbers[-self.slice_size:]
+
+        sum_min: int = sum(slice_min)
+        sum_max: int = sum(slice_max)
+
+        self.results = (sum_min, sum_max)
+
+    def print_result(self):
+        """Prints the Tuple with the min and max sum numbers."""
+        print(" ".join([str(number) for number in self.results]))
+
+    def input_numbers(self):
+        """Ask for a list of numbers without a prompt because that's how HR rolls."""
+
+        if len(self.numbers) <= 0:
+            arr: List[int] = list(map(int, input().strip().split()))
+
+            self.numbers = sorted(arr)
+            self.slice_size = max(len(self.numbers) - 1, 0)
+        else:
+            # we need an else to make coverage happy
+            pass
+
+    def main(self):
+        """Main method for the challenge."""
+
+        self.input_numbers()
+
+        self.min_max_sum()
+
+        self.print_result()
 
 
-if __name__ == "__main__":
+def get_cmdline_arguments() -> List[int]:
+    """Get the list of numbers from the command line."""
 
-    arr: List[int] = list(map(int, input().rstrip().split()))
+    input_numbers: List[int] = [int(number) for number in sys.argv[1:]]
 
-    miniMaxSum(arr)
+    return input_numbers
+
+
+if __name__ == "__main__":  # pragma: nocover
+
+    data: List[int] = get_cmdline_arguments()
+
+    program = Challenge(data)
+
+    program.main()
