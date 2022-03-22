@@ -48,8 +48,11 @@ class Challenge:
         """
 
         if len(self.lines) <= 0:
+            data: str
+
             for _ in range(0, self.input_lines):
-                self.lines.append(input().strip())
+                data = input().strip()
+                self.lines.append(data)
         else:
             pass
 
@@ -64,6 +67,8 @@ class Challenge:
         text_odd: str = ""
         new_line: str
         line: str
+
+        self.output = []
 
         for line in self.lines:
             text_even = ""

@@ -10,6 +10,7 @@ import os.path
 import subprocess
 import sys
 from typing import List
+from unittest.mock import patch
 
 import mock
 import pytest
@@ -42,9 +43,11 @@ def test_method_without_input(input_lines: int, lines: List[str],
     with mock.patch.object(builtins, "input", lambda: str(input_lines)):
         code.input_number()
 
-    with mock.patch.object(builtins, "input", lambda: "\n".join(lines)):
+    with patch("builtins.input") as mock_input:
+        mock_input.side_effect = lines
         code.input_string()
 
+    assert mock_input.call_count == 0
     assert code.input_lines == max(input_lines, 0)
 
     code.solve()
@@ -73,20 +76,23 @@ def test_method_with_input(input_lines: int, lines: List[str],
     with mock.patch.object(builtins, "input", lambda: str(input_lines)):
         code.input_number()
 
-    with mock.patch.object(builtins, "input", lambda: "\n".join(lines)):
+    with patch("builtins.input") as mock_input:
+        mock_input.side_effect = lines
         code.input_string()
 
+    assert mock_input.call_count == code.input_lines
     assert code.input_lines == max(input_lines, 0)
 
     code.solve()
 
-    captured = capsys.readouterr()  # discard previous output
+    # captured = capsys.readouterr()  # discard previous output
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 
-    captured_out = captured.out.strip().split("\n")
+    captured_out = captured.out.split("\n")
     expected_out = expected
 
+    print(f"code.output == {code.output}")
     print(f"{captured_out} == {expected_out}")
     assert all(e == o for e, o in zip(captured_out, expected_out))
 
