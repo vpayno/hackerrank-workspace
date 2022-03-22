@@ -102,6 +102,13 @@ python_pytype()
 	done
 } # python_pytype()
 
+python_bandit()
+{
+	 echo Running: bandit --verbose --recursive --exclude ./src/test ./src
+	 time bandit --verbose --recursive --exclude ./src/test ./src
+	 printf "\n"
+ } # python_bandit()
+
 python_pytest()
 {
 	 echo Running: pytest --verbose --cov-report term --cov=. --cov-branch
@@ -315,6 +322,7 @@ main()
 		python_pyright |& tee run-tests-pyright.txt
 		python_pyanalyze |& tee run-tests-pyanalyze.txt
 		# python_pytype |& tee run-tests-pytype.txt
+		python_bandit |& tee run-tests-bandit.txt
 		python_pytest |& tee run-tests-pytest.txt
 
 	elif [[ ${project_language} == rust ]]; then
