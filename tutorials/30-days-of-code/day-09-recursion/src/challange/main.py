@@ -1,30 +1,35 @@
 #!/bin/python3
+"""
+HackerRank - Day 09 - Recursion
+"""
 
-import math
 import os
-import random
-import re
 import sys
 
-#
-# Complete the 'factorial' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts INTEGER n as parameter.
-#
 
+def factorial(number: int) -> int:
+    """Recursive factorial function."""
+    retval: int
 
-def factorial(n):
-    pass
+    if number > 1:
+        retval = number * factorial(number - 1)
+    else:
+        retval = number
+
+    return retval
 
 
 if __name__ == "__main__":
-    fptr = open(os.environ["OUTPUT_PATH"], "w")
+    try:
+        fptr = open(os.environ["OUTPUT_PATH"], "w", encoding="utf8")
+    except KeyError:
+        fptr = sys.stdout
 
-    n = int(input().strip())
+    with fptr:
+        num: int = int(input().strip())
 
-    result = factorial(n)
+        result = factorial(num)
 
-    fptr.write(str(result) + "\n")
+        fptr.write(str(result) + "\n")
 
-    fptr.close()
+        fptr.close()
