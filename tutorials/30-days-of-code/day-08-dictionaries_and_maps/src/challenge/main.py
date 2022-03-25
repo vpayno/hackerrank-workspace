@@ -1,38 +1,111 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
-Day 08: Dictionaries and Maps
+HackerRank - Tutorials - 30 Days of Code - Day 07 - Arrays
+
+Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
 """
 
 from typing import Dict, List
 
-input_quantity: int = 0
-input_dict: Dict[str, str] = {}
-input_names: List[str] = []
+from rich.traceback import install
 
-input_quantity = int(input())
-# print(f"{input_quantity}")
+install()
 
-name: str
-value: str
 
-for _ in range(0, input_quantity):
-    name, value = input().strip().split(" ")
-    input_dict[name] = value.strip()
+class Challenge:
+    """
+    Day 07 - Arrays
+    """
 
-# print(f"{input_dict}")
+    def __init__(self):
 
-while True:
-    try:
-        name = input().strip()
-        input_names.append(name)
-    except EOFError:
-        break
+        self.quantity: int = 0
+        self.data: Dict[str, str] = {}
+        self.names: List[str] = []
 
-# print(f"{input_names}")
+        self.output: List[str] = []
 
-for name in input_names:
-    try:
-        value = input_dict[name]
-        print(f"{name}={value}")
-    except KeyError:
-        print("Not found")
+    def input_quantity(self):
+        """
+        Read an int without a prompt to keep things interesting.
+        """
+
+        self.quantity = max(int(input().strip()), 0)
+
+    def input_data(self):
+        """
+        Read a list of names and numbers without a prompt to keep things
+        interesting.
+        """
+
+        name: str
+        value: str
+
+        for _ in range(0, self.quantity):
+            name, value = input().strip().split(" ")
+            self.data[name] = value.strip()
+
+    def input_names(self):
+        """
+        Read a list of names without a prompt to keep things
+        interesting. Stop when we reach EOF.
+        """
+
+        name: str
+
+        while True:
+            try:
+                name = input().strip()
+
+                if name in ["", "EOF"]:
+                    raise EOFError
+
+                self.names.append(name)
+
+            except EOFError:
+                break
+
+    def solve(self):
+        """
+        Reverse the numbers in the list.
+        """
+
+        name: str
+        value: str
+
+        for name in self.names:
+            try:
+                value = self.data[name]
+                self.output.append(f"{name}={value}")
+            except KeyError:
+                self.output.append("Not found")
+
+    def print_results(self):
+        """Print the results of the challenge."""
+
+        line: str
+
+        for line in self.output:
+            print(line)
+
+    def main(self):
+        """
+        Challenge steps.
+        """
+
+        self.input_quantity()
+
+        self.input_data()
+
+        self.input_names()
+
+        self.solve()
+
+        self.print_results()
+
+
+if __name__ == "__main__":  # pragma: no cover
+
+    challenge = Challenge()
+
+    challenge.main()
