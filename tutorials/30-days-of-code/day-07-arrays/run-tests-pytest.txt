@@ -26,11 +26,11 @@ src/test/test_main.py          72      0     32      1    99%
 TOTAL                         114      0     48      1    99%
 
 
-============================== 7 passed in 1.71s ===============================
+============================== 7 passed in 2.34s ===============================
 
-real	0m3.937s
-user	0m3.793s
-sys	0m0.659s
+real	0m4.908s
+user	0m4.494s
+sys	0m0.721s
 
 Running: spackle
 Name                        Stmts   Miss Branch BrPart  Cover   Missing
@@ -42,7 +42,14 @@ src/test/test_main.py          72      0     32      1    99%   62->exit
 -----------------------------------------------------------------------
 TOTAL                         114      0     48      1    99%
 
-real	0m0.246s
-user	0m0.071s
-sys	0m0.021s
+real	0m0.338s
+user	0m0.299s
+sys	0m0.039s
+
+Running: coverage json --pretty-print
+Wrote JSON report to coverage.json
+
+real	0m0.321s
+user	0m0.273s
+sys	0m0.048s
 
