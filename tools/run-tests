@@ -118,6 +118,10 @@ python_pytest()
 	 echo Running: spackle
 	 time spackle
 	 printf "\n"
+
+	 echo Running: coverage json --pretty-print
+	 time coverage json --pretty-print
+	 printf "\n"
  } # python_pytest()
 
 rust_clean()
