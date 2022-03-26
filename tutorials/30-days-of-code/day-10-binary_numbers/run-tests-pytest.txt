@@ -1,0 +1,75 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-branch
+============================= test session starts ==============================
+platform linux -- Python 3.10.3, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.3/bin/python3.10
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-10-binary_numbers/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-10-binary_numbers
+plugins: anyio-3.5.0, hypothesis-6.39.4, pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1
+collecting ... collected 27 items
+
+src/test/test_main.py::test_method_without_input[0-expected0] PASSED     [  3%]
+src/test/test_main.py::test_method_without_input[1-expected1] PASSED     [  7%]
+src/test/test_main.py::test_method_without_input[3-expected2] PASSED     [ 11%]
+src/test/test_main.py::test_method_without_input[5-expected3] PASSED     [ 14%]
+src/test/test_main.py::test_method_without_input[11-expected4] PASSED    [ 18%]
+src/test/test_main.py::test_method_without_input[23-expected5] PASSED    [ 22%]
+src/test/test_main.py::test_method_without_input[37-expected6] PASSED    [ 25%]
+src/test/test_main.py::test_method_without_input[127-expected7] PASSED   [ 29%]
+src/test/test_main.py::test_method_without_input[255-expected8] PASSED   [ 33%]
+src/test/test_main.py::test_method_with_input[0-expected0] PASSED        [ 37%]
+src/test/test_main.py::test_method_with_input[1-expected1] PASSED        [ 40%]
+src/test/test_main.py::test_method_with_input[3-expected2] PASSED        [ 44%]
+src/test/test_main.py::test_method_with_input[5-expected3] PASSED        [ 48%]
+src/test/test_main.py::test_method_with_input[11-expected4] PASSED       [ 51%]
+src/test/test_main.py::test_method_with_input[23-expected5] PASSED       [ 55%]
+src/test/test_main.py::test_method_with_input[37-expected6] PASSED       [ 59%]
+src/test/test_main.py::test_method_with_input[127-expected7] PASSED      [ 62%]
+src/test/test_main.py::test_method_with_input[255-expected8] PASSED      [ 66%]
+src/test/test_main.py::test_script[0-expected0] PASSED                   [ 70%]
+src/test/test_main.py::test_script[1-expected1] PASSED                   [ 74%]
+src/test/test_main.py::test_script[3-expected2] PASSED                   [ 77%]
+src/test/test_main.py::test_script[5-expected3] PASSED                   [ 81%]
+src/test/test_main.py::test_script[11-expected4] PASSED                  [ 85%]
+src/test/test_main.py::test_script[23-expected5] PASSED                  [ 88%]
+src/test/test_main.py::test_script[37-expected6] PASSED                  [ 92%]
+src/test/test_main.py::test_script[127-expected7] PASSED                 [ 96%]
+src/test/test_main.py::test_script[255-expected8] PASSED                 [100%]
+
+---------- coverage: platform linux, python 3.10.3-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          32      0      8      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          50      0     18      0   100%
+-------------------------------------------------------------
+TOTAL                          82      0     26      0   100%
+
+
+============================== 27 passed in 4.42s ==============================
+
+real	0m6.741s
+user	0m6.202s
+sys	0m1.059s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          32      0      8      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          50      0     18      0   100%
+-----------------------------------------------------------------------
+TOTAL                          82      0     26      0   100%
+
+real	0m0.266s
+user	0m0.223s
+sys	0m0.043s
+
+Running: coverage json --pretty-print
+Wrote JSON report to coverage.json
+
+real	0m0.192s
+user	0m0.155s
+sys	0m0.034s
+
