@@ -1,0 +1,81 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-branch
+============================= test session starts ==============================
+platform linux -- Python 3.10.3, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.3/bin/python3.10
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-12-inheritance/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-12-inheritance
+plugins: anyio-3.5.0, hypothesis-6.39.4, pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1
+collecting ... collected 33 items
+
+src/test/test_main.py::test_method_without_input[data0-scores0-expected0] PASSED [  3%]
+src/test/test_main.py::test_method_without_input[data1-scores1-expected1] PASSED [  6%]
+src/test/test_main.py::test_method_without_input[data2-scores2-expected2] PASSED [  9%]
+src/test/test_main.py::test_method_without_input[data3-scores3-expected3] PASSED [ 12%]
+src/test/test_main.py::test_method_without_input[data4-scores4-expected4] PASSED [ 15%]
+src/test/test_main.py::test_method_without_input[data5-scores5-expected5] PASSED [ 18%]
+src/test/test_main.py::test_method_without_input[data6-scores6-expected6] PASSED [ 21%]
+src/test/test_main.py::test_method_without_input[data7-scores7-expected7] PASSED [ 24%]
+src/test/test_main.py::test_method_without_input[data8-scores8-expected8] PASSED [ 27%]
+src/test/test_main.py::test_method_without_input[data9-scores9-expected9] PASSED [ 30%]
+src/test/test_main.py::test_method_without_input[data10-scores10-expected10] PASSED [ 33%]
+src/test/test_main.py::test_method_with_input[data0-scores0-expected0] PASSED [ 36%]
+src/test/test_main.py::test_method_with_input[data1-scores1-expected1] PASSED [ 39%]
+src/test/test_main.py::test_method_with_input[data2-scores2-expected2] PASSED [ 42%]
+src/test/test_main.py::test_method_with_input[data3-scores3-expected3] PASSED [ 45%]
+src/test/test_main.py::test_method_with_input[data4-scores4-expected4] PASSED [ 48%]
+src/test/test_main.py::test_method_with_input[data5-scores5-expected5] PASSED [ 51%]
+src/test/test_main.py::test_method_with_input[data6-scores6-expected6] PASSED [ 54%]
+src/test/test_main.py::test_method_with_input[data7-scores7-expected7] PASSED [ 57%]
+src/test/test_main.py::test_method_with_input[data8-scores8-expected8] PASSED [ 60%]
+src/test/test_main.py::test_method_with_input[data9-scores9-expected9] PASSED [ 63%]
+src/test/test_main.py::test_method_with_input[data10-scores10-expected10] PASSED [ 66%]
+src/test/test_main.py::test_script[data0-scores0-expected0] PASSED       [ 69%]
+src/test/test_main.py::test_script[data1-scores1-expected1] PASSED       [ 72%]
+src/test/test_main.py::test_script[data2-scores2-expected2] PASSED       [ 75%]
+src/test/test_main.py::test_script[data3-scores3-expected3] PASSED       [ 78%]
+src/test/test_main.py::test_script[data4-scores4-expected4] PASSED       [ 81%]
+src/test/test_main.py::test_script[data5-scores5-expected5] PASSED       [ 84%]
+src/test/test_main.py::test_script[data6-scores6-expected6] PASSED       [ 87%]
+src/test/test_main.py::test_script[data7-scores7-expected7] PASSED       [ 90%]
+src/test/test_main.py::test_script[data8-scores8-expected8] PASSED       [ 93%]
+src/test/test_main.py::test_script[data9-scores9-expected9] PASSED       [ 96%]
+src/test/test_main.py::test_script[data10-scores10-expected10] PASSED    [100%]
+
+---------- coverage: platform linux, python 3.10.3-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          77      0     28      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          97      0     34      3    98%
+-------------------------------------------------------------
+TOTAL                         174      0     62      3    99%
+
+
+============================== 33 passed in 5.50s ==============================
+
+real	0m8.347s
+user	0m7.687s
+sys	0m1.173s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          77      0     28      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          97      0     34      3    98%   55->exit, 72->exit, 77->exit
+-----------------------------------------------------------------------
+TOTAL                         174      0     62      3    99%
+
+real	0m0.312s
+user	0m0.264s
+sys	0m0.049s
+
+Running: coverage json --pretty-print
+Wrote JSON report to coverage.json
+
+real	0m0.199s
+user	0m0.169s
+sys	0m0.030s
+

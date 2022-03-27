@@ -1,34 +1,48 @@
 #!/usr/bin/env python3
 """
-Day 12 - Inheritance
+HackerRank - Tutorials - 30 Days of Code - Day 10 - Binary Numbers
+
+Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
 """
 
-from typing import List
+from typing import List, Optional
+
+from rich.traceback import install
+
+install()
 
 
 class Person:
     """Person class"""
 
-    def __init__(self, firstName: str, lastName: str, idNumber: str):
+    def __init__(self, first_name: str, last_name: str, id_number: str):
 
-        self.firstName: str = firstName
-        self.lastName: str = lastName
-        self.idNumber: str = idNumber
+        self.first_name: str = first_name.strip()
+        self.last_name: str = last_name.strip()
+        self.id_number: str = id_number.strip()
 
-    def printPerson(self):
-        """How info about a person."""
+    def __str__(self) -> str:
+        """String representation of class."""
 
-        print("Name:", self.lastName + ",", self.firstName)
-        print("ID:", self.idNumber)
+        string: str = f"Name: {self.last_name}, {self.first_name}"
+        string += f" ID: {self.id_number}"
+
+        return string
+
+    def print_person(self):
+        """Show info about a person."""
+
+        print(f"Name: {self.last_name}, {self.first_name}")
+        print(f"ID: {self.id_number}")
 
 
 class Student(Person):
     """Inherits Person, adds scores and calculate()"""
 
-    def __init__(self, firstName: str, lastName: str, idNumber: str,
+    def __init__(self, first_name: str, last_name: str, id_number: str,
                  scores: List[int]):
 
-        super().__init__(firstName, lastName, idNumber)
+        super().__init__(first_name, last_name, id_number)
 
         self.scores: List[int] = scores.copy()
 
@@ -55,12 +69,106 @@ class Student(Person):
         return grade
 
 
-line: List[str] = input().split()
-firstName: str = line[0]
-lastName: str = line[1]
-idNum: str = line[2]
-numScores: int = int(input())  # not needed for Python
-scores: List[int] = list(map(int, input().split()))
-s: Student = Student(firstName, lastName, idNum, scores)
-s.printPerson()
-print("Grade:", s.calculate())
+class Challenge:
+    """
+    Main challenge class.
+    """
+
+    def __init__(self,
+                 student: Optional[Student] = None,
+                 quantity: Optional[int] = None):
+
+        self.student: Optional[Student]
+        self.quantity: int
+
+        self.output: str = ""
+
+        if student is not None:
+            self.student = student
+        else:
+            self.student = None
+
+        if quantity is not None:
+            self.quantity = quantity
+        else:
+            self.quantity = 0
+
+    def input_user(self):
+        """
+        Read an int without a prompt to keep things interesting.
+        """
+
+        if self.student is None or None in [
+                self.student.first_name,
+                self.student.last_name,
+                self.student.id_number,
+        ]:
+            line: List[str] = input().split()
+
+            first_name: str = line[0]
+            last_name: str = line[1]
+            id_number: str = line[2]
+            scores: List[int] = []
+
+            self.student = Student(first_name, last_name, id_number, scores)
+        else:
+            pass
+
+    def input_quantity(self):
+        """
+        Read an int without a prompt to keep things interesting.
+        """
+
+        if self.quantity <= 0:
+            self.quantity = max(int(input().strip()), 0)
+        else:
+            pass
+
+    def input_scores(self):
+        """
+        Read an int without a prompt to keep things interesting.
+        """
+
+        if self.student is not None and len(self.student.scores) <= 0:
+            self.student.scores = list(map(int, input().split()))
+        else:
+            pass
+
+    def solve(self):
+        """Solves the challenge."""
+
+        if self.student is not None:
+            self.output = self.student.calculate()
+        else:
+            pass
+
+    def print_results(self):
+        """Print the results of the challenge."""
+
+        if self.student is not None and self.output != "":
+            self.student.print_person()
+            print(f"Grade: {self.output}")
+        else:
+            pass
+
+    def main(self):
+        """
+        Challenge steps.
+        """
+
+        self.input_user()
+
+        self.input_quantity()
+
+        self.input_scores()
+
+        self.solve()
+
+        self.print_results()
+
+
+if __name__ == "__main__":  # pragma: no cover
+
+    challenge = Challenge()
+
+    challenge.main()
