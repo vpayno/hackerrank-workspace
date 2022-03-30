@@ -1,21 +1,36 @@
 class Node:
-    def __init__(self,data):
+
+    def __init__(self, data):
         self.data = data
-        self.next = None 
-class Solution: 
-    def display(self,head):
+        self.next = None
+
+
+class Solution:
+
+    def display(self, head):
         current = head
         while current:
-            print(current.data,end=' ')
             current = current.next
 
-    def insert(self,head,data): 
-    #Complete this method
+    def insert(self, head, data):
+        if head is None:
+            head = Node(data)
+        else:
+            last = None
+            current = head
+            while current:
+                last = current
+                current = current.next
+            if last:
+                last.next = Node(data)
 
-mylist= Solution()
-T=int(input())
-head=None
+        return head
+
+
+mylist = Solution()
+T = int(input())
+head = None
 for i in range(T):
-    data=int(input())
-    head=mylist.insert(head,data)    
-mylist.display(head); 	 
+    data = int(input())
+    head = mylist.insert(head, data)
+mylist.display(head)
