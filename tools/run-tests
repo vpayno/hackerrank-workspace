@@ -87,6 +87,15 @@ python_pyanalyze()
 	printf "\n"
 } # python_pyanalyze()
 
+python_flake8()
+{
+	local directory="src"
+
+	echo PYTHONPATH="${directory}" flake8 ./"${directory}"
+	time { PYTHONPATH="${directory}" flake8 ./"${directory}"; }
+	printf "\n"
+} # python_flake8()
+
 python_pytype()
 {
 	local directory
@@ -322,9 +331,10 @@ main()
 		printf "\nRunning Python Checks and Tests...\n\n"
 
 		python_mypy |& tee run-tests-mypy.txt
-		#python_pyre |& tee run-tests-pyre.txt
+		# python_pyre |& tee run-tests-pyre.txt
 		python_pyright |& tee run-tests-pyright.txt
 		python_pyanalyze |& tee run-tests-pyanalyze.txt
+		# python_flake8 |& tee run-tests-flake8.txt
 		# python_pytype |& tee run-tests-pytype.txt
 		python_bandit |& tee run-tests-bandit.txt
 		python_pytest |& tee run-tests-pytest.txt
