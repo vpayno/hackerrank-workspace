@@ -82,8 +82,8 @@ python_pyanalyze()
 {
 	local directory="src"
 
-	echo PYTHONPATH="${directory}" pyanalyze --verbose ./"${directory}"
-	time { PYTHONPATH="${directory}" pyanalyze --verbose ./"${directory}"; }
+	echo PYTHONPATH="${directory}" pyanalyze --verbose --enable-all ./"${directory}"
+	time { PYTHONPATH="${directory}" pyanalyze --verbose --enable-all ./"${directory}"; }
 	printf "\n"
 } # python_pyanalyze()
 
