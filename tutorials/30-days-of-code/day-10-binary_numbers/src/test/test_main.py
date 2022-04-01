@@ -13,6 +13,7 @@ from typing import List
 
 import mock
 import pytest
+from _pytest.capture import CaptureFixture
 
 # Our Project
 from challenge import main
@@ -33,7 +34,8 @@ integration_test_data = unit_test_data
 
 
 @pytest.mark.parametrize("number,expected", unit_test_data)
-def test_method_without_input(number: int, expected: List[int], capsys):
+def test_method_without_input(number: int, expected: List[int],
+                              capsys: CaptureFixture) -> None:
     """Runs the class methods against all of our test data."""
 
     captured_out: List[int]
@@ -60,7 +62,8 @@ def test_method_without_input(number: int, expected: List[int], capsys):
 
 
 @pytest.mark.parametrize("number,expected", unit_test_data)
-def test_method_with_input(number: int, expected: List[int], capsys):
+def test_method_with_input(number: int, expected: List[int],
+                           capsys: CaptureFixture) -> None:
     """Runs the class method against all of our test data."""
 
     captured_out: List[int]
@@ -88,7 +91,7 @@ def test_method_with_input(number: int, expected: List[int], capsys):
 
 
 @pytest.mark.parametrize("number,expected", unit_test_data)
-def test_script(number: int, expected: List[int]):
+def test_script(number: int, expected: List[int]) -> None:
     """Runs the main script against all of our test data."""
 
     program_input: bytes = bytes(f"{number}\n", "utf8")

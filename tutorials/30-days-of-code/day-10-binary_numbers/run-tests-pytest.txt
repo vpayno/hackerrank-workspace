@@ -41,16 +41,16 @@ Name                        Stmts   Miss Branch BrPart  Cover
 src/challenge/__init__.py       0      0      0      0   100%
 src/challenge/main.py          32      0      8      0   100%
 src/test/__init__.py            0      0      0      0   100%
-src/test/test_main.py          50      0     18      0   100%
+src/test/test_main.py          51      0     18      0   100%
 -------------------------------------------------------------
-TOTAL                          82      0     26      0   100%
+TOTAL                          83      0     26      0   100%
 
 
-============================== 27 passed in 4.42s ==============================
+============================== 27 passed in 4.17s ==============================
 
-real	0m6.741s
-user	0m6.202s
-sys	0m1.059s
+real	0m6.354s
+user	0m5.819s
+sys	0m1.050s
 
 Running: spackle
 Name                        Stmts   Miss Branch BrPart  Cover   Missing
@@ -58,18 +58,25 @@ Name                        Stmts   Miss Branch BrPart  Cover   Missing
 src/challenge/__init__.py       0      0      0      0   100%
 src/challenge/main.py          32      0      8      0   100%
 src/test/__init__.py            0      0      0      0   100%
-src/test/test_main.py          50      0     18      0   100%
+src/test/test_main.py          51      0     18      0   100%
 -----------------------------------------------------------------------
-TOTAL                          82      0     26      0   100%
+TOTAL                          83      0     26      0   100%
 
-real	0m0.266s
-user	0m0.223s
-sys	0m0.043s
+real	0m0.276s
+user	0m0.252s
+sys	0m0.035s
 
 Running: coverage json --pretty-print
 Wrote JSON report to coverage.json
 
-real	0m0.192s
-user	0m0.155s
-sys	0m0.034s
+real	0m0.186s
+user	0m0.160s
+sys	0m0.033s
+
+mv -v coverage.json .coverage.json
+renamed 'coverage.json' -> '.coverage.json'
+
+real	0m0.003s
+user	0m0.002s
+sys	0m0.002s
 

@@ -5,24 +5,24 @@ Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 1.595sec
+Completed in 1.237sec
 
 Analysis stats
 Total files analyzed: 72
 
 Timing stats
-Find Source Files:    0.02sec
-Read Source Files:    0.02sec
-Tokenize:             0.25sec
-Parse:                0.39sec
-Resolve Imports:      0.15sec
-Bind:                 0.18sec
-Check:                0.23sec
+Find Source Files:    0sec
+Read Source Files:    0.01sec
+Tokenize:             0.13sec
+Parse:                0.28sec
+Resolve Imports:      0.14sec
+Bind:                 0.16sec
+Check:                0.14sec
 Detect Cycles:        0sec
 
-real	0m3.824s
-user	0m4.800s
-sys	0m0.605s
+real	0m2.772s
+user	0m3.316s
+sys	0m0.529s
 
 Running: pyright --stats ./src/test
 No configuration file found.
@@ -31,22 +31,22 @@ Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 1.828sec
+Completed in 1.941sec
 
 Analysis stats
-Total files analyzed: 81
+Total files analyzed: 99
 
 Timing stats
-Find Source Files:    0.01sec
+Find Source Files:    0sec
 Read Source Files:    0.02sec
-Tokenize:             0.2sec
-Parse:                0.3sec
-Resolve Imports:      0.17sec
-Bind:                 0.33sec
-Check:                0.46sec
+Tokenize:             0.22sec
+Parse:                0.46sec
+Resolve Imports:      0.21sec
+Bind:                 0.23sec
+Check:                0.45sec
 Detect Cycles:        0sec
 
-real	0m3.810s
-user	0m5.333s
-sys	0m0.606s
+real	0m3.603s
+user	0m4.874s
+sys	0m0.594s
 

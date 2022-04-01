@@ -17,7 +17,7 @@ class Challenge:
     Main challenge class.
     """
 
-    def __init__(self, number: Optional[int] = None):
+    def __init__(self, number: Optional[int] = None) -> None:
 
         self.number: int = 0
 
@@ -28,7 +28,7 @@ class Challenge:
         else:
             self.numbers = 0
 
-    def input_number(self):
+    def input_number(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
@@ -38,7 +38,7 @@ class Challenge:
         else:
             pass
 
-    def solve(self):
+    def solve(self) -> None:
         """Solves the challenge."""
 
         binary: str = bin(self.number)
@@ -57,12 +57,12 @@ class Challenge:
 
         self.output = sorted(list(counts))[-1]
 
-    def print_results(self):
+    def print_results(self) -> None:
         """Print the results of the challenge."""
 
         print(self.output)
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """
