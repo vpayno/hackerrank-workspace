@@ -1,0 +1,77 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-branch
+============================= test session starts ==============================
+platform linux -- Python 3.10.3, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.3/bin/python3.10
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-15-linked_list/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-15-linked_list
+plugins: anyio-3.5.0, hypothesis-6.39.4, pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1
+collecting ... collected 22 items
+
+src/test/test_main.py::test_node_class PASSED                            [  4%]
+src/test/test_main.py::test_print_results_error PASSED                   [  9%]
+src/test/test_main.py::test_linkedlist_class[0-numbers0-expected0] PASSED [ 13%]
+src/test/test_main.py::test_linkedlist_class[1-numbers1-expected1] PASSED [ 18%]
+src/test/test_main.py::test_linkedlist_class[3-numbers2-expected2] PASSED [ 22%]
+src/test/test_main.py::test_linkedlist_class[4-numbers3-expected3] PASSED [ 27%]
+src/test/test_main.py::test_linkedlist_class[5-numbers4-expected4] PASSED [ 31%]
+src/test/test_main.py::test_method_without_input[0-numbers0-expected0] PASSED [ 36%]
+src/test/test_main.py::test_method_without_input[1-numbers1-expected1] PASSED [ 40%]
+src/test/test_main.py::test_method_without_input[3-numbers2-expected2] PASSED [ 45%]
+src/test/test_main.py::test_method_without_input[4-numbers3-expected3] PASSED [ 50%]
+src/test/test_main.py::test_method_without_input[5-numbers4-expected4] PASSED [ 54%]
+src/test/test_main.py::test_method_with_input[0-numbers0-expected0] PASSED [ 59%]
+src/test/test_main.py::test_method_with_input[1-numbers1-expected1] PASSED [ 63%]
+src/test/test_main.py::test_method_with_input[3-numbers2-expected2] PASSED [ 68%]
+src/test/test_main.py::test_method_with_input[4-numbers3-expected3] PASSED [ 72%]
+src/test/test_main.py::test_method_with_input[5-numbers4-expected4] PASSED [ 77%]
+src/test/test_main.py::test_script[0-numbers0-expected0] PASSED          [ 81%]
+src/test/test_main.py::test_script[1-numbers1-expected1] PASSED          [ 86%]
+src/test/test_main.py::test_script[3-numbers2-expected2] PASSED          [ 90%]
+src/test/test_main.py::test_script[4-numbers3-expected3] PASSED          [ 95%]
+src/test/test_main.py::test_script[5-numbers4-expected4] PASSED          [100%]
+
+---------- coverage: platform linux, python 3.10.3-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          74      0     24      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py         102      0     24      0   100%
+-------------------------------------------------------------
+TOTAL                         176      0     48      0   100%
+
+
+============================== 22 passed in 2.91s ==============================
+
+real	0m5.222s
+user	0m4.936s
+sys	0m0.779s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          74      0     24      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py         102      0     24      0   100%
+-----------------------------------------------------------------------
+TOTAL                         176      0     48      0   100%
+
+real	0m0.254s
+user	0m0.075s
+sys	0m0.016s
+
+Running: coverage json --pretty-print
+Wrote JSON report to coverage.json
+
+real	0m0.206s
+user	0m0.179s
+sys	0m0.026s
+
+mv -v coverage.json .coverage.json
+renamed 'coverage.json' -> '.coverage.json'
+
+real	0m0.005s
+user	0m0.002s
+sys	0m0.004s
+
