@@ -1,0 +1,52 @@
+Running: pyright --stats ./src/challenge
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+0 errors, 0 warnings, 0 informations 
+Completed in 1.292sec
+
+Analysis stats
+Total files analyzed: 72
+
+Timing stats
+Find Source Files:    0sec
+Read Source Files:    0.02sec
+Tokenize:             0.14sec
+Parse:                0.28sec
+Resolve Imports:      0.13sec
+Bind:                 0.16sec
+Check:                0.16sec
+Detect Cycles:        0sec
+
+real	0m2.990s
+user	0m3.650s
+sys	0m0.498s
+
+Running: pyright --stats ./src/test
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+0 errors, 0 warnings, 0 informations 
+Completed in 2.333sec
+
+Analysis stats
+Total files analyzed: 98
+
+Timing stats
+Find Source Files:    0sec
+Read Source Files:    0.03sec
+Tokenize:             0.25sec
+Parse:                0.49sec
+Resolve Imports:      0.26sec
+Bind:                 0.33sec
+Check:                0.59sec
+Detect Cycles:        0sec
+
+real	0m4.007s
+user	0m5.948s
+sys	0m0.723s
+

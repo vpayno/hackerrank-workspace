@@ -1,0 +1,72 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-branch
+============================= test session starts ==============================
+platform linux -- Python 3.10.3, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.3/bin/python3.10
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-18-queues_and_stacks/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-18-queues_and_stacks
+plugins: anyio-3.5.0, hypothesis-6.39.4, pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1
+collecting ... collected 17 items
+
+src/test/test_main.py::test_stack_class PASSED                           [  5%]
+src/test/test_main.py::test_queue_class PASSED                           [ 11%]
+src/test/test_main.py::test_method_without_input[racecar-True-The word, racecar, is a palindrome.] PASSED [ 17%]
+src/test/test_main.py::test_method_without_input[TacoCat-True-The word, TacoCat, is a palindrome.] PASSED [ 23%]
+src/test/test_main.py::test_method_without_input[apple-False-The word, apple, is not a palindrome.] PASSED [ 29%]
+src/test/test_main.py::test_method_without_input[orange-False-The word, orange, is not a palindrome.] PASSED [ 35%]
+src/test/test_main.py::test_method_without_input[Madam-True-The word, Madam, is a palindrome.] PASSED [ 41%]
+src/test/test_main.py::test_method_with_input[racecar-True-The word, racecar, is a palindrome.] PASSED [ 47%]
+src/test/test_main.py::test_method_with_input[TacoCat-True-The word, TacoCat, is a palindrome.] PASSED [ 52%]
+src/test/test_main.py::test_method_with_input[apple-False-The word, apple, is not a palindrome.] PASSED [ 58%]
+src/test/test_main.py::test_method_with_input[orange-False-The word, orange, is not a palindrome.] PASSED [ 64%]
+src/test/test_main.py::test_method_with_input[Madam-True-The word, Madam, is a palindrome.] PASSED [ 70%]
+src/test/test_main.py::test_script[racecar-True-The word, racecar, is a palindrome.] PASSED [ 76%]
+src/test/test_main.py::test_script[TacoCat-True-The word, TacoCat, is a palindrome.] PASSED [ 82%]
+src/test/test_main.py::test_script[apple-False-The word, apple, is not a palindrome.] PASSED [ 88%]
+src/test/test_main.py::test_script[orange-False-The word, orange, is not a palindrome.] PASSED [ 94%]
+src/test/test_main.py::test_script[Madam-True-The word, Madam, is a palindrome.] PASSED [100%]
+
+---------- coverage: platform linux, python 3.10.3-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover
+-------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          46      0     14      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          87      0     22      0   100%
+-------------------------------------------------------------
+TOTAL                         133      0     36      0   100%
+
+
+============================== 17 passed in 3.08s ==============================
+
+real	0m5.584s
+user	0m5.206s
+sys	0m0.863s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          46      0     14      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          87      0     22      0   100%
+-----------------------------------------------------------------------
+TOTAL                         133      0     36      0   100%
+
+real	0m0.256s
+user	0m0.061s
+sys	0m0.015s
+
+Running: coverage json --pretty-print
+Wrote JSON report to coverage.json
+
+real	0m0.246s
+user	0m0.206s
+sys	0m0.040s
+
+mv -v coverage.json .coverage.json
+renamed 'coverage.json' -> '.coverage.json'
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.004s
+
