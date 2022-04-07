@@ -13,8 +13,10 @@ import sys
 # The function accepts INTEGER_ARRAY grades as parameter.
 #
 
+
 def gradingStudents(grades):
     # Write your code here
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')

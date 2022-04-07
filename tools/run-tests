@@ -131,6 +131,10 @@ python_pytest()
 	 echo Running: coverage json --pretty-print
 	 time coverage json --pretty-print
 	 printf "\n"
+
+	 echo mv -v {,.}coverage.json
+	 time mv -v {,.}coverage.json
+	 printf "\n"
  } # python_pytest()
 
 rust_clean()
