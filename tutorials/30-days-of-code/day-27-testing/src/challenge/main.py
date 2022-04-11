@@ -1,11 +1,46 @@
+#!/usr/bin/env python3
+
+
 def minimum_index(seq):
     if len(seq) == 0:
-        raise ValueError("Cannot get the minimum value index from an empty sequence")
+        raise ValueError(
+            "Cannot get the minimum value index from an empty sequence")
     min_idx = 0
     for i in range(1, len(seq)):
         if seq[i] < seq[min_idx]:
             min_idx = i
     return min_idx
+
+
+class TestDataEmptyArray:
+
+    @staticmethod
+    def get_array():
+        return []
+
+
+class TestDataUniqueValues:
+
+    @staticmethod
+    def get_array():
+        return [1, 2, 3]
+
+    @staticmethod
+    def get_expected_result():
+        seq = [1, 2, 3]
+        return minimum_index(seq)
+
+
+class TestDataExactlyTwoDifferentMinimums:
+
+    @staticmethod
+    def get_array():
+        return [1, 1, 2, 3, 4]
+
+    @staticmethod
+    def get_expected_result():
+        seq = [1, 1]
+        return minimum_index(seq)
 
 
 def TestWithEmptyArray():
@@ -39,8 +74,8 @@ def TestiWithExactyTwoDifferentMinimums():
     result = minimum_index(seq)
     assert result == expected_result
 
+
 TestWithEmptyArray()
 TestWithUniqueValues()
 TestiWithExactyTwoDifferentMinimums()
 print("OK")
-
