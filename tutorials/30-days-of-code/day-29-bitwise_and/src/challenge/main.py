@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 
 import os
+import sys
+import time
 from typing import Set
+
+import big_o
 
 
 def bitwiseAnd(N: int, K: int) -> int:
@@ -12,34 +16,57 @@ def bitwiseAnd(N: int, K: int) -> int:
     i: int
     j: int
 
-    for i in range(1, N):
+    for i in range(1, K):
         for j in range(i + 1, N + 1):
-            # print(f"{i} & {j} = {i & j}")
-            results.add(i & j)
+            result = i & j
+            if result < K:
+                results.add(result)
 
-    for i in reversed(list(results)):
-        if i < K:
-            result = i
-            break
+    return max(results)
 
-    # print(f"result={result}")
-    return result
+
+def bitwise_and_bench(lines):
+    for line in lines:
+        count, lim = [int(num) for num in line.strip().split()]
+        bitwiseAnd(count, lim)
 
 
 if __name__ == "__main__":
-    fptr = open(os.environ["OUTPUT_PATH"], "w")
+    with open("./test-long-inputs.txt", "r") as data:
+        lines = data.readlines()[1:]
 
-    t = int(input().strip())
+    def samples(line):
+        return [line for line in lines]
 
-    for t_itr in range(t):
-        first_multiple_input = input().rstrip().split()
+    best, others = big_o.big_o(bitwise_and_bench, samples, n_measures=20)
 
-        count = int(first_multiple_input[0])
+    print(f"Best {best}")
+    print()
+    for class_, residuals in others.items():
+        print(class_)
 
-        lim = int(first_multiple_input[1])
+    sys.exit(0)
 
-        res = bitwiseAnd(count, lim)
+    time_start = time.time()
 
-        fptr.write(str(res) + "\n")
+    with open(os.environ["OUTPUT_PATH"], "w") as fptr:
 
-    fptr.close()
+        t = int(input().strip())
+
+        for _ in range(t):
+
+            # count, lim = [int(num) for num in input().strip().split()]
+
+            first_multiple_input = input().rstrip().split()
+
+            count = int(first_multiple_input[0])
+
+            lim = int(first_multiple_input[1])
+
+            res = bitwiseAnd(count, lim)
+
+            fptr.write(f"{res}\n")
+
+    time_end = time.time()
+
+    print(f"total time: {time_end - time_start:.2f}s")
