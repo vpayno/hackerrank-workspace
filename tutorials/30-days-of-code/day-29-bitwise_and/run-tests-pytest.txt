@@ -5,12 +5,13 @@ cachedir: .pytest_cache
 hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-29-bitwise_and/.hypothesis/examples')
 rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-29-bitwise_and
 plugins: anyio-3.5.0, hypothesis-6.41.0, pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1
-collecting ... collected 4 items
+collecting ... collected 5 items
 
-src/test/test_main.py::test_write_output_file PASSED                     [ 25%]
-src/test/test_main.py::test_method_without_input[3-data0-expected0] PASSED [ 50%]
-src/test/test_main.py::test_method_with_input[3-data0-expected0] PASSED  [ 75%]
-src/test/test_main.py::test_script[3-data0-expected0] PASSED             [100%]
+src/test/test_main.py::test_write_output_file PASSED                     [ 20%]
+src/test/test_main.py::test_method_without_input[3-data0-expected0] PASSED [ 40%]
+src/test/test_main.py::test_method_with_input[3-data0-expected0] PASSED  [ 60%]
+src/test/test_main.py::test_script_with_file_fixtures PASSED             [ 80%]
+src/test/test_main.py::test_script_with_parametrize[3-data0-expected0] PASSED [100%]
 
 ---------- coverage: platform linux, python 3.10.4-final-0 -----------
 Name                        Stmts   Miss Branch BrPart  Cover
@@ -18,16 +19,16 @@ Name                        Stmts   Miss Branch BrPart  Cover
 src/challenge/__init__.py       0      0      0      0   100%
 src/challenge/main.py          58      0     28      0   100%
 src/test/__init__.py            0      0      0      0   100%
-src/test/test_main.py          84      0     32      0   100%
+src/test/test_main.py         109      0     42      0   100%
 -------------------------------------------------------------
-TOTAL                         142      0     60      0   100%
+TOTAL                         167      0     70      0   100%
 
 
-============================== 4 passed in 1.32s ===============================
+============================== 5 passed in 35.70s ==============================
 
-real	0m3.450s
-user	0m3.355s
-sys	0m0.599s
+real	0m37.817s
+user	0m37.614s
+sys	0m0.708s
 
 Running: spackle
 Name                        Stmts   Miss Branch BrPart  Cover   Missing
@@ -35,25 +36,25 @@ Name                        Stmts   Miss Branch BrPart  Cover   Missing
 src/challenge/__init__.py       0      0      0      0   100%
 src/challenge/main.py          58      0     28      0   100%
 src/test/__init__.py            0      0      0      0   100%
-src/test/test_main.py          84      0     32      0   100%
+src/test/test_main.py         109      0     42      0   100%
 -----------------------------------------------------------------------
-TOTAL                         142      0     60      0   100%
+TOTAL                         167      0     70      0   100%
 
-real	0m0.266s
-user	0m0.232s
-sys	0m0.046s
+real	0m0.255s
+user	0m0.223s
+sys	0m0.031s
 
 Running: coverage json --pretty-print
 Wrote JSON report to coverage.json
 
-real	0m0.212s
-user	0m0.181s
-sys	0m0.030s
+real	0m0.199s
+user	0m0.176s
+sys	0m0.023s
 
 mv -v coverage.json .coverage.json
 renamed 'coverage.json' -> '.coverage.json'
 
-real	0m0.004s
-user	0m0.001s
-sys	0m0.004s
+real	0m0.005s
+user	0m0.000s
+sys	0m0.007s
 

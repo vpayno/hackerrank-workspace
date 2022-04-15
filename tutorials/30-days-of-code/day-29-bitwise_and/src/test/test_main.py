@@ -137,9 +137,70 @@ def test_method_with_input(
     assert all(e == o for e, o in zip(captured_out, expected_out))
 
 
+@pytest.fixture
+def expected_data_from_file() -> List[str]:
+    """Returns expected data from a file."""
+
+    with open("resources/test-data/test-data-01-expected.txt",
+              "r",
+              encoding="utf-8") as file:
+        expected_data: List[str] = file.readlines()
+
+    return expected_data
+
+
+@pytest.fixture
+def input_data_from_file() -> List[str]:
+    """Returns input data from a file."""
+
+    with open("resources/test-data/test-data-01-inputs.txt",
+              "r",
+              encoding="utf-8") as file:
+        input_data: List[str] = file.readlines()
+
+    return input_data
+
+
+# pylint: disable=redefined-outer-name
+def test_script_with_file_fixtures(input_data_from_file: List[str],
+                                   expected_data_from_file: List[str]) -> None:
+    """Runs the main script against all of our test data."""
+
+    program_input: bytes = bytes()
+
+    line: str
+    for line in input_data_from_file:
+        program_input += bytes(f"{line}", "utf8")
+
+    process: subprocess.CompletedProcess = subprocess.run(
+        [
+            sys.executable,
+            os.path.join(os.path.dirname("src/challenge/"), "main.py"),
+        ],
+        check=False,
+        input=program_input,
+        stdout=subprocess.PIPE,
+    )
+
+    program_output: str = process.stdout.decode("utf-8").strip()
+    program_out: List[str] = program_output.split("\n")
+
+    # Remove new lines from file input since our captured -> List[str] input losses them.
+    expected_out = [number.strip() for number in expected_data_from_file]
+
+    print(f"   quantity = {input_data_from_file[0]}")
+    print(f"       data = {input_data_from_file[1:3]}...")
+    print(f"   expected = {expected_data_from_file[0:3]}...")
+    print(f"      input = {program_input!r}")
+    print(f"     output = {program_output}")
+    print(f"{program_out} == {expected_out}")
+
+    assert all(e == o for e, o in zip(program_out, expected_out))
+
+
 @pytest.mark.parametrize("quantity,data,expected", unit_test_data)
-def test_script(quantity: int, data: List[tuple[int, int]],
-                expected: List[int]) -> None:
+def test_script_with_parametrize(quantity: int, data: List[tuple[int, int]],
+                                 expected: List[int]) -> None:
     """Runs the main script against all of our test data."""
 
     number: int
@@ -172,6 +233,6 @@ def test_script(quantity: int, data: List[tuple[int, int]],
     print(f"   expected = {expected}")
     print(f"      input = {program_input!r}")
     print(f"     output = {program_output}")
-    print(f"{program_output} == {expected}")
+    print(f"{program_out} == {expected}")
 
     assert all(e == o for e, o in zip(program_out, expected_out))
