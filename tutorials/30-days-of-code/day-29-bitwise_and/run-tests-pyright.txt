@@ -1,0 +1,58 @@
+Running: pyright --stats ./src/challenge
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+0 errors, 0 warnings, 0 informations 
+Completed in 1.609sec
+
+Analysis stats
+Total files analyzed: 78
+
+Timing stats
+Find Source Files:    0.01sec
+Read Source Files:    0.02sec
+Tokenize:             0.2sec
+Parse:                0.25sec
+Resolve Imports:      0.16sec
+Bind:                 0.31sec
+Check:                0.28sec
+Detect Cycles:        0sec
+WARNING: there is a new pyright version available (v1.1.237).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+
+real	0m4.283s
+user	0m5.495s
+sys	0m0.654s
+
+Running: pyright --stats ./src/test
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+0 errors, 0 warnings, 0 informations 
+Completed in 2.228sec
+
+Analysis stats
+Total files analyzed: 99
+
+Timing stats
+Find Source Files:    0sec
+Read Source Files:    0.02sec
+Tokenize:             0.18sec
+Parse:                0.49sec
+Resolve Imports:      0.29sec
+Bind:                 0.37sec
+Check:                0.46sec
+Detect Cycles:        0sec
+WARNING: there is a new pyright version available (v1.1.237).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+
+real	0m4.364s
+user	0m6.487s
+sys	0m0.750s
+
