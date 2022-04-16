@@ -61,22 +61,20 @@ class Challenge:
         - 1st iteration: 8m 58s
         - 2nd iteration: 4m 27s
         - 3rd iteration: 2m 12s
+        - 4th iteration: 1m 45s
         """
 
         i: int
         result: bool = True
 
-        if number == 1:
-            result = False
+        if number <= 3:
+            result = number > 1
 
-        elif number == 2:
-            result = True
-
-        elif number % 2 == 0:
+        elif number % 2 == 0 or number % 3 == 0:
             result = False
 
         else:
-            for i in range(3, number // 2, 2):
+            for i in range(5, number // 2, 2):
                 if number % i == 0:
                     result = False
                 else:
