@@ -161,6 +161,7 @@ def input_data_from_file() -> List[str]:
     return input_data
 
 
+# pylint is complaining about the figure names in the function signature.
 # pylint: disable=redefined-outer-name
 def test_script_with_file_fixtures(input_data_from_file: List[str],
                                    expected_data_from_file: List[str]) -> None:
