@@ -62,6 +62,7 @@ class Challenge:
         - 2nd iteration: 4m 27s
         - 3rd iteration: 2m 12s
         - 4th iteration: 1m 45s
+        - 5th iteration: 0m 0.6s
         """
 
         i: int
@@ -74,7 +75,8 @@ class Challenge:
             result = False
 
         else:
-            for i in range(5, number // 2, 2):
+            limit: int = int(number**0.5) + 1
+            for i in range(5, limit, 2):
                 if number % i == 0:
                     result = False
                 else:
