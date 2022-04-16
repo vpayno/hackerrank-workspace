@@ -60,6 +60,7 @@ class Challenge:
         Using case 8:
         - 1st iteration: 8m 58s
         - 2nd iteration: 4m 27s
+        - 3rd iteration: 2m 12s
         """
 
         i: int
@@ -75,7 +76,7 @@ class Challenge:
             result = False
 
         else:
-            for i in range(3, number, 2):
+            for i in range(3, number // 2, 2):
                 if number % i == 0:
                     result = False
                 else:
