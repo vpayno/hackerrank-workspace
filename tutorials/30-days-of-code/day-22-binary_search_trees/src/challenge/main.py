@@ -44,39 +44,25 @@ class Solution:
 
         return node
 
-    @staticmethod
-    def getHeight(root: Optional[Node]) -> int:
+    def getHeight(self, root: Optional[Node]) -> int:
         """
         Write your code here
         """
 
-        height: int
+        if root is None:
+            return -1
 
-        if root is not None:
+        height_left: int = self.getHeight(root.left)
+        height_right: int = self.getHeight(root.right)
 
-            node: Optional[Node]
+        result: int
 
-            node = root
-            height_left: int = 0
-
-            while node.left is not None:
-                height_left += 1
-                node = node.left
-
-            node = root
-            height_right: int = 0
-
-            while node.right is not None:
-                height_right += 1
-                node = node.right
-
-            height = max(height_left, height_right)
-
+        if height_left > height_right:
+            result = 1 + height_left
         else:
+            result = 1 + height_right
 
-            height = -1
-
-        return height
+        return result
 
 
 T: int = int(input())
