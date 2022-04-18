@@ -1,0 +1,46 @@
+Running: bandit --verbose --recursive --exclude ./src/test ./src
+[main]	INFO	profile include tests: None
+[main]	INFO	profile exclude tests: None
+[main]	INFO	cli include tests: None
+[main]	INFO	cli exclude tests: None
+[main]	INFO	running on Python 3.10.4
+Run started:2022-04-18 03:19:34.254327
+Files in scope (2):
+	./src/challenge/__init__.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+	./src/challenge/main.py (score: {SEVERITY: 0, CONFIDENCE: 0})
+Files excluded (9):
+	./src/challenge/.main.py.swp
+	./src/challenge/__pycache__/__init__.cpython-310.pyc
+	./src/challenge/__pycache__/main.cpython-310.pyc
+	./src/test/.test_main.py.swp
+	./src/test/__init__.py
+	./src/test/__pycache__/__init__.cpython-310.pyc
+	./src/test/__pycache__/test_main.cpython-310-pytest-7.1.1.pyc
+	./src/test/__pycache__/test_main.cpython-310.pyc
+	./src/test/test_main.py
+
+Test results:
+	No issues identified.
+
+Code scanned:
+	Total lines of code: 108
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 0
+		High: 0
+Files skipped (0):
+
+real	0m0.697s
+user	0m0.606s
+sys	0m0.077s
+

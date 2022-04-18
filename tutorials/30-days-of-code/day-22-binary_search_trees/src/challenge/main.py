@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 """
-Day 22: Binary Search Trees
+HackerRank - Tutorials - 30 Days of Code - Day 22 - Binary Search Trees
+
+Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
 """
 
-from typing import Optional
+from typing import List, Optional
+
+from rich.traceback import install
+
+install()
 
 
 class Node:  # pylint: disable=too-few-public-methods
@@ -44,7 +50,7 @@ class Solution:
 
         return node
 
-    def getHeight(self, root: Optional[Node]) -> int:
+    def get_height(self, root: Optional[Node]) -> int:
         """
         Write your code here
         """
@@ -52,8 +58,8 @@ class Solution:
         if root is None:
             return -1
 
-        height_left: int = self.getHeight(root.left)
-        height_right: int = self.getHeight(root.right)
+        height_left: int = self.get_height(root.left)
+        height_right: int = self.get_height(root.right)
 
         result: int
 
@@ -65,16 +71,88 @@ class Solution:
         return result
 
 
-T: int = int(input())
+class Challenge:
+    """
+    Challenge Solution
+    """
 
-myTree: Solution = Solution()
-root: Optional[Node] = None
-data: int
+    def __init__(
+        self,
+        quantity: int = 0,
+        numbers: Optional[List[int]] = None,
+    ) -> None:
 
-i: int
-for i in range(T):
-    data = int(input())
-    root = myTree.insert(root, data)
+        self.quantity: int = quantity
 
-height: int = myTree.getHeight(root)
-print(height)
+        self.numbers: List[int]
+
+        self.output: int = 0
+
+        if numbers is not None:
+            self.numbers = numbers
+        else:
+            self.numbers = []
+
+        self.tree: Solution = Solution()
+
+    def input_quantity(self) -> None:
+        """
+        Read an int without a prompt to keep things interesting.
+        """
+
+        if self.quantity <= 0:
+            self.quantity = int(input().strip())
+        else:
+            pass
+
+    def input_numbers(self) -> None:
+        """
+        Read a list of ints without a prompt to keep things interesting.
+        """
+
+        number: int = 0
+
+        if len(self.numbers) <= 0:
+            for _ in range(self.quantity):
+                number = int(input().strip())
+                self.numbers.append(number)
+
+            self.quantity = len(self.numbers)
+        else:
+            pass
+
+    def solve(self) -> None:
+        """Solves the challenge."""
+
+        root: Optional[Node] = None
+        data: int
+
+        for data in self.numbers:
+            root = self.tree.insert(root, data)
+
+        self.output = self.tree.get_height(root)
+
+    def print_results(self) -> None:
+        """Print the results of the challenge."""
+
+        print(self.output)
+
+    def main(self) -> None:
+        """
+        Challenge steps.
+        """
+
+        self.input_quantity()
+
+        self.input_numbers()
+
+        self.solve()
+
+        self.print_results()
+
+
+if __name__ == "__main__":  # pragma: no cover
+
+    challenge = Challenge()
+
+    challenge.main()
