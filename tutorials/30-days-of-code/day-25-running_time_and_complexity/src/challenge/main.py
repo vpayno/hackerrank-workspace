@@ -5,11 +5,79 @@ HackerRank - Tutorials - 30 Days of Code - Day 25 - Running Time and Complexity
 Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
 """
 
-from typing import List, Optional
+from typing import Any, Callable, List, Optional
 
+import big_o  # type: ignore
+import typer
 from rich.traceback import install
 
 install()
+
+
+def run() -> None:  # pragma: nocover
+    """
+    Run the app.
+    """
+
+    load_commands()
+    app()
+
+
+def load_commands() -> typer.Typer:
+    """
+    Defines app commands.
+
+    Using this trick since directly using methods will prompt for "self"
+    arguments on the command line.
+    """
+
+    cli = typer.Typer()
+
+    @cli.command()
+    def test(numbers: str = typer.Option(..., prompt_required=False)) -> None:
+        """
+        Run the challenge tests.
+        """
+
+        prog: Challenge
+
+        if numbers in ["", "-"]:
+            prog = Challenge()
+
+        else:
+            data: List[int] = [int(number) for number in numbers.split(" ")]
+
+            prog = Challenge(numbers=data)
+
+        prog.main()
+
+    @cli.command()
+    # pylint: disable=too-many-arguments
+    def benchmark(
+        quantity: int = 101,
+        min_num: int = 1,
+        max_num: int = 10001,
+        n_measures: int = 23,
+        n_repeats: int = 101,
+    ) -> None:
+        """
+        Benchmark the is_prime() function using the big_o library.
+        """
+
+        prog: Challenge = Challenge()
+
+        prog.bench_with_bigo(
+            quantity=quantity,
+            min_num=min_num,
+            max_num=max_num,
+            n_measures=n_measures,
+            n_repeats=n_repeats,
+        )
+
+    return cli
+
+
+app: typer.Typer = load_commands()
 
 
 class Challenge:
@@ -30,6 +98,10 @@ class Challenge:
             self.numbers = numbers.copy()
         else:
             self.numbers = []
+            self.quantity = len(self.numbers)
+
+        # Not sure if we care if len and quantity aren't equal when passed in.
+        self.quantity = len(self.numbers)
 
     def input_quantity(self) -> None:
         """
@@ -84,6 +156,40 @@ class Challenge:
 
         return result
 
+    # pylint: disable=too-many-arguments
+    def bench_with_bigo(
+        self,
+        quantity: int = 1000,
+        min_num: int = 1,
+        max_num: int = 10001,
+        n_measures: int = 23,
+        n_repeats: int = 1000,
+    ) -> None:
+        """
+        Benchmark the is_prime() function using the big_o library.
+        """
+
+        number_generator: Callable[
+            [Any],
+            Any] = lambda n: big_o.datagen.integers(quantity, min_num, max_num)
+
+        def bench_is_prime(numbers: List[int]) -> None:
+            number: int
+
+            for number in numbers:
+                _ = self.is_prime(number)
+
+        best, others = big_o.big_o(bench_is_prime,
+                                   number_generator,
+                                   n_measures=n_measures,
+                                   n_repeats=n_repeats)
+
+        print("Benchmarking the is_prime() function.\n")
+        print(f"{best}")
+        print()
+        for class_, _ in others.items():
+            print(class_)
+
     def solve(self) -> None:
         """
         Solves the challenge.
@@ -109,7 +215,7 @@ class Challenge:
 
     def main(self) -> None:
         """
-        Challenge steps.
+        Run the challenge steps.
         """
 
         self.input_quantity()
@@ -123,6 +229,6 @@ class Challenge:
 
 if __name__ == "__main__":  # pragma: no cover
 
-    challenge = Challenge()
+    challenge: Challenge = Challenge()
 
     challenge.main()

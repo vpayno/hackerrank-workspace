@@ -13,9 +13,12 @@ from unittest.mock import patch
 
 import pytest
 from _pytest.capture import CaptureFixture, CaptureResult
+from typer.testing import CliRunner
 
 # Our Project
 from challenge import main
+
+app = main.app
 
 unit_test_data = [
     [1, [1], ["Not prime"]],
@@ -27,17 +30,83 @@ unit_test_data = [
 integration_test_data = unit_test_data
 
 
+def test_typer_cli_benchmark() -> None:
+    """Test the Typer cli related code. (command => benchmark)"""
+
+    runner: CliRunner = CliRunner()
+
+    result = runner.invoke(app, ["benchmark"])
+
+    assert result.exit_code == 0
+    assert "Polynomial: time" in result.output
+
+
+@pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
+def test_typer_cli_test_with_arguments(
+    quantity: int,
+    numbers: List[int],
+    expected: List[str],
+) -> None:
+    """Test the Typer cli related code. (command => test)"""
+
+    assert quantity == len(numbers)
+
+    runner: CliRunner = CliRunner()
+
+    number_string: str = " ".join([f"{number}" for number in numbers])
+
+    result = runner.invoke(app, ["test", "--numbers", number_string])
+
+    captured_out: List[str] = result.output.strip().split("\n")
+    expected_out: List[str] = expected
+
+    print(f"{result.output}")
+    assert 0 == result.exit_code
+    assert quantity == len(captured_out)
+    assert all(e == o for e, o in zip(captured_out, expected_out))
+
+
+@pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
+def test_typer_cli_test_with_stdin(
+    quantity: int,
+    numbers: List[int],
+    expected: List[str],
+) -> None:
+    """Test the Typer cli related code. (command => test)"""
+
+    assert quantity == len(numbers)
+
+    std_input: str = f"{quantity}\n"
+    std_input += "\n".join([f"{number}" for number in numbers]) + "\n"
+
+    print(f"std_input={std_input}")
+
+    runner: CliRunner = CliRunner()
+
+    # result = runner.invoke(app, ["test"], input="1\n7\n")
+    result = runner.invoke(app, ["test", "--numbers", "-"], input=std_input)
+
+    captured_out: List[str] = result.output.strip().split("\n")
+    expected_out: List[str] = expected
+
+    print(f"result.output={result.output}")
+    print(f"{captured_out} == {expected_out}")
+    assert 0 == result.exit_code
+    assert quantity == len(captured_out)
+    assert all(e == o for e, o in zip(captured_out, expected_out))
+
+
 @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
 def test_method_without_input(
     quantity: int,
     numbers: List[int],
-    expected: List[int],
+    expected: List[str],
     capsys: CaptureFixture,
 ) -> None:
     """Runs the class methods against all of our test data."""
 
-    captured_out: List[int]
-    expected_out: List[int]
+    captured_out: List[str]
+    expected_out: List[str]
 
     code: main.Challenge = main.Challenge(quantity, numbers)
 
@@ -74,13 +143,13 @@ def test_method_without_input(
 def test_method_with_input(
     quantity: int,
     numbers: List[int],
-    expected: List[int],
+    expected: List[str],
     capsys: CaptureFixture,
 ) -> None:
     """Runs the class method against all of our test data."""
 
-    captured_out: List[int]
-    expected_out: List[int]
+    captured_out: List[str]
+    expected_out: List[str]
 
     code: main.Challenge = main.Challenge()
 

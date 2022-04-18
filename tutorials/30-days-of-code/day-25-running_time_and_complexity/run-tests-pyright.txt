@@ -3,26 +3,26 @@ No configuration file found.
 No pyproject.toml file found.
 Assuming Python platform Linux
 Searching for source files
-Found 2 source files
+Found 3 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 1.242sec
+Completed in 3.158sec
 
 Analysis stats
-Total files analyzed: 74
+Total files analyzed: 103
 
 Timing stats
 Find Source Files:    0.01sec
-Read Source Files:    0.01sec
-Tokenize:             0.14sec
-Parse:                0.24sec
-Resolve Imports:      0.14sec
-Bind:                 0.19sec
-Check:                0.16sec
+Read Source Files:    0.04sec
+Tokenize:             0.38sec
+Parse:                0.81sec
+Resolve Imports:      0.3sec
+Bind:                 0.63sec
+Check:                0.49sec
 Detect Cycles:        0sec
 
-real	0m2.892s
-user	0m3.547s
-sys	0m0.487s
+real	0m6.705s
+user	0m8.556s
+sys	0m1.734s
 
 Running: pyright --stats ./src/test
 No configuration file found.
@@ -31,22 +31,22 @@ Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 2.246sec
+Completed in 6.222sec
 
 Analysis stats
-Total files analyzed: 99
+Total files analyzed: 169
 
 Timing stats
-Find Source Files:    0.01sec
-Read Source Files:    0.02sec
-Tokenize:             0.24sec
-Parse:                0.45sec
-Resolve Imports:      0.27sec
-Bind:                 0.3sec
-Check:                0.6sec
+Find Source Files:    0sec
+Read Source Files:    0.1sec
+Tokenize:             0.65sec
+Parse:                1.23sec
+Resolve Imports:      0.77sec
+Bind:                 1.25sec
+Check:                1.75sec
 Detect Cycles:        0sec
 
-real	0m4.251s
-user	0m6.406s
-sys	0m0.747s
+real	0m8.944s
+user	0m15.602s
+sys	0m1.425s
 
