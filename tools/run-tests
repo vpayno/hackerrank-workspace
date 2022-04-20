@@ -82,9 +82,19 @@ python_pyanalyze()
 {
 	local directory="src"
 
+	if [[ -f ./src/challenge/__main__.py ]]; then
+		mv -v ./src/challenge/__main__.py{,~}
+		printf "\n"
+	fi
+
 	echo PYTHONPATH="${directory}" pyanalyze --verbose --enable-all ./"${directory}"
 	time { PYTHONPATH="${directory}" pyanalyze --verbose --enable-all ./"${directory}"; }
 	printf "\n"
+
+	if [[ -f ./src/challenge/__main__.py~ ]]; then
+		mv -v ./src/challenge/__main__.py{~,}
+		printf "\n"
+	fi
 } # python_pyanalyze()
 
 python_flake8()
