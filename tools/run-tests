@@ -123,28 +123,30 @@ python_pytype()
 
 python_bandit()
 {
-	 echo Running: bandit --verbose --recursive --exclude ./src/test ./src
-	 time bandit --verbose --recursive --exclude ./src/test ./src
-	 printf "\n"
+	echo Running: bandit --verbose --recursive --exclude ./src/test ./src
+	time bandit --verbose --recursive --exclude ./src/test ./src
+	printf "\n"
  } # python_bandit()
 
 python_pytest()
 {
-	 echo Running: pytest --verbose --cov-report term --cov=. --cov-branch
-	 time pytest --verbose --cov-report term --cov=. --cov-branch
-	 printf "\n"
+	# pytest --randomly-seed="${RANDOM}" ...
 
-	 echo Running: spackle
-	 time spackle
-	 printf "\n"
+	echo Running: pytest --verbose --cov-report term --cov=. --cov-branch -p no:randomly
+	time pytest --verbose --cov-report term --cov=. --cov-branch -p no:randomly
+	printf "\n"
 
-	 echo Running: coverage json --pretty-print
-	 time coverage json --pretty-print
-	 printf "\n"
+	echo Running: spackle
+	time spackle
+	printf "\n"
 
-	 echo mv -v {,.}coverage.json
-	 time mv -v {,.}coverage.json
-	 printf "\n"
+	echo Running: coverage json --pretty-print
+	time coverage json --pretty-print
+	printf "\n"
+
+	echo mv -v {,.}coverage.json
+	time mv -v {,.}coverage.json
+	printf "\n"
  } # python_pytest()
 
 rust_clean()
