@@ -1,31 +1,68 @@
-use std::io;
+use std::io::{self, BufRead, Write};
 
-fn get_user_input() -> String {
-    let mut buffer: String = String::new();
+fn user_input<R, W>(mut reader: R, mut writer: W, question: &str) -> String
+where
+    R: BufRead,
+    W: Write,
+{
+    write!(&mut writer, "{}", question).expect("Unable to write");
 
-    let stdin = io::stdin();
+    let mut response = String::new();
+    reader.read_line(&mut response).expect("Unable to read");
+    return response;
+} // user_input()
 
-    stdin.read_line(&mut buffer).ok();
+fn user_output<W>(mut writer: W, message: &str)
+where
+    W: Write,
+{
+    write!(&mut writer, "{}", message).expect("Unable to write");
+} // user_output()
 
-    return buffer;
-}
-
-fn print_user_message(message: String) {
-    // Don't print an extra new line since the new line the input has one.
-    print!("{message}", message = message);
-}
-
-fn print_hello_world() {
-    let mut message: String = String::new();
-
-    message.push_str("Hello, World.");
-
-    println!("{greeting}", greeting = message);
-}
-
+#[cfg(not(tarpaulin_include))]
 fn main() {
-    let message = get_user_input();
+    let stdio = io::stdin();
+    let input = stdio.lock();
 
-    print_hello_world();
-    print_user_message(message);
-}
+    let mut output = io::stdout();
+
+    let banner: String = "Hello, World.\n".to_string();
+    let message: String = user_input(input, &mut output, "");
+
+    user_output(&mut output, &banner[..]);
+    user_output(&mut output, &message[..]);
+} // main()
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_user_input() {
+        let input = b"Testing user input with dependency injection.";
+
+        let mut output = Vec::new();
+
+        let answer = user_input(&input[..], &mut output, "Enter message:");
+
+        let output = String::from_utf8(output).expect("Not UTF-8");
+
+        assert_eq!("Enter message:", output);
+        assert_eq!("Testing user input with dependency injection.", answer);
+    } // test_user_input()
+
+    #[test]
+    fn test_user_output() {
+        let expected = "Testing user ouput with dependency injection.";
+
+        let mut output = Vec::new();
+
+        user_output(&mut output, &expected[..]);
+
+        let output = String::from_utf8(output).expect("Not UTF-8");
+
+        assert_eq!(expected, output);
+    } // test_user_output()
+} // mod tests
+
+//  src/main.rs: 12, 22-24, 26, 28-29, 31-33

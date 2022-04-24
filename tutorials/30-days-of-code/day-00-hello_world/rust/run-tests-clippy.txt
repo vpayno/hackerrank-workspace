@@ -1,0 +1,18 @@
+cargo clippy --release
+    Checking rust v0.1.0 (/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/rust)
+warning: unneeded `return` statement
+  --> src/main.rs:12:5
+   |
+12 |     return response;
+   |     ^^^^^^^^^^^^^^^^ help: remove `return`: `response`
+   |
+   = note: `#[warn(clippy::needless_return)]` on by default
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#needless_return
+
+warning: `rust` (bin "rust") generated 1 warning
+    Finished release [optimized] target(s) in 0.43s
+
+real	0m0.986s
+user	0m0.766s
+sys	0m0.185s
+
