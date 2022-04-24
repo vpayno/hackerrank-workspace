@@ -182,8 +182,8 @@ rust_test()
 	time cargo test --release
 	printf "\n"
 
-	echo cargo tarpaulin --release --skip-clean --timeout=300 --command=Test
-	time cargo tarpaulin --release --skip-clean --timeout=300 --command=Test
+	echo cargo tarpaulin --release --timeout=300 --bins --verbose
+	time cargo tarpaulin --release --timeout=300 --bins --verbose
 	printf "\n"
 } # rust_test()
 
