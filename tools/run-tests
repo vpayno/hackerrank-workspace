@@ -30,6 +30,13 @@ done < <(find . -type f -name __init__.py -exec dirname {} \;)
 printf "PYTHON_MODULES=[%s]\n" "${PYTHON_MODULES[*]}"
 printf "\n"
 
+python_pylint()
+{
+	echo pylint ./src
+	time pylint ./src
+	printf "\n"
+} # python_pylint()
+
 python_mypy()
 {
 	echo mypy ./src
@@ -346,6 +353,7 @@ main()
 	if [[ ${project_language} == python ]]; then
 		printf "\nRunning Python Checks and Tests...\n\n"
 
+		python_pylint |& tee run-tests-pylint.txt
 		python_mypy |& tee run-tests-mypy.txt
 		# python_pyre |& tee run-tests-pyre.txt
 		python_pyright |& tee run-tests-pyright.txt
