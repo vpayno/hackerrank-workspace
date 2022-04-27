@@ -37,6 +37,13 @@ python_pylint()
 	printf "\n"
 } # python_pylint()
 
+python_perflint()
+{
+	echo perflint ./src
+	time perflint ./src
+	printf "\n"
+} # python_perflint()
+
 python_mypy()
 {
 	echo mypy ./src
@@ -354,6 +361,7 @@ main()
 		printf "\nRunning Python Checks and Tests...\n\n"
 
 		python_pylint |& tee run-tests-pylint.txt
+		python_perflint |& tee run-tests-perflint.txt
 		python_mypy |& tee run-tests-mypy.txt
 		# python_pyre |& tee run-tests-pyre.txt
 		python_pyright |& tee run-tests-pyright.txt
