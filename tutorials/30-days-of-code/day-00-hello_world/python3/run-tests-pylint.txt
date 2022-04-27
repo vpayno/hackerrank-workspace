@@ -1,0 +1,10 @@
+pylint ./src
+
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 9.66/10, +0.34)
+
+
+real	0m4.901s
+user	0m4.486s
+sys	0m0.277s
+
