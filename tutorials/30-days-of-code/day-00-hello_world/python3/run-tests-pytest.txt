@@ -1,10 +1,10 @@
-Running: pytest --verbose --cov-report term --cov=. --cov-branch
+Running: pytest --verbose --cov-report term --cov=. --cov-branch -p no:randomly
 ============================= test session starts ==============================
-platform linux -- Python 3.10.2, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.2/bin/python
+platform linux -- Python 3.10.4, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.4/bin/python3.10
 cachedir: .pytest_cache
-hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/.hypothesis/examples')
-rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world
-plugins: anyio-3.5.0, typeguard-2.13.3, cov-3.0.0, hypothesis-6.39.4, pylama-8.3.8, subprocess-1.4.1
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/python3/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/python3
+plugins: anyio-3.5.0, hypothesis-6.41.0, pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1, betamax-0.8.1, datafiles-2.0
 collecting ... collected 5 items
 
 src/test/test_hello_world.py::test_class_init PASSED                     [ 20%]
@@ -13,7 +13,7 @@ src/test/test_hello_world.py::test_method_without_input[Hello pytest!-Let's run 
 src/test/test_hello_world.py::test_method_with_input[Hello pytest!-Let's run some tests!-expected0] PASSED [ 80%]
 src/test/test_hello_world.py::test_script[Let's run some tests!-expected0] PASSED [100%]
 
----------- coverage: platform linux, python 3.10.2-final-0 -----------
+---------- coverage: platform linux, python 3.10.4-final-0 -----------
 Name                           Stmts   Miss Branch BrPart  Cover
 ----------------------------------------------------------------
 src/challenge/__init__.py          0      0      0      0   100%
@@ -24,11 +24,11 @@ src/test/test_hello_world.py      40      0      7      0   100%
 TOTAL                             59      0     11      0   100%
 
 
-============================== 5 passed in 1.21s ===============================
+============================== 5 passed in 2.05s ===============================
 
-real	0m3.648s
-user	0m3.530s
-sys	0m0.584s
+real	0m5.137s
+user	0m4.244s
+sys	0m0.898s
 
 Running: spackle
 Name                           Stmts   Miss Branch BrPart  Cover   Missing
@@ -40,7 +40,21 @@ src/test/test_hello_world.py      40      0      7      0   100%
 --------------------------------------------------------------------------
 TOTAL                             59      0     11      0   100%
 
-real	0m0.298s
-user	0m0.263s
-sys	0m0.044s
+real	0m0.312s
+user	0m0.264s
+sys	0m0.043s
+
+Running: coverage json --pretty-print
+Wrote JSON report to coverage.json
+
+real	0m0.247s
+user	0m0.218s
+sys	0m0.029s
+
+mv -v coverage.json .coverage.json
+renamed 'coverage.json' -> '.coverage.json'
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.003s
 

@@ -1,28 +1,32 @@
 Running: pyright --stats ./src/test
+ * Install prebuilt node (18.0.0) ..... done.
 No configuration file found.
 No pyproject.toml file found.
 Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 1.586sec
+Completed in 1.918sec
 
 Analysis stats
 Total files analyzed: 80
 
 Timing stats
-Find Source Files:    0.01sec
-Read Source Files:    0.03sec
-Tokenize:             0.14sec
-Parse:                0.27sec
-Resolve Imports:      0.17sec
-Bind:                 0.25sec
-Check:                0.38sec
+Find Source Files:    0sec
+Read Source Files:    0.08sec
+Tokenize:             0.21sec
+Parse:                0.32sec
+Resolve Imports:      0.26sec
+Bind:                 0.28sec
+Check:                0.39sec
 Detect Cycles:        0sec
+WARNING: there is a new pyright version available (v1.1.239).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
 
-real	0m3.827s
-user	0m4.608s
-sys	0m0.666s
+
+real	0m14.370s
+user	0m10.437s
+sys	0m3.881s
 
 Running: pyright --stats ./src/challenge
 No configuration file found.
@@ -31,7 +35,7 @@ Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 1.366sec
+Completed in 1.145sec
 
 Analysis stats
 Total files analyzed: 20
@@ -39,14 +43,17 @@ Total files analyzed: 20
 Timing stats
 Find Source Files:    0sec
 Read Source Files:    0.01sec
-Tokenize:             0.21sec
-Parse:                0.24sec
-Resolve Imports:      0.09sec
-Bind:                 0.18sec
-Check:                0.24sec
+Tokenize:             0.16sec
+Parse:                0.19sec
+Resolve Imports:      0.12sec
+Bind:                 0.11sec
+Check:                0.14sec
 Detect Cycles:        0sec
+WARNING: there is a new pyright version available (v1.1.239).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
 
-real	0m3.474s
-user	0m4.134s
-sys	0m0.657s
+
+real	0m3.177s
+user	0m3.689s
+sys	0m0.673s
 
