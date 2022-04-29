@@ -13,7 +13,7 @@ class Challenge:
     Day 00 - Hello World
     """
 
-    def __init__(self, greeting="Hello, World."):
+    def __init__(self, greeting: str = "Hello, World.") -> None:
         """
         The things we do to make pylink happy.
         """

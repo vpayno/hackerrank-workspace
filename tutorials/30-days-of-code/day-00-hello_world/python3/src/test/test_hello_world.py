@@ -35,7 +35,7 @@ integration_test_data = [
 ]
 
 
-def test_class_init():
+def test_class_init() -> None:
     """the things we test for 100% coverage without using nocover"""
     program: hello_world.Challenge = hello_world.Challenge(
         greeting="greeting text")
@@ -45,7 +45,7 @@ def test_class_init():
     assert all(e == o for e, o in zip(expected_output, program_output))
 
 
-def test_class_str():
+def test_class_str() -> None:
     """test for the __str__ method that was added because pylint loves to complain"""
     assert hello_world.Challenge().__str__() == "Hello, World."
     assert hello_world.Challenge(
@@ -54,7 +54,7 @@ def test_class_str():
 
 @pytest.mark.parametrize("greeting,input_string,expected", unit_test_data)
 def test_method_without_input(greeting: str, input_string: str,
-                              expected: List[str]):
+                              expected: List[str]) -> None:
     """Runs the hello_world class method against all of our test data."""
     code: hello_world.Challenge = hello_world.Challenge(greeting)
     result: List[str] = code.hello_world(input_string)
@@ -64,7 +64,7 @@ def test_method_without_input(greeting: str, input_string: str,
 
 @pytest.mark.parametrize("greeting,input_string,expected", unit_test_data)
 def test_method_with_input(greeting: str, input_string: str,
-                           expected: List[str]):
+                           expected: List[str]) -> None:
     """Runs the hello_world class method against all of our test data."""
     code: hello_world.Challenge = hello_world.Challenge(greeting)
     with mock.patch.object(builtins, "input", lambda: input_string):
@@ -74,7 +74,7 @@ def test_method_with_input(greeting: str, input_string: str,
 
 
 @pytest.mark.parametrize("input_string,expected", integration_test_data)
-def test_script(input_string: str, expected: List[str]):
+def test_script(input_string: str, expected: List[str]) -> None:
     """Runs the hello_world script against all of our test data."""
     process = subprocess.run(
         [

@@ -1,91 +1,14 @@
 PYTHONPATH=src pyanalyze --verbose --enable-all ./src
-Checking file: ('./src/challenge/__init__.py', 32599)
+Checking file: ('./src/challenge/__init__.py', 5377)
 ./src/challenge/__init__.py took 0.00 s
-Checking file: ('./src/challenge/hello_world.py', 32599)
-
-Missing type annotation for parameter greeting (code: missing_parameter_annotation)
-In ./src/challenge/hello_world.py at line 16
-  13:     Day 00 - Hello World
-  14:     """
-  15: 
-  16:     def __init__(self, greeting="Hello, World."):
-          ^
-  17:         """
-  18:         The things we do to make pylink happy.
-  19:         """
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/challenge/hello_world.py at line 16
-  13:     Day 00 - Hello World
-  14:     """
-  15: 
-  16:     def __init__(self, greeting="Hello, World."):
-          ^
-  17:         """
-  18:         The things we do to make pylink happy.
-  19:         """
-./src/challenge/hello_world.py took 0.19 s
-Checking file: ('./src/test/__init__.py', 32599)
+Checking file: ('./src/challenge/hello_world.py', 5377)
+./src/challenge/hello_world.py took 0.14 s
+Checking file: ('./src/test/__init__.py', 5377)
 ./src/test/__init__.py took 0.00 s
-Checking file: ('./src/test/test_hello_world.py', 32599)
+Checking file: ('./src/test/test_hello_world.py', 5377)
+./src/test/test_hello_world.py took 0.15 s
 
-Missing function return annotation (code: missing_return_annotation)
-In ./src/test/test_hello_world.py at line 38
-  35: ]
-  36: 
-  37: 
-  38: def test_class_init():
-      ^
-  39:     """the things we test for 100% coverage without using nocover"""
-  40:     program: hello_world.Challenge = hello_world.Challenge(
-  41:         greeting="greeting text")
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/test/test_hello_world.py at line 48
-  45:     assert all(e == o for e, o in zip(expected_output, program_output))
-  46: 
-  47: 
-  48: def test_class_str():
-      ^
-  49:     """test for the __str__ method that was added because pylint loves to complain"""
-  50:     assert hello_world.Challenge().__str__() == "Hello, World."
-  51:     assert hello_world.Challenge(
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/test/test_hello_world.py at line 56
-  53: 
-  54: 
-  55: @pytest.mark.parametrize("greeting,input_string,expected", unit_test_data)
-  56: def test_method_without_input(greeting: str, input_string: str,
-      ^
-  57:                               expected: List[str]):
-  58:     """Runs the hello_world class method against all of our test data."""
-  59:     code: hello_world.Challenge = hello_world.Challenge(greeting)
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/test/test_hello_world.py at line 66
-  63: 
-  64: 
-  65: @pytest.mark.parametrize("greeting,input_string,expected", unit_test_data)
-  66: def test_method_with_input(greeting: str, input_string: str,
-      ^
-  67:                            expected: List[str]):
-  68:     """Runs the hello_world class method against all of our test data."""
-  69:     code: hello_world.Challenge = hello_world.Challenge(greeting)
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/test/test_hello_world.py at line 77
-  74: 
-  75: 
-  76: @pytest.mark.parametrize("input_string,expected", integration_test_data)
-  77: def test_script(input_string: str, expected: List[str]):
-      ^
-  78:     """Runs the hello_world script against all of our test data."""
-  79:     process = subprocess.run(
-  80:         [
-./src/test/test_hello_world.py took 0.31 s
-
-real	0m1.794s
-user	0m1.354s
-sys	0m0.230s
+real	0m1.118s
+user	0m1.047s
+sys	0m0.071s
 
