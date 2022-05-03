@@ -32,8 +32,8 @@ printf "\n"
 
 python_pylint()
 {
-	echo pylint ./src
-	time pylint ./src
+	echo pylint ./src/*
+	time pylint ./src/*
 	printf "\n"
 } # python_pylint()
 
