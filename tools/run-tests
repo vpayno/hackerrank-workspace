@@ -146,20 +146,20 @@ python_pytest()
 {
 	# pytest --randomly-seed="${RANDOM}" ...
 
-	echo Running: pytest --verbose --cov-report term --cov=. --cov-branch -p no:randomly
-	time pytest --verbose --cov-report term --cov=. --cov-branch -p no:randomly
+	echo Running: pytest --verbose --cov-report term --cov=. --cov-report={term-missing,xml:.coverage.xml} --cov-branch -p no:randomly
+	time pytest --verbose --cov-report term --cov=. --cov-branch --cov-report={term-missing,xml:.coverage.xml} -p no:randomly
 	printf "\n"
 
 	echo Running: spackle
 	time spackle
 	printf "\n"
 
-	echo Running: coverage json --pretty-print
-	time coverage json --pretty-print
+	echo Running: coverage json --pretty-print -o .coverage.json
+	time coverage json --pretty-print -o .coverage.json
 	printf "\n"
 
-	echo mv -v {,.}coverage.json
-	time mv -v {,.}coverage.json
+	echo Running: coverage report --show-missing
+	time coverage report --show-missing
 	printf "\n"
  } # python_pytest()
 
