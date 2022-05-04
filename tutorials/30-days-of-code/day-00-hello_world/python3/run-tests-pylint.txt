@@ -1,10 +1,10 @@
-pylint ./src
+pylint ./src/challenge ./src/test
 
--------------------------------------------------------------------
-Your code has been rated at 10.00/10 (previous run: 9.66/10, +0.34)
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
 
 
-real	0m4.901s
-user	0m4.486s
-sys	0m0.277s
+real	0m9.568s
+user	0m8.701s
+sys	0m0.624s
 

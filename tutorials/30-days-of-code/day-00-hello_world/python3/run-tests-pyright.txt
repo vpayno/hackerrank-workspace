@@ -5,24 +5,24 @@ Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 2.044sec
+Completed in 3.314sec
 
 Analysis stats
-Total files analyzed: 80
+Total files analyzed: 82
 
 Timing stats
 Find Source Files:    0.01sec
 Read Source Files:    0.04sec
-Tokenize:             0.23sec
-Parse:                0.43sec
-Resolve Imports:      0.33sec
-Bind:                 0.29sec
-Check:                0.32sec
+Tokenize:             0.42sec
+Parse:                0.47sec
+Resolve Imports:      0.47sec
+Bind:                 0.56sec
+Check:                0.75sec
 Detect Cycles:        0sec
 
-real	0m3.797s
-user	0m5.454s
-sys	0m0.501s
+real	0m8.500s
+user	0m11.419s
+sys	0m1.715s
 
 Running: pyright --stats ./src/challenge
 No configuration file found.
@@ -31,22 +31,22 @@ Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 1.172sec
+Completed in 1.848sec
 
 Analysis stats
-Total files analyzed: 20
+Total files analyzed: 21
 
 Timing stats
-Find Source Files:    0sec
-Read Source Files:    0.01sec
-Tokenize:             0.19sec
-Parse:                0.2sec
-Resolve Imports:      0.14sec
-Bind:                 0.12sec
-Check:                0.12sec
+Find Source Files:    0.01sec
+Read Source Files:    0.02sec
+Tokenize:             0.32sec
+Parse:                0.3sec
+Resolve Imports:      0.18sec
+Bind:                 0.21sec
+Check:                0.29sec
 Detect Cycles:        0sec
 
-real	0m3.304s
-user	0m4.041s
-sys	0m0.445s
+real	0m5.492s
+user	0m6.654s
+sys	0m1.042s
 
