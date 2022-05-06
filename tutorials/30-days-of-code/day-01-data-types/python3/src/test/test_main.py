@@ -44,7 +44,7 @@ integration_test_data = [
 ]
 
 
-def test_class_str():
+def test_class_str() -> None:
     """Runs tests against __str__()"""
 
     assert main.Challenge().__str__() == "4 4.0 HackerRank "
@@ -52,7 +52,7 @@ def test_class_str():
 
 @pytest.mark.parametrize("int2,double2,str2,expected", unit_test_data)
 def test_method_with_input(int2: int, double2: float, str2: str,
-                           expected: List[Union[int, float, str]]):
+                           expected: List[Union[int, float, str]]) -> None:
     """Runs the main class method against all of our test data."""
 
     getcontext().prec = 6
@@ -84,7 +84,7 @@ def test_method_with_input(int2: int, double2: float, str2: str,
 
 
 @pytest.mark.parametrize("input_data,expected", integration_test_data)
-def test_script(input_data: bytes, expected: List[str]):
+def test_script(input_data: bytes, expected: List[str]) -> None:
     """Runs the main script against all of our test data."""
 
     process: subprocess.CompletedProcess = subprocess.run(

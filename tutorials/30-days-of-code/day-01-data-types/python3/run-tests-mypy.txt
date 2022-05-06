@@ -1,7 +1,7 @@
 mypy ./src
 Success: no issues found in 4 source files
 
-real	0m0.459s
-user	0m0.382s
-sys	0m0.077s
+real	0m0.448s
+user	0m0.370s
+sys	0m0.067s
 
