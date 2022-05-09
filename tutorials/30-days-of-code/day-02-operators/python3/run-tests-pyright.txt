@@ -5,24 +5,27 @@ Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 1.818sec
+Completed in 1.233sec
 
 Analysis stats
-Total files analyzed: 22
+Total files analyzed: 23
 
 Timing stats
 Find Source Files:    0sec
-Read Source Files:    0.02sec
-Tokenize:             0.21sec
-Parse:                0.29sec
-Resolve Imports:      0.12sec
-Bind:                 0.2sec
-Check:                0.48sec
+Read Source Files:    0.03sec
+Tokenize:             0.14sec
+Parse:                0.16sec
+Resolve Imports:      0.11sec
+Bind:                 0.15sec
+Check:                0.27sec
 Detect Cycles:        0sec
+WARNING: there is a new pyright version available (v1.1.245).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
 
-real	0m5.712s
-user	0m6.184s
-sys	0m0.836s
+
+real	0m3.056s
+user	0m3.841s
+sys	0m0.546s
 
 Running: pyright --stats ./src/test
 No configuration file found.
@@ -31,22 +34,25 @@ Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 2.31sec
+Completed in 2.208sec
 
 Analysis stats
-Total files analyzed: 83
+Total files analyzed: 104
 
 Timing stats
-Find Source Files:    0.01sec
-Read Source Files:    0.05sec
-Tokenize:             0.25sec
+Find Source Files:    0sec
+Read Source Files:    0.04sec
+Tokenize:             0.24sec
 Parse:                0.35sec
-Resolve Imports:      0.21sec
-Bind:                 0.39sec
-Check:                0.68sec
+Resolve Imports:      0.25sec
+Bind:                 0.37sec
+Check:                0.58sec
 Detect Cycles:        0sec
+WARNING: there is a new pyright version available (v1.1.245).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
 
-real	0m5.144s
-user	0m7.013s
-sys	0m0.873s
+
+real	0m4.011s
+user	0m6.584s
+sys	0m0.616s
 

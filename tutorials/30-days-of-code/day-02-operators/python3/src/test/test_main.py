@@ -10,10 +10,11 @@ import os.path
 import subprocess
 import sys
 from decimal import Decimal, getcontext
-from typing import List
+from typing import Any, List
 
 import mock
 import pytest
+from _pytest.capture import CaptureFixture, CaptureResult
 
 # Our Project
 from challenge import main
@@ -33,8 +34,13 @@ integration_test_data = [
 
 @pytest.mark.parametrize("meal_cost,tip_percent,tax_percent,expected",
                          unit_test_data)
-def test_method_with_input(meal_cost: float, tip_percent: int, tax_percent: str,
-                           expected: int, capsys):
+def test_method_with_input(
+    meal_cost: float,
+    tip_percent: int,
+    tax_percent: str,
+    expected: int,
+    capsys: CaptureFixture,
+) -> None:
     """Runs the main class method against all of our test data."""
 
     getcontext().prec = 2
@@ -64,7 +70,8 @@ def test_method_with_input(meal_cost: float, tip_percent: int, tax_percent: str,
     print(f"{code.tax_percent} == {tax_percent}")
     assert code.tax_percent == tax_percent
 
-    captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.debug = False
     code.solve()
     captured = capsys.readouterr()  # capture code.solve()
@@ -91,6 +98,7 @@ def test_method_with_input(meal_cost: float, tip_percent: int, tax_percent: str,
     captured_out: List[str]
 
     captured = capsys.readouterr()  # discard previous output
+    assert captured is not None  # pyanalize was complaining the capture wasn't used
     code.solve()
     captured = capsys.readouterr()  # capture code.solve()
     expected_out = f"""
@@ -109,7 +117,7 @@ def test_method_with_input(meal_cost: float, tip_percent: int, tax_percent: str,
 
 
 @pytest.mark.parametrize("input_data,expected", integration_test_data)
-def test_script(input_data: List[str], expected: str):
+def test_script(input_data: List[str], expected: str) -> None:
     """Runs the main script against all of our test data."""
 
     print(f"input_data = {input_data}")

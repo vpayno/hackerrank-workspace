@@ -1,14 +1,14 @@
-PYTHONPATH=src pyanalyze --verbose ./src
-Checking file: ('./src/challenge/__init__.py', 8242)
+PYTHONPATH=src pyanalyze --verbose --enable-all ./src
+Checking file: ('./src/challenge/__init__.py', 3717)
 ./src/challenge/__init__.py took 0.00 s
-Checking file: ('./src/challenge/main.py', 8242)
-./src/challenge/main.py took 0.17 s
-Checking file: ('./src/test/__init__.py', 8242)
+Checking file: ('./src/challenge/main.py', 3717)
+./src/challenge/main.py took 0.21 s
+Checking file: ('./src/test/__init__.py', 3717)
 ./src/test/__init__.py took 0.00 s
-Checking file: ('./src/test/test_main.py', 8242)
+Checking file: ('./src/test/test_main.py', 3717)
 ./src/test/test_main.py took 0.15 s
 
-real	0m1.205s
-user	0m1.122s
-sys	0m0.083s
+real	0m1.267s
+user	0m1.176s
+sys	0m0.090s
 

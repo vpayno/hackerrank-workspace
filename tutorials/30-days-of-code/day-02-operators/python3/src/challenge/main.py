@@ -14,7 +14,7 @@ class Challenge:
     Day 03 - Operators
     """
 
-    def __init__(self, debug: bool = False):
+    def __init__(self, debug: bool = False) -> None:
 
         self.debug = debug
 
@@ -29,25 +29,25 @@ class Challenge:
         self.tax: float = 0.0
         self.total: float = 0.0
 
-    def input_meal_cost(self):
+    def input_meal_cost(self) -> None:
         """
         Read a float without a prompt to keep things interesting.
         """
         self.meal_cost = float(input().strip())
 
-    def input_tip_percent(self):
+    def input_tip_percent(self) -> None:
         """
         Read an integer without a prompt to keep things interesting.
         """
         self.tip_percent = int(input().strip())
 
-    def input_tax_percent(self):
+    def input_tax_percent(self) -> None:
         """
         Read a string without a prompt to keep things interesting.
         """
         self.tax_percent = int(input().strip())
 
-    def solve(self):
+    def solve(self) -> None:
         """
         Calculates the cost of the meal.
         """
@@ -62,7 +62,7 @@ class Challenge:
             # For the challange, solve() prints the total as an integer.
             print(int(round(self.total, ndigits=0)))
 
-    def print_results(self):
+    def print_results(self) -> None:
         """
         Print the results.
         """
@@ -78,7 +78,7 @@ class Challenge:
         """
         print(output)
 
-    def main(self):
+    def main(self) -> None:
         """
         Read and save an integer, double, and String to your variables.
         """
