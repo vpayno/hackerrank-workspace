@@ -11,18 +11,18 @@ class Challenge:
     Day 03 - Intro to Conditional Statements
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
 
         self.number: int = 0
         self.result: str = ""
 
-    def input_number(self):
+    def input_number(self) -> None:
         """
         Read a string without a prompt to keep things interesting.
         """
         self.number = int(input().strip())
 
-    def solve(self):
+    def solve(self) -> None:
         """
         Calculates if the number is weird or not.
         """
@@ -42,7 +42,7 @@ class Challenge:
 
         print(self.result)
 
-    def main(self):
+    def main(self) -> None:
         """
         Read and save an integer, double, and String to your variables.
         """

@@ -1,10 +1,10 @@
-Running: pytest --verbose --cov-report term --cov=. --cov-branch
+Running: pytest --verbose --cov-report term --cov=. --cov-report=term-missing --cov-report=xml:.coverage.xml --cov-branch -p no:randomly
 ============================= test session starts ==============================
-platform linux -- Python 3.10.2, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.2/bin/python
+platform linux -- Python 3.10.4, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.4/bin/python3.10
 cachedir: .pytest_cache
-hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-03-intro-to-conditional-operators/.hypothesis/examples')
-rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-03-intro-to-conditional-operators
-plugins: anyio-3.5.0, typeguard-2.13.3, cov-3.0.0, hypothesis-6.39.4, pylama-8.3.8, subprocess-1.4.1
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-03-intro-to-conditional-operators/python3/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-03-intro-to-conditional-operators/python3
+plugins: anyio-3.5.0, hypothesis-6.41.0, pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1, betamax-0.8.1, datafiles-2.0, xonsh-0.12.2
 collecting ... collected 12 items
 
 src/test/test_main.py::test_method_with_input[3-Weird] PASSED            [  8%]
@@ -20,22 +20,23 @@ src/test/test_main.py::test_script[8-Weird] PASSED                       [ 83%]
 src/test/test_main.py::test_script[21-Weird] PASSED                      [ 91%]
 src/test/test_main.py::test_script[22-Not Weird] PASSED                  [100%]
 
----------- coverage: platform linux, python 3.10.2-final-0 -----------
-Name                        Stmts   Miss Branch BrPart  Cover
--------------------------------------------------------------
+---------- coverage: platform linux, python 3.10.4-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
 src/challenge/__init__.py       0      0      0      0   100%
 src/challenge/main.py          20      0      6      0   100%
 src/test/__init__.py            0      0      0      0   100%
-src/test/test_main.py          35      0      3      0   100%
--------------------------------------------------------------
-TOTAL                          55      0      9      0   100%
+src/test/test_main.py          37      0      3      0   100%
+-----------------------------------------------------------------------
+TOTAL                          57      0      9      0   100%
+Coverage XML written to file .coverage.xml
 
 
-============================== 12 passed in 2.29s ==============================
+============================== 12 passed in 2.57s ==============================
 
-real	0m4.670s
-user	0m4.336s
-sys	0m0.855s
+real	0m6.422s
+user	0m5.850s
+sys	0m1.132s
 
 Running: spackle
 Name                        Stmts   Miss Branch BrPart  Cover   Missing
@@ -43,11 +44,45 @@ Name                        Stmts   Miss Branch BrPart  Cover   Missing
 src/challenge/__init__.py       0      0      0      0   100%
 src/challenge/main.py          20      0      6      0   100%
 src/test/__init__.py            0      0      0      0   100%
-src/test/test_main.py          35      0      3      0   100%
+src/test/test_main.py          37      0      3      0   100%
 -----------------------------------------------------------------------
-TOTAL                          55      0      9      0   100%
+TOTAL                          57      0      9      0   100%
 
-real	0m0.272s
-user	0m0.081s
-sys	0m0.012s
+real	0m0.273s
+user	0m0.238s
+sys	0m0.035s
+
+Running: coverage json --pretty-print -o .coverage.json
+Wrote JSON report to .coverage.json
+
+real	0m0.208s
+user	0m0.178s
+sys	0m0.030s
+
+Running: coverage report --show-missing
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          20      0      6      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          37      0      3      0   100%
+-----------------------------------------------------------------------
+TOTAL                          57      0      9      0   100%
+
+real	0m0.350s
+user	0m0.284s
+sys	0m0.057s
+
+Running: pycobertura show .coverage.xml
+Filename                     Stmts    Miss  Cover    Missing
+-------------------------  -------  ------  -------  ---------
+src/challenge/__init__.py        0       0  100.00%
+src/challenge/main.py           20       0  100.00%
+src/test/__init__.py             0       0  100.00%
+src/test/test_main.py           37       0  100.00%
+TOTAL                           57       0  100.00%
+
+real	0m0.328s
+user	0m0.274s
+sys	0m0.053s
 

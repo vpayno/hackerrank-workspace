@@ -9,9 +9,11 @@ import builtins
 import os.path
 import subprocess
 import sys
+from typing import Any
 
 import mock
 import pytest
+from _pytest.capture import CaptureFixture, CaptureResult
 
 # Our Project
 from challenge import main
@@ -36,7 +38,8 @@ integration_test_data = [
 
 
 @pytest.mark.parametrize("number,expected", unit_test_data)
-def test_method_with_input(number: int, expected: str, capsys):
+def test_method_with_input(number: int, expected: str,
+                           capsys: CaptureFixture) -> None:
     """Runs the main class method against all of our test data."""
 
     code: main.Challenge = main.Challenge()
@@ -44,7 +47,8 @@ def test_method_with_input(number: int, expected: str, capsys):
     with mock.patch.object(builtins, "input", lambda: str(number)):
         code.input_number()
 
-    captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.solve()
     captured = capsys.readouterr()  # capture code.solve()
 
@@ -64,7 +68,7 @@ def test_method_with_input(number: int, expected: str, capsys):
 
 
 @pytest.mark.parametrize("number,expected", integration_test_data)
-def test_script(number: str, expected: str):
+def test_script(number: str, expected: str) -> None:
     """Runs the main script against all of our test data."""
 
     program_input: bytes = bytes(f"{number}", "utf8")
