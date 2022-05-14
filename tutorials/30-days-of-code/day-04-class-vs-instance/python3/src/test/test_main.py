@@ -67,7 +67,7 @@ integration_test_data = [[
 
 
 @pytest.mark.parametrize("age,expected", unit_test_data_person)
-def test_class_person(age: int, expected: str, capsys):
+def test_class_person(age: int, expected: str, capsys) -> None:
     """Runs the class methods against all of our test data."""
 
     captured = capsys.readouterr()  # discard previous output
@@ -97,7 +97,8 @@ def test_class_person(age: int, expected: str, capsys):
 
 
 @pytest.mark.parametrize("test_cases,age,expected", unit_test_data)
-def test_method_with_input(test_cases: int, age: int, expected: str, capsys):
+def test_method_with_input(test_cases: int, age: int, expected: str,
+                           capsys) -> None:
     """Runs the class method against all of our test data."""
 
     captured = capsys.readouterr()  # discard previous output
@@ -129,7 +130,7 @@ def test_method_with_input(test_cases: int, age: int, expected: str, capsys):
 
 
 @pytest.mark.parametrize("test_cases,ages,expected", integration_test_data)
-def test_script(test_cases: int, ages: List[int], expected: List[str]):
+def test_script(test_cases: int, ages: List[int], expected: List[str]) -> None:
     """Runs the main script against all of our test data."""
 
     program_input: bytes = bytes(

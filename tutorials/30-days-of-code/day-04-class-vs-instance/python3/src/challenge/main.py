@@ -11,7 +11,7 @@ class Person:
     Person with an age.
     """
 
-    def __init__(self, age: int):
+    def __init__(self, age: int) -> None:
 
         # The problem description says the age can be -5 <= age <= 30; But,
         # that's not tested in the 3 test cases and it gets reset to 0 here if
@@ -22,7 +22,7 @@ class Person:
             print("Age is not valid, setting age to 0.")
             self.age = 0
 
-    def am_i_old(self):
+    def am_i_old(self) -> None:
         """
         Checks the person's age to determine how old they are.
         """
@@ -34,7 +34,7 @@ class Person:
         else:
             print("You are old.")
 
-    def year_passes(self):
+    def year_passes(self) -> None:
         """
         Increment the person's age by one.
         """
@@ -47,12 +47,12 @@ class Challenge:
     Day 04 - Class vs Instance
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
 
         self.age: int = 0
         self.test_cases: int = 0
 
-    def input_test_cases(self):
+    def input_test_cases(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
@@ -61,14 +61,14 @@ class Challenge:
         # 1 <= T < 4 but it's not enforced in the stub code they provide.
         self.test_cases = int(input().strip())
 
-    def input_age(self):
+    def input_age(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
 
         self.age = int(input().strip())
 
-    def solve(self):
+    def solve(self) -> None:
         """
         Calculates if the user is old.
         """
@@ -84,7 +84,7 @@ class Challenge:
             person.am_i_old()
             print("")
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """
