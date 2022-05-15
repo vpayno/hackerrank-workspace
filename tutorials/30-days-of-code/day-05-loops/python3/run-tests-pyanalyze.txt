@@ -1,0 +1,137 @@
+PYTHONPATH=src pyanalyze --verbose --enable-all ./src
+Checking file: ('./src/challenge/__init__.py', 4883)
+./src/challenge/__init__.py took 0.00 s
+Checking file: ('./src/challenge/main.py', 4883)
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 14
+  11:     Day 05 - Loops
+  12:     """
+  13: 
+  14:     def __init__(self, number: int = 0):
+          ^
+  15: 
+  16:         self.number: int = number
+  17: 
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 18
+  15: 
+  16:         self.number: int = number
+  17: 
+  18:     def input_number(self):
+          ^
+  19:         """
+  20:         Read an int without a prompt to keep things interesting.
+  21:         """
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 25
+  22: 
+  23:         self.number = int(input().strip())
+  24: 
+  25:     def solve(self):
+          ^
+  26:         """
+  27:         Calculates multiples of n.
+  28:         """
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 37
+  34:             result = self.number * i
+  35:             print(f"{self.number} * {i} = {result}")
+  36: 
+  37:     def main(self):
+          ^
+  38:         """
+  39:         Challenge steps.
+  40:         """
+./src/challenge/main.py took 0.16 s
+Checking file: ('./src/test/__init__.py', 4883)
+./src/test/__init__.py took 0.00 s
+Checking file: ('./src/test/test_main.py', 4883)
+
+Missing type annotation for parameter capsys (code: missing_parameter_annotation)
+In ./src/test/test_main.py at line 33
+  30: 
+  31: 
+  32: @pytest.mark.parametrize("number,expected", unit_test_data)
+  33: def test_class_person(number: int, expected: List[str], capsys):
+      ^
+  34:     """Runs the class methods against all of our test data."""
+  35: 
+  36:     captured = capsys.readouterr()  # discard previous output
+
+Missing type annotation for parameter capsys (code: missing_parameter_annotation)
+In ./src/test/test_main.py at line 56
+  53: 
+  54: 
+  55: @pytest.mark.parametrize("number,expected", unit_test_data)
+  56: def test_method_with_input(number: int, expected: List[str], capsys):
+      ^
+  57:     """Runs the class method against all of our test data."""
+  58: 
+  59:     code: main.Challenge = main.Challenge()
+Ignoring duplicate error (<ast.FunctionDef object at 0x7a087e86ebc0>, <ErrorCode.missing_parameter_annotation: 63>)
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/test/test_main.py at line 33
+  30: 
+  31: 
+  32: @pytest.mark.parametrize("number,expected", unit_test_data)
+  33: def test_class_person(number: int, expected: List[str], capsys):
+      ^
+  34:     """Runs the class methods against all of our test data."""
+  35: 
+  36:     captured = capsys.readouterr()  # discard previous output
+
+Variable captured is not read after being written to (code: unused_variable)
+In ./src/test/test_main.py at line 36
+  33: def test_class_person(number: int, expected: List[str], capsys):
+  34:     """Runs the class methods against all of our test data."""
+  35: 
+  36:     captured = capsys.readouterr()  # discard previous output
+          ^
+  37: 
+  38:     code: main.Challenge = main.Challenge(number)
+  39: 
+Ignoring duplicate error (<ast.FunctionDef object at 0x7a087e86d9f0>, <ErrorCode.missing_parameter_annotation: 63>)
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/test/test_main.py at line 56
+  53: 
+  54: 
+  55: @pytest.mark.parametrize("number,expected", unit_test_data)
+  56: def test_method_with_input(number: int, expected: List[str], capsys):
+      ^
+  57:     """Runs the class method against all of our test data."""
+  58: 
+  59:     code: main.Challenge = main.Challenge()
+
+Variable captured is not read after being written to (code: unused_variable)
+In ./src/test/test_main.py at line 67
+  64:     with mock.patch.object(builtins, "input", lambda: str(number)):
+  65:         code.input_number()
+  66: 
+  67:     captured = capsys.readouterr()  # discard previous output
+          ^
+  68:     code.solve()
+  69:     captured = capsys.readouterr()  # capture new output
+  70: 
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/test/test_main.py at line 81
+  78: 
+  79: 
+  80: @pytest.mark.parametrize("number,expected", integration_test_data)
+  81: def test_script(number: int, expected: List[str]):
+      ^
+  82:     """Runs the main script against all of our test data."""
+  83: 
+  84:     program_input: bytes = bytes(f"{number}", "utf8")
+./src/test/test_main.py took 0.32 s
+
+real	0m1.394s
+user	0m1.220s
+sys	0m0.148s
+

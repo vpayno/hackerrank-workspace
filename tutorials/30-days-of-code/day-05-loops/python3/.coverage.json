@@ -1,0 +1,163 @@
+{
+    "meta": {
+        "version": "6.3.3",
+        "timestamp": "2022-05-14T22:05:21.673441",
+        "branch_coverage": true,
+        "show_contexts": false
+    },
+    "files": {
+        "src/challenge/__init__.py": {
+            "executed_lines": [
+                1
+            ],
+            "summary": {
+                "covered_lines": 0,
+                "num_statements": 0,
+                "percent_covered": 100.0,
+                "percent_covered_display": "100",
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 0,
+                "num_partial_branches": 0,
+                "covered_branches": 0,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "src/challenge/main.py": {
+            "executed_lines": [
+                2,
+                9,
+                10,
+                14,
+                16,
+                18,
+                23,
+                25,
+                33,
+                34,
+                35,
+                37,
+                42,
+                44,
+                47,
+                49,
+                51
+            ],
+            "summary": {
+                "covered_lines": 13,
+                "num_statements": 13,
+                "percent_covered": 100.0,
+                "percent_covered_display": "100",
+                "missing_lines": 0,
+                "excluded_lines": 3,
+                "num_branches": 2,
+                "num_partial_branches": 0,
+                "covered_branches": 2,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": [
+                47,
+                49,
+                51
+            ]
+        },
+        "src/test/__init__.py": {
+            "executed_lines": [
+                1
+            ],
+            "summary": {
+                "covered_lines": 0,
+                "num_statements": 0,
+                "percent_covered": 100.0,
+                "percent_covered_display": "100",
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 0,
+                "num_partial_branches": 0,
+                "covered_branches": 0,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        },
+        "src/test/test_main.py": {
+            "executed_lines": [
+                2,
+                8,
+                9,
+                10,
+                11,
+                12,
+                14,
+                15,
+                18,
+                20,
+                29,
+                32,
+                33,
+                36,
+                38,
+                43,
+                44,
+                46,
+                47,
+                49,
+                50,
+                52,
+                55,
+                56,
+                59,
+                64,
+                65,
+                67,
+                68,
+                69,
+                71,
+                72,
+                74,
+                75,
+                77,
+                80,
+                81,
+                84,
+                86,
+                96,
+                98,
+                99,
+                100,
+                101,
+                102,
+                104
+            ],
+            "summary": {
+                "covered_lines": 46,
+                "num_statements": 46,
+                "percent_covered": 100.0,
+                "percent_covered_display": "100",
+                "missing_lines": 0,
+                "excluded_lines": 0,
+                "num_branches": 11,
+                "num_partial_branches": 0,
+                "covered_branches": 11,
+                "missing_branches": 0
+            },
+            "missing_lines": [],
+            "excluded_lines": []
+        }
+    },
+    "totals": {
+        "covered_lines": 59,
+        "num_statements": 59,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 3,
+        "num_branches": 13,
+        "num_partial_branches": 0,
+        "covered_branches": 13,
+        "missing_branches": 0
+    }
+}
