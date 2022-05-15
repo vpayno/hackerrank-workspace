@@ -9,10 +9,11 @@ import builtins
 import os.path
 import subprocess
 import sys
-from typing import List
+from typing import Any, List
 
 import mock
 import pytest
+from _pytest.capture import CaptureFixture, CaptureResult
 
 # Our Project
 from challenge import main
@@ -30,10 +31,12 @@ integration_test_data = unit_test_data
 
 
 @pytest.mark.parametrize("number,expected", unit_test_data)
-def test_class_person(number: int, expected: List[str], capsys):
+def test_class_person(number: int, expected: List[str],
+                      capsys: CaptureFixture) -> None:
     """Runs the class methods against all of our test data."""
 
-    captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
 
     code: main.Challenge = main.Challenge(number)
 
@@ -53,7 +56,8 @@ def test_class_person(number: int, expected: List[str], capsys):
 
 
 @pytest.mark.parametrize("number,expected", unit_test_data)
-def test_method_with_input(number: int, expected: List[str], capsys):
+def test_method_with_input(number: int, expected: List[str],
+                           capsys: CaptureFixture) -> None:
     """Runs the class method against all of our test data."""
 
     code: main.Challenge = main.Challenge()
@@ -64,7 +68,8 @@ def test_method_with_input(number: int, expected: List[str], capsys):
     with mock.patch.object(builtins, "input", lambda: str(number)):
         code.input_number()
 
-    captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.solve()
     captured = capsys.readouterr()  # capture new output
 
@@ -78,7 +83,7 @@ def test_method_with_input(number: int, expected: List[str], capsys):
 
 
 @pytest.mark.parametrize("number,expected", integration_test_data)
-def test_script(number: int, expected: List[str]):
+def test_script(number: int, expected: List[str]) -> None:
     """Runs the main script against all of our test data."""
 
     program_input: bytes = bytes(f"{number}", "utf8")

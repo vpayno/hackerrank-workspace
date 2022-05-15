@@ -11,18 +11,18 @@ class Challenge:
     Day 05 - Loops
     """
 
-    def __init__(self, number: int = 0):
+    def __init__(self, number: int = 0) -> None:
 
         self.number: int = number
 
-    def input_number(self):
+    def input_number(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
 
         self.number = int(input().strip())
 
-    def solve(self):
+    def solve(self) -> None:
         """
         Calculates multiples of n.
         """
@@ -34,7 +34,7 @@ class Challenge:
             result = self.number * i
             print(f"{self.number} * {i} = {result}")
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """
