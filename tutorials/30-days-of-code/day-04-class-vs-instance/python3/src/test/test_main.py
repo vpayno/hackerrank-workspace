@@ -9,10 +9,11 @@ import builtins
 import os.path
 import subprocess
 import sys
-from typing import List
+from typing import Any, List
 
 import mock
 import pytest
+from _pytest.capture import CaptureFixture, CaptureResult
 
 # Our Project
 from challenge import main
@@ -67,10 +68,11 @@ integration_test_data = [[
 
 
 @pytest.mark.parametrize("age,expected", unit_test_data_person)
-def test_class_person(age: int, expected: str, capsys) -> None:
+def test_class_person(age: int, expected: str, capsys: CaptureFixture) -> None:
     """Runs the class methods against all of our test data."""
 
-    captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
 
     code: main.Person = main.Person(age)
 
@@ -98,10 +100,11 @@ def test_class_person(age: int, expected: str, capsys) -> None:
 
 @pytest.mark.parametrize("test_cases,age,expected", unit_test_data)
 def test_method_with_input(test_cases: int, age: int, expected: str,
-                           capsys) -> None:
+                           capsys: CaptureFixture) -> None:
     """Runs the class method against all of our test data."""
 
-    captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
 
     code: main.Challenge = main.Challenge()
     person: main.Person = main.Person(age)
