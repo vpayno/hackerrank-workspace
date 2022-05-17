@@ -13,7 +13,7 @@ class Challenge:
     Day 06 - Review
     """
 
-    def __init__(self, lines: Optional[List[str]] = None):
+    def __init__(self, lines: Optional[List[str]] = None) -> None:
 
         self.input_lines: int
         self.lines: List[str] = []
@@ -32,7 +32,7 @@ class Challenge:
             self.lines = []
             self.input_lines = 0
 
-    def input_number(self):
+    def input_number(self) -> None:
         """
         Read a number without a prompt to keep things interesting.
         """
@@ -42,7 +42,7 @@ class Challenge:
         else:
             pass
 
-    def input_string(self):
+    def input_string(self) -> None:
         """
         Read a string without a prompt to keep things interesting.
         """
@@ -56,7 +56,7 @@ class Challenge:
         else:
             pass
 
-    def solve(self):
+    def solve(self) -> None:
         """
         Break up the string into an even and odd index strings.
         """
@@ -84,12 +84,12 @@ class Challenge:
             new_line = f"{text_even} {text_odd}"
             self.output.append(new_line)
 
-    def print_results(self):
+    def print_results(self) -> None:
         """Print the results of the challenge."""
 
         print("\n".join(self.output))
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """

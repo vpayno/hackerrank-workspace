@@ -1,137 +1,14 @@
 PYTHONPATH=src pyanalyze --verbose --enable-all ./src
-Checking file: ('./src/challenge/__init__.py', 15436)
+Checking file: ('./src/challenge/__init__.py', 23921)
 ./src/challenge/__init__.py took 0.00 s
-Checking file: ('./src/challenge/main.py', 15436)
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/challenge/main.py at line 16
-  13:     Day 06 - Review
-  14:     """
-  15: 
-  16:     def __init__(self, lines: Optional[List[str]] = None):
-          ^
-  17: 
-  18:         self.input_lines: int
-  19:         self.lines: List[str] = []
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/challenge/main.py at line 35
-  32:             self.lines = []
-  33:             self.input_lines = 0
-  34: 
-  35:     def input_number(self):
-          ^
-  36:         """
-  37:         Read a number without a prompt to keep things interesting.
-  38:         """
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/challenge/main.py at line 45
-  42:         else:
-  43:             pass
-  44: 
-  45:     def input_string(self):
-          ^
-  46:         """
-  47:         Read a string without a prompt to keep things interesting.
-  48:         """
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/challenge/main.py at line 59
-  56:         else:
-  57:             pass
-  58: 
-  59:     def solve(self):
-          ^
-  60:         """
-  61:         Break up the string into an even and odd index strings.
-  62:         """
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/challenge/main.py at line 87
-  84:             new_line = f"{text_even} {text_odd}"
-  85:             self.output.append(new_line)
-  86: 
-  87:     def print_results(self):
-          ^
-  88:         """Print the results of the challenge."""
-  89: 
-  90:         print("\n".join(self.output))
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/challenge/main.py at line 92
-  89: 
-  90:         print("\n".join(self.output))
-  91: 
-  92:     def main(self):
-          ^
-  93:         """
-  94:         Challenge steps.
-  95:         """
-./src/challenge/main.py took 0.38 s
-Checking file: ('./src/test/__init__.py', 15436)
+Checking file: ('./src/challenge/main.py', 23921)
+./src/challenge/main.py took 0.32 s
+Checking file: ('./src/test/__init__.py', 23921)
 ./src/test/__init__.py took 0.00 s
-Checking file: ('./src/test/test_main.py', 15436)
+Checking file: ('./src/test/test_main.py', 23921)
+./src/test/test_main.py took 0.28 s
 
-Missing type annotation for parameter capsys (code: missing_parameter_annotation)
-In ./src/test/test_main.py at line 34
-  31: 
-  32: 
-  33: @pytest.mark.parametrize("input_lines,lines,expected", unit_test_data)
-  34: def test_method_without_input(input_lines: int, lines: List[str],
-      ^
-  35:                               expected: List[str], capsys):
-  36:     """Runs the class methods against all of our test data."""
-  37: 
-
-Missing type annotation for parameter capsys (code: missing_parameter_annotation)
-In ./src/test/test_main.py at line 67
-  64: 
-  65: 
-  66: @pytest.mark.parametrize("input_lines,lines,expected", unit_test_data)
-  67: def test_method_with_input(input_lines: int, lines: List[str],
-      ^
-  68:                            expected: List[str], capsys):
-  69:     """Runs the class method against all of our test data."""
-  70: 
-Ignoring duplicate error (<ast.FunctionDef object at 0x7bc92963e860>, <ErrorCode.missing_parameter_annotation: 63>)
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/test/test_main.py at line 34
-  31: 
-  32: 
-  33: @pytest.mark.parametrize("input_lines,lines,expected", unit_test_data)
-  34: def test_method_without_input(input_lines: int, lines: List[str],
-      ^
-  35:                               expected: List[str], capsys):
-  36:     """Runs the class methods against all of our test data."""
-  37: 
-Ignoring duplicate error (<ast.FunctionDef object at 0x7bc929b0c070>, <ErrorCode.missing_parameter_annotation: 63>)
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/test/test_main.py at line 67
-  64: 
-  65: 
-  66: @pytest.mark.parametrize("input_lines,lines,expected", unit_test_data)
-  67: def test_method_with_input(input_lines: int, lines: List[str],
-      ^
-  68:                            expected: List[str], capsys):
-  69:     """Runs the class method against all of our test data."""
-  70: 
-
-Missing function return annotation (code: missing_return_annotation)
-In ./src/test/test_main.py at line 101
-  98: 
-  99: 
- 100: @pytest.mark.parametrize("input_lines,lines,expected", unit_test_data)
- 101: def test_script(input_lines: int, lines: List[str], expected: List[str]):
-      ^
- 102:     """Runs the main script against all of our test data."""
- 103: 
- 104:     program_input: bytes = bytes(f"{input_lines}\n", "utf8")
-./src/test/test_main.py took 0.40 s
-
-real	0m2.130s
-user	0m0.077s
-sys	0m0.012s
+real	0m1.855s
+user	0m0.562s
+sys	0m0.075s
 
