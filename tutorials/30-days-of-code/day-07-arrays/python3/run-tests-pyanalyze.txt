@@ -1,0 +1,198 @@
+PYTHONPATH=src pyanalyze --verbose --enable-all ./src
+Checking file: ('./src/challenge/__init__.py', 10154)
+./src/challenge/__init__.py took 0.00 s
+Checking file: ('./src/challenge/main.py', 10154)
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 24
+  21:         numbers -- list of numbers from 2nd input
+  22:     """
+  23: 
+  24:     def __init__(
+          ^
+  25:         self,
+  26:         quantity: int,
+  27:         numbers: List[int],
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 39
+  36: 
+  37:         super().__init__(self.message)
+  38: 
+  39:     def __str__(self):
+          ^
+  40:         return (
+  41:             f"quantity={self.quantity} != len(numbers)={len(self.numbers)}\n" +
+  42:             f"{self.message}")
+
+Value of __str__ incompatible with base class <class 'BaseException'> (code: incompatible_override)
+    Base class: 'Literal[<slot wrapper '__str__' of 'BaseException' objects>]', signature is @asynq (...) -> Any[explicit]
+    Child class: 'Literal[<function InputDoesNotMatchQuantityException.__str__ at 0x7b3aa0add000>]', signature is (self: challenge.main.InputDoesNotMatchQuantityException) -> Any[unannotated]
+    callable is not asynq
+
+In ./src/challenge/main.py at line 39
+  36: 
+  37:         super().__init__(self.message)
+  38: 
+  39:     def __str__(self):
+          ^
+  40:         return (
+  41:             f"quantity={self.quantity} != len(numbers)={len(self.numbers)}\n" +
+  42:             f"{self.message}")
+
+Suggested return type (code: suggested_return_type)
+  str
+
+In ./src/challenge/main.py at line 39
+  36: 
+  37:         super().__init__(self.message)
+  38: 
+  39:     def __str__(self):
+          ^
+  40:         return (
+  41:             f"quantity={self.quantity} != len(numbers)={len(self.numbers)}\n" +
+  42:             f"{self.message}")
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 50
+  47:     Day 07 - Arrays
+  48:     """
+  49: 
+  50:     def __init__(self, numbers: Optional[List[int]] = None):
+          ^
+  51: 
+  52:         self.numbers: List[int] = []
+  53:         self.quantity: int = 0
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 67
+  64:         else:
+  65:             self.numbers = []
+  66: 
+  67:     def input_quantity(self):
+          ^
+  68:         """
+  69:         Read an int without a prompt to keep things interesting.
+  70:         """
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 77
+  74:         else:
+  75:             pass
+  76: 
+  77:     def input_numbers(self):
+          ^
+  78:         """
+  79:         Read a space separated list of numbers without a prompt to keep things
+  80:         interesting.
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 100
+  97:             raise InputDoesNotMatchQuantityException(self.quantity,
+  98:                                                      self.numbers)
+  99: 
+ 100:     def solve(self):
+          ^
+ 101:         """
+ 102:         Reverse the numbers in the list.
+ 103:         """
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 107
+ 104: 
+ 105:         self.output = list(reversed(self.numbers))
+ 106: 
+ 107:     def print_results(self):
+          ^
+ 108:         """Print the results of the challenge."""
+ 109: 
+ 110:         print(" ".join([str(number) for number in self.output]))
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 112
+ 109: 
+ 110:         print(" ".join([str(number) for number in self.output]))
+ 111: 
+ 112:     def main(self):
+          ^
+ 113:         """
+ 114:         Challenge steps.
+ 115:         """
+./src/challenge/main.py took 0.30 s
+Checking file: ('./src/test/__init__.py', 10154)
+./src/test/__init__.py took 0.00 s
+Checking file: ('./src/test/test_main.py', 10154)
+
+Missing type annotation for parameter capsys (code: missing_parameter_annotation)
+In ./src/test/test_main.py at line 53
+  50: 
+  51: 
+  52: @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
+  53: def test_method_without_input(quantity: int, numbers: List[int],
+      ^
+  54:                               expected: List[int], capsys):
+  55:     """Runs the class methods against all of our test data."""
+  56: 
+
+Missing type annotation for parameter capsys (code: missing_parameter_annotation)
+In ./src/test/test_main.py at line 88
+  85: 
+  86: 
+  87: @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
+  88: def test_method_with_input(quantity: int, numbers: List[int],
+      ^
+  89:                            expected: List[int], capsys):
+  90:     """Runs the class method against all of our test data."""
+  91: 
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/test/test_main.py at line 29
+  26: integration_test_data = unit_test_data
+  27: 
+  28: 
+  29: def test_raise_exception():
+      ^
+  30:     """Test the custom exception."""
+  31:     code: main.Challenge = main.Challenge()
+  32: 
+Ignoring duplicate error (<ast.FunctionDef object at 0x7b3aa05d50f0>, <ErrorCode.missing_parameter_annotation: 63>)
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/test/test_main.py at line 53
+  50: 
+  51: 
+  52: @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
+  53: def test_method_without_input(quantity: int, numbers: List[int],
+      ^
+  54:                               expected: List[int], capsys):
+  55:     """Runs the class methods against all of our test data."""
+  56: 
+Ignoring duplicate error (<ast.FunctionDef object at 0x7b3aa053f100>, <ErrorCode.missing_parameter_annotation: 63>)
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/test/test_main.py at line 88
+  85: 
+  86: 
+  87: @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
+  88: def test_method_with_input(quantity: int, numbers: List[int],
+      ^
+  89:                            expected: List[int], capsys):
+  90:     """Runs the class method against all of our test data."""
+  91: 
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/test/test_main.py at line 122
+ 119: 
+ 120: 
+ 121: @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
+ 122: def test_script(quantity: int, numbers: List[int], expected: List[int]):
+      ^
+ 123:     """Runs the main script against all of our test data."""
+ 124: 
+ 125:     program_input: bytes = bytes(f"{quantity}\n", "utf8")
+./src/test/test_main.py took 0.50 s
+
+real	0m2.181s
+user	0m0.074s
+sys	0m0.012s
+
