@@ -9,11 +9,12 @@ import builtins
 import os.path
 import subprocess
 import sys
-from typing import List
+from typing import Any, List
 from unittest.mock import patch
 
 import mock
 import pytest
+from _pytest.capture import CaptureFixture, CaptureResult
 
 # Our Project
 from challenge import main
@@ -26,7 +27,7 @@ unit_test_data = [
 integration_test_data = unit_test_data
 
 
-def test_raise_exception():
+def test_raise_exception() -> None:
     """Test the custom exception."""
     code: main.Challenge = main.Challenge()
 
@@ -51,7 +52,8 @@ def test_raise_exception():
 
 @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
 def test_method_without_input(quantity: int, numbers: List[int],
-                              expected: List[int], capsys):
+                              expected: List[int],
+                              capsys: CaptureFixture) -> None:
     """Runs the class methods against all of our test data."""
 
     captured_out: List[int]
@@ -73,7 +75,8 @@ def test_method_without_input(quantity: int, numbers: List[int],
 
     code.solve()
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 
@@ -86,7 +89,7 @@ def test_method_without_input(quantity: int, numbers: List[int],
 
 @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
 def test_method_with_input(quantity: int, numbers: List[int],
-                           expected: List[int], capsys):
+                           expected: List[int], capsys: CaptureFixture) -> None:
     """Runs the class method against all of our test data."""
 
     captured_out: List[int]
@@ -106,7 +109,8 @@ def test_method_with_input(quantity: int, numbers: List[int],
 
     code.solve()
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 
@@ -119,7 +123,7 @@ def test_method_with_input(quantity: int, numbers: List[int],
 
 
 @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
-def test_script(quantity: int, numbers: List[int], expected: List[int]):
+def test_script(quantity: int, numbers: List[int], expected: List[int]) -> None:
     """Runs the main script against all of our test data."""
 
     program_input: bytes = bytes(f"{quantity}\n", "utf8")

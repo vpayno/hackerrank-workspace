@@ -28,7 +28,7 @@ class InputDoesNotMatchQuantityException(Exception):
         message:
         str = "Quantity of numbers in 2nd input doesn't match the quantity " +
         "described in the 1st input.",
-    ):
+    ) -> None:
 
         self.quantity: int = quantity
         self.numbers: List[int] = numbers
@@ -36,7 +36,7 @@ class InputDoesNotMatchQuantityException(Exception):
 
         super().__init__(self.message)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return (
             f"quantity={self.quantity} != len(numbers)={len(self.numbers)}\n" +
             f"{self.message}")
@@ -47,7 +47,7 @@ class Challenge:
     Day 07 - Arrays
     """
 
-    def __init__(self, numbers: Optional[List[int]] = None):
+    def __init__(self, numbers: Optional[List[int]] = None) -> None:
 
         self.numbers: List[int] = []
         self.quantity: int = 0
@@ -64,7 +64,7 @@ class Challenge:
         else:
             self.numbers = []
 
-    def input_quantity(self):
+    def input_quantity(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
@@ -74,7 +74,7 @@ class Challenge:
         else:
             pass
 
-    def input_numbers(self):
+    def input_numbers(self) -> None:
         """
         Read a space separated list of numbers without a prompt to keep things
         interesting.
@@ -97,19 +97,19 @@ class Challenge:
             raise InputDoesNotMatchQuantityException(self.quantity,
                                                      self.numbers)
 
-    def solve(self):
+    def solve(self) -> None:
         """
         Reverse the numbers in the list.
         """
 
         self.output = list(reversed(self.numbers))
 
-    def print_results(self):
+    def print_results(self) -> None:
         """Print the results of the challenge."""
 
         print(" ".join([str(number) for number in self.output]))
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """
