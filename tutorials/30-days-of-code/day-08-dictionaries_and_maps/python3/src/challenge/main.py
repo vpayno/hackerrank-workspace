@@ -17,7 +17,7 @@ class Challenge:
     Day 07 - Arrays
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
 
         self.quantity: int = 0
         self.data: Dict[str, str] = {}
@@ -25,14 +25,14 @@ class Challenge:
 
         self.output: List[str] = []
 
-    def input_quantity(self):
+    def input_quantity(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
 
         self.quantity = max(int(input().strip()), 0)
 
-    def input_data(self):
+    def input_data(self) -> None:
         """
         Read a list of names and numbers without a prompt to keep things
         interesting.
@@ -45,7 +45,7 @@ class Challenge:
             name, value = input().strip().split(" ")
             self.data[name] = value.strip()
 
-    def input_names(self):
+    def input_names(self) -> None:
         """
         Read a list of names without a prompt to keep things
         interesting. Stop when we reach EOF.
@@ -65,7 +65,7 @@ class Challenge:
             except EOFError:
                 break
 
-    def solve(self):
+    def solve(self) -> None:
         """
         Reverse the numbers in the list.
         """
@@ -80,7 +80,7 @@ class Challenge:
             except KeyError:
                 self.output.append("Not found")
 
-    def print_results(self):
+    def print_results(self) -> None:
         """Print the results of the challenge."""
 
         line: str
@@ -88,7 +88,7 @@ class Challenge:
         for line in self.output:
             print(line)
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """

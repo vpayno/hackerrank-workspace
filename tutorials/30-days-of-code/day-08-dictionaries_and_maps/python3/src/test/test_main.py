@@ -9,11 +9,12 @@ import builtins
 import os.path
 import subprocess
 import sys
-from typing import Dict, List
+from typing import Any, Dict, List
 from unittest.mock import patch
 
 import mock
 import pytest
+from _pytest.capture import CaptureFixture, CaptureResult
 
 # Our Project
 from challenge import main
@@ -57,8 +58,13 @@ integration_test_data = unit_test_data
 
 
 @pytest.mark.parametrize("quantity,data,names,expected", unit_test_data)
-def test_method_with_input(quantity: int, data: Dict[str, str],
-                           names: List[str], expected: List[str], capsys):
+def test_method_with_input(
+    quantity: int,
+    data: Dict[str, str],
+    names: List[str],
+    expected: List[str],
+    capsys: CaptureFixture,
+) -> None:
     """Runs the class method against all of our test data."""
 
     captured_out: List[str]
@@ -84,7 +90,8 @@ def test_method_with_input(quantity: int, data: Dict[str, str],
 
     assert len(code.output) == len(names) - 1
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 
@@ -98,7 +105,7 @@ def test_method_with_input(quantity: int, data: Dict[str, str],
 
 @pytest.mark.parametrize("quantity,data,names,expected", unit_test_data)
 def test_script(quantity: int, data: Dict[str, str], names: List[str],
-                expected: List[int]):
+                expected: List[int]) -> None:
     """Runs the main script against all of our test data."""
 
     program_input: bytes = bytes(f"{quantity}\n", "utf8")
