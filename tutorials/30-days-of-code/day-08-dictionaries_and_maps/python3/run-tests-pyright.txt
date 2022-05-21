@@ -1,0 +1,61 @@
+Running: pyright --stats ./src/challenge
+ * Install prebuilt node (18.2.0) ..... done.
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+0 errors, 0 warnings, 0 informations 
+Completed in 2.505sec
+
+Analysis stats
+Total files parsed and bound: 79
+Total files checked: 2
+
+Timing stats
+Find Source Files:    0.01sec
+Read Source Files:    0.11sec
+Tokenize:             0.29sec
+Parse:                0.49sec
+Resolve Imports:      0.32sec
+Bind:                 0.34sec
+Check:                0.41sec
+Detect Cycles:        0sec
+WARNING: there is a new pyright version available (v1.1.248).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+
+real	0m20.703s
+user	0m14.751s
+sys	0m5.571s
+
+Running: pyright --stats ./src/test
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+0 errors, 0 warnings, 0 informations 
+Completed in 6.321sec
+
+Analysis stats
+Total files parsed and bound: 84
+Total files checked: 2
+
+Timing stats
+Find Source Files:    0.02sec
+Read Source Files:    0.14sec
+Tokenize:             0.74sec
+Parse:                1.26sec
+Resolve Imports:      0.67sec
+Bind:                 0.97sec
+Check:                1.49sec
+Detect Cycles:        0sec
+WARNING: there is a new pyright version available (v1.1.248).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+
+real	0m9.176s
+user	0m13.736s
+sys	0m1.583s
+

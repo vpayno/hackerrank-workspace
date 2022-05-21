@@ -1,0 +1,125 @@
+PYTHONPATH=src pyanalyze --verbose --enable-all ./src
+Checking file: ('./src/challenge/__init__.py', 10496)
+./src/challenge/__init__.py took 0.00 s
+Checking file: ('./src/challenge/main.py', 10496)
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 20
+  17:     Day 07 - Arrays
+  18:     """
+  19: 
+  20:     def __init__(self):
+          ^
+  21: 
+  22:         self.quantity: int = 0
+  23:         self.data: Dict[str, str] = {}
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 28
+  25: 
+  26:         self.output: List[str] = []
+  27: 
+  28:     def input_quantity(self):
+          ^
+  29:         """
+  30:         Read an int without a prompt to keep things interesting.
+  31:         """
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 35
+  32: 
+  33:         self.quantity = max(int(input().strip()), 0)
+  34: 
+  35:     def input_data(self):
+          ^
+  36:         """
+  37:         Read a list of names and numbers without a prompt to keep things
+  38:         interesting.
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 48
+  45:             name, value = input().strip().split(" ")
+  46:             self.data[name] = value.strip()
+  47: 
+  48:     def input_names(self):
+          ^
+  49:         """
+  50:         Read a list of names without a prompt to keep things
+  51:         interesting. Stop when we reach EOF.
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 68
+  65:             except EOFError:
+  66:                 break
+  67: 
+  68:     def solve(self):
+          ^
+  69:         """
+  70:         Reverse the numbers in the list.
+  71:         """
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 83
+  80:             except KeyError:
+  81:                 self.output.append("Not found")
+  82: 
+  83:     def print_results(self):
+          ^
+  84:         """Print the results of the challenge."""
+  85: 
+  86:         line: str
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/challenge/main.py at line 91
+  88:         for line in self.output:
+  89:             print(line)
+  90: 
+  91:     def main(self):
+          ^
+  92:         """
+  93:         Challenge steps.
+  94:         """
+./src/challenge/main.py took 0.37 s
+Checking file: ('./src/test/__init__.py', 10496)
+./src/test/__init__.py took 0.00 s
+Checking file: ('./src/test/test_main.py', 10496)
+
+Missing type annotation for parameter capsys (code: missing_parameter_annotation)
+In ./src/test/test_main.py at line 60
+  57: 
+  58: 
+  59: @pytest.mark.parametrize("quantity,data,names,expected", unit_test_data)
+  60: def test_method_with_input(quantity: int, data: Dict[str, str],
+      ^
+  61:                            names: List[str], expected: List[str], capsys):
+  62:     """Runs the class method against all of our test data."""
+  63: 
+Ignoring duplicate error (<ast.FunctionDef object at 0x796ef61f71c0>, <ErrorCode.missing_parameter_annotation: 63>)
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/test/test_main.py at line 60
+  57: 
+  58: 
+  59: @pytest.mark.parametrize("quantity,data,names,expected", unit_test_data)
+  60: def test_method_with_input(quantity: int, data: Dict[str, str],
+      ^
+  61:                            names: List[str], expected: List[str], capsys):
+  62:     """Runs the class method against all of our test data."""
+  63: 
+
+Missing function return annotation (code: missing_return_annotation)
+In ./src/test/test_main.py at line 100
+  97: 
+  98: 
+  99: @pytest.mark.parametrize("quantity,data,names,expected", unit_test_data)
+ 100: def test_script(quantity: int, data: Dict[str, str], names: List[str],
+      ^
+ 101:                 expected: List[int]):
+ 102:     """Runs the main script against all of our test data."""
+ 103: 
+./src/test/test_main.py took 0.42 s
+
+real	0m4.098s
+user	0m2.760s
+sys	0m0.481s
+

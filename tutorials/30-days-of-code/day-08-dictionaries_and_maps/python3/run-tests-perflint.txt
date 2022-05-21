@@ -1,0 +1,6 @@
+perflint ./src
+
+real	0m1.795s
+user	0m1.613s
+sys	0m0.166s
+
