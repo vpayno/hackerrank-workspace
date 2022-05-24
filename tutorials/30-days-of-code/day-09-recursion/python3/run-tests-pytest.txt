@@ -23,17 +23,17 @@ Name                        Stmts   Miss Branch BrPart  Cover   Missing
 src/challenge/__init__.py       0      0      0      0   100%
 src/challenge/main.py          38      0     10      0   100%
 src/test/__init__.py            0      0      0      0   100%
-src/test/test_main.py          50      0     18      1    99%   38->exit
+src/test/test_main.py          53      0     18      1    99%   40->exit
 -----------------------------------------------------------------------
-TOTAL                          88      0     28      1    99%
+TOTAL                          91      0     28      1    99%
 Coverage XML written to file .coverage.xml
 
 
-============================== 9 passed in 2.71s ===============================
+============================== 9 passed in 2.35s ===============================
 
-real	0m6.213s
-user	0m5.871s
-sys	0m1.100s
+real	0m5.545s
+user	0m5.226s
+sys	0m0.902s
 
 Running: spackle
 Name                        Stmts   Miss Branch BrPart  Cover   Missing
@@ -41,20 +41,20 @@ Name                        Stmts   Miss Branch BrPart  Cover   Missing
 src/challenge/__init__.py       0      0      0      0   100%
 src/challenge/main.py          38      0     10      0   100%
 src/test/__init__.py            0      0      0      0   100%
-src/test/test_main.py          50      0     18      1    99%   38->exit
+src/test/test_main.py          53      0     18      1    99%   40->exit
 -----------------------------------------------------------------------
-TOTAL                          88      0     28      1    99%
+TOTAL                          91      0     28      1    99%
 
-real	0m0.298s
-user	0m0.265s
+real	0m0.232s
+user	0m0.193s
 sys	0m0.040s
 
 Running: coverage json --pretty-print -o .coverage.json
 Wrote JSON report to .coverage.json
 
-real	0m0.190s
-user	0m0.164s
-sys	0m0.026s
+real	0m0.183s
+user	0m0.159s
+sys	0m0.025s
 
 Running: coverage report --show-missing
 Name                        Stmts   Miss Branch BrPart  Cover   Missing
@@ -62,13 +62,13 @@ Name                        Stmts   Miss Branch BrPart  Cover   Missing
 src/challenge/__init__.py       0      0      0      0   100%
 src/challenge/main.py          38      0     10      0   100%
 src/test/__init__.py            0      0      0      0   100%
-src/test/test_main.py          50      0     18      1    99%   38->exit
+src/test/test_main.py          53      0     18      1    99%   40->exit
 -----------------------------------------------------------------------
-TOTAL                          88      0     28      1    99%
+TOTAL                          91      0     28      1    99%
 
-real	0m0.229s
-user	0m0.205s
-sys	0m0.026s
+real	0m0.185s
+user	0m0.167s
+sys	0m0.019s
 
 Running: pycobertura show .coverage.xml
 Filename                     Stmts    Miss  Cover    Missing
@@ -76,10 +76,10 @@ Filename                     Stmts    Miss  Cover    Missing
 src/challenge/__init__.py        0       0  100.00%
 src/challenge/main.py           38       0  100.00%
 src/test/__init__.py             0       0  100.00%
-src/test/test_main.py           50       0  100.00%
-TOTAL                           88       0  100.00%
+src/test/test_main.py           53       0  100.00%
+TOTAL                           91       0  100.00%
 
-real	0m0.201s
-user	0m0.173s
-sys	0m0.029s
+real	0m0.194s
+user	0m0.162s
+sys	0m0.033s
 

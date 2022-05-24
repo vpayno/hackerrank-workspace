@@ -7,7 +7,7 @@ Author: Victor Payno (https://github.com/vpayno/hackerrank-workspace)
 
 import os
 import sys
-from typing import Optional
+from typing import Optional, TextIO
 
 from rich.traceback import install
 
@@ -19,7 +19,7 @@ class Challenge:
     Day 07 - Arrays
     """
 
-    def __init__(self, number: Optional[int] = None):
+    def __init__(self, number: Optional[int] = None) -> None:
 
         self.number: int = 0
 
@@ -30,7 +30,7 @@ class Challenge:
         else:
             self.numbers = 0
 
-    def input_number(self):
+    def input_number(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
@@ -52,12 +52,12 @@ class Challenge:
 
         return retval
 
-    def solve(self):
+    def solve(self) -> None:
         """Solves the challenge."""
 
         self.output = self.factorial(self.number)
 
-    def print_results(self):
+    def print_results(self) -> None:
         """Print the results of the challenge."""
 
         if "pytest" in sys.modules:
@@ -65,6 +65,8 @@ class Challenge:
             print(self.output)
 
         else:
+
+            fptr: TextIO
 
             try:
                 fptr = open(os.environ["OUTPUT_PATH"], "w", encoding="utf8")
@@ -76,7 +78,7 @@ class Challenge:
 
                 fptr.close()
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """
