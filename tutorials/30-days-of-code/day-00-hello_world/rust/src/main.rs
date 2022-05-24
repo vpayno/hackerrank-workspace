@@ -9,7 +9,8 @@ where
 
     let mut response = String::new();
     reader.read_line(&mut response).expect("Unable to read");
-    return response;
+
+    response
 } // user_input()
 
 fn user_output<W>(mut writer: W, message: &str)
