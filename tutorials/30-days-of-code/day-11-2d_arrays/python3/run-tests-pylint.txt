@@ -1,15 +1,10 @@
 pylint ./src/challenge ./src/test
-************* Module test.test_main
-src/test/test_main.py:57:11: C0121: Comparison 'code.debug == True' should be 'code.debug is True' if checking for the singleton value True, or 'code.debug' if testing for truthiness (singleton-comparison)
-src/test/test_main.py:80:11: C0121: Comparison 'code.debug == True' should be 'code.debug is True' if checking for the singleton value True, or 'code.debug' if testing for truthiness (singleton-comparison)
-src/test/test_main.py:104:11: C0121: Comparison 'code.debug == True' should be 'code.debug is True' if checking for the singleton value True, or 'code.debug' if testing for truthiness (singleton-comparison)
-src/test/test_main.py:149:11: C0121: Comparison 'code.debug == False' should be 'code.debug is False' if checking for the singleton value False, or 'not code.debug' if testing for falsiness (singleton-comparison)
 
 -------------------------------------------------------------------
-Your code has been rated at 9.78/10 (previous run: 10.00/10, -0.22)
+Your code has been rated at 10.00/10 (previous run: 9.78/10, +0.22)
 
 
-real	0m5.786s
-user	0m5.566s
-sys	0m0.243s
+real	0m5.775s
+user	0m5.538s
+sys	0m0.265s
 

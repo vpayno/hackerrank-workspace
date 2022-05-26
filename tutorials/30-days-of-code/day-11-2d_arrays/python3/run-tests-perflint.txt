@@ -1,6 +1,6 @@
 perflint ./src
 
-real	0m1.259s
-user	0m1.154s
-sys	0m0.110s
+real	0m1.399s
+user	0m1.262s
+sys	0m0.139s
 

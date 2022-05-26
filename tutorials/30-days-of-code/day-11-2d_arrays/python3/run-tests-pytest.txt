@@ -28,11 +28,11 @@ TOTAL                         173      0     56      0   100%
 Coverage XML written to file .coverage.xml
 
 
-============================== 8 passed in 1.91s ===============================
+============================== 8 passed in 2.12s ===============================
 
-real	0m5.044s
-user	0m4.837s
-sys	0m0.838s
+real	0m5.176s
+user	0m4.913s
+sys	0m0.868s
 
 Running: spackle
 Name                        Stmts   Miss Branch BrPart  Cover   Missing
@@ -44,16 +44,16 @@ src/test/test_main.py          91      0     34      0   100%
 -----------------------------------------------------------------------
 TOTAL                         173      0     56      0   100%
 
-real	0m0.309s
+real	0m0.301s
 user	0m0.264s
-sys	0m0.044s
+sys	0m0.039s
 
 Running: coverage json --pretty-print -o .coverage.json
 Wrote JSON report to .coverage.json
 
-real	0m0.199s
-user	0m0.176s
-sys	0m0.024s
+real	0m0.202s
+user	0m0.175s
+sys	0m0.027s
 
 Running: coverage report --show-missing
 Name                        Stmts   Miss Branch BrPart  Cover   Missing
@@ -65,9 +65,9 @@ src/test/test_main.py          91      0     34      0   100%
 -----------------------------------------------------------------------
 TOTAL                         173      0     56      0   100%
 
-real	0m0.211s
-user	0m0.193s
-sys	0m0.025s
+real	0m0.268s
+user	0m0.229s
+sys	0m0.040s
 
 Running: pycobertura show .coverage.xml
 Filename                     Stmts    Miss  Cover    Missing
@@ -78,7 +78,7 @@ src/test/__init__.py             0       0  100.00%
 src/test/test_main.py           91       0  100.00%
 TOTAL                          173       0  100.00%
 
-real	0m0.199s
-user	0m0.173s
-sys	0m0.027s
+real	0m0.201s
+user	0m0.178s
+sys	0m0.023s
 

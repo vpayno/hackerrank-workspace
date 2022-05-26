@@ -54,7 +54,7 @@ def test_debug_print(capsys: CaptureFixture) -> None:
 
     code: main.Challenge = main.Challenge(debug=True)
 
-    assert code.debug == True
+    assert code.debug is True
 
     # captured = capsys.readouterr()  # discard previous output
     code.debug_print(input_data)
@@ -77,7 +77,7 @@ def test_debug_pprint(capsys: CaptureFixture) -> None:
 
     code: main.Challenge = main.Challenge(debug=True)
 
-    assert code.debug == True
+    assert code.debug is True
 
     # captured = capsys.readouterr()  # discard previous output
     code.debug_pprint(input_data)
@@ -101,7 +101,7 @@ def test_method_without_input(matrix: List[List[int]], expected: List[int],
 
     code: main.Challenge = main.Challenge(matrix=matrix, debug=True)
 
-    assert code.debug == True
+    assert code.debug is True
 
     str_matrix: List[List[str]] = [
         [str(number) for number in line] for line in matrix
@@ -146,7 +146,7 @@ def test_method_with_input(matrix: List[List[int]], expected: List[int],
 
     code: main.Challenge = main.Challenge()
 
-    assert code.debug == False
+    assert code.debug is False
 
     str_matrix: List[List[str]] = [
         [str(number) for number in line] for line in matrix
