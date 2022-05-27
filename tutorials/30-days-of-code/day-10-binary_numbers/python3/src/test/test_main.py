@@ -9,11 +9,11 @@ import builtins
 import os.path
 import subprocess
 import sys
-from typing import List
+from typing import Any, List
 
 import mock
 import pytest
-from _pytest.capture import CaptureFixture
+from _pytest.capture import CaptureFixture, CaptureResult
 
 # Our Project
 from challenge import main
@@ -50,7 +50,8 @@ def test_method_without_input(number: int, expected: List[int],
 
     code.solve()
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 
@@ -78,7 +79,8 @@ def test_method_with_input(number: int, expected: List[int],
 
     code.solve()
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 

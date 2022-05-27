@@ -1,6 +1,12 @@
 perflint ./src
+************* Module test.test_main
+src/test/test_main.py:21:17: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
 
-real	0m1.383s
-user	0m1.281s
-sys	0m0.108s
+------------------------------------------------------------------
+Your code has been rated at 9.89/10 (previous run: 9.62/10, +0.26)
+
+
+real	0m1.467s
+user	0m1.347s
+sys	0m0.128s
 
