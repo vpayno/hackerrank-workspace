@@ -1,28 +1,30 @@
 Running: pyright --stats ./src/challenge
+ * Install prebuilt node (18.2.0) ..... done.
 No configuration file found.
 No pyproject.toml file found.
 Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 2.492sec
+Completed in 1.79sec
 
 Analysis stats
-Total files analyzed: 72
+Total files parsed and bound: 79
+Total files checked: 2
 
 Timing stats
 Find Source Files:    0.01sec
-Read Source Files:    0.02sec
-Tokenize:             0.33sec
-Parse:                0.59sec
-Resolve Imports:      0.2sec
-Bind:                 0.37sec
-Check:                0.47sec
+Read Source Files:    0.04sec
+Tokenize:             0.21sec
+Parse:                0.34sec
+Resolve Imports:      0.25sec
+Bind:                 0.25sec
+Check:                0.31sec
 Detect Cycles:        0sec
 
-real	0m5.184s
-user	0m6.583s
-sys	0m0.813s
+real	0m14.178s
+user	0m10.153s
+sys	0m3.921s
 
 Running: pyright --stats ./src/test
 No configuration file found.
@@ -31,22 +33,23 @@ Assuming Python platform Linux
 Searching for source files
 Found 2 source files
 0 errors, 0 warnings, 0 informations 
-Completed in 2.263sec
+Completed in 2.138sec
 
 Analysis stats
-Total files analyzed: 81
+Total files parsed and bound: 83
+Total files checked: 2
 
 Timing stats
 Find Source Files:    0sec
-Read Source Files:    0.02sec
-Tokenize:             0.27sec
+Read Source Files:    0.06sec
+Tokenize:             0.23sec
 Parse:                0.36sec
-Resolve Imports:      0.2sec
-Bind:                 0.4sec
-Check:                0.66sec
+Resolve Imports:      0.25sec
+Bind:                 0.28sec
+Check:                0.58sec
 Detect Cycles:        0sec
 
-real	0m4.712s
-user	0m6.902s
-sys	0m0.718s
+real	0m3.969s
+user	0m6.124s
+sys	0m0.712s
 
