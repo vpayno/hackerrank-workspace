@@ -1,15 +1,15 @@
 perflint ./src
 ************* Module test.test_main
-src/test/test_main.py:91:19: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
-src/test/test_main.py:154:19: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
-src/test/test_main.py:187:19: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
-src/test/test_main.py:21:17: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+src/test/test_main.py:94:19: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+src/test/test_main.py:158:19: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+src/test/test_main.py:191:19: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+src/test/test_main.py:22:17: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
 
 ------------------------------------------------------------------
-Your code has been rated at 9.78/10 (previous run: 9.66/10, +0.11)
+Your code has been rated at 9.78/10 (previous run: 9.78/10, +0.00)
 
 
-real	0m1.466s
-user	0m1.332s
-sys	0m0.138s
+real	0m1.553s
+user	0m1.404s
+sys	0m0.153s
 

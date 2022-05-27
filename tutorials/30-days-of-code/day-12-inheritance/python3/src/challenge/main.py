@@ -15,7 +15,7 @@ install()
 class Person:
     """Person class"""
 
-    def __init__(self, first_name: str, last_name: str, id_number: str):
+    def __init__(self, first_name: str, last_name: str, id_number: str) -> None:
 
         self.first_name: str = first_name.strip()
         self.last_name: str = last_name.strip()
@@ -29,7 +29,7 @@ class Person:
 
         return string
 
-    def print_person(self):
+    def print_person(self) -> None:
         """Show info about a person."""
 
         print(f"Name: {self.last_name}, {self.first_name}")
@@ -40,7 +40,7 @@ class Student(Person):
     """Inherits Person, adds scores and calculate()"""
 
     def __init__(self, first_name: str, last_name: str, id_number: str,
-                 scores: List[int]):
+                 scores: List[int]) -> None:
 
         super().__init__(first_name, last_name, id_number)
 
@@ -76,7 +76,7 @@ class Challenge:
 
     def __init__(self,
                  student: Optional[Student] = None,
-                 quantity: Optional[int] = None):
+                 quantity: Optional[int] = None) -> None:
 
         self.student: Optional[Student]
         self.quantity: int
@@ -93,7 +93,7 @@ class Challenge:
         else:
             self.quantity = 0
 
-    def input_user(self):
+    def input_user(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
@@ -114,7 +114,7 @@ class Challenge:
         else:
             pass
 
-    def input_quantity(self):
+    def input_quantity(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
@@ -124,7 +124,7 @@ class Challenge:
         else:
             pass
 
-    def input_scores(self):
+    def input_scores(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
@@ -134,7 +134,7 @@ class Challenge:
         else:
             pass
 
-    def solve(self):
+    def solve(self) -> None:
         """Solves the challenge."""
 
         if self.student is not None:
@@ -142,7 +142,7 @@ class Challenge:
         else:
             pass
 
-    def print_results(self):
+    def print_results(self) -> None:
         """Print the results of the challenge."""
 
         if self.student is not None and self.output != "":
@@ -151,7 +151,7 @@ class Challenge:
         else:
             pass
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """

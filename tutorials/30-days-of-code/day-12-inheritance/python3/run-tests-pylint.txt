@@ -4,7 +4,7 @@ pylint ./src/challenge ./src/test
 Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
 
 
-real	0m5.940s
-user	0m5.541s
-sys	0m0.289s
+real	0m6.419s
+user	0m6.135s
+sys	0m0.321s
 
