@@ -8,11 +8,11 @@ Challenge Tests
 import os.path
 import subprocess
 import sys
-from typing import List
+from typing import Any, List
 from unittest.mock import patch
 
 import pytest
-from _pytest.capture import CaptureFixture
+from _pytest.capture import CaptureFixture, CaptureResult
 
 # Our Project
 from challenge import main
@@ -56,7 +56,8 @@ def test_debug_print(capsys: CaptureFixture) -> None:
 
     assert code.debug is True
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.debug_print(input_data)
     captured = capsys.readouterr()  # capture new output
 
@@ -79,7 +80,8 @@ def test_debug_pprint(capsys: CaptureFixture) -> None:
 
     assert code.debug is True
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.debug_pprint(input_data)
     captured = capsys.readouterr()  # capture new output
 
@@ -122,7 +124,8 @@ def test_method_without_input(matrix: List[List[int]], expected: List[int],
                 for o, e in zip(line_out, line_exp)]
                for line_out, line_exp in zip(code.matrix, matrix))
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 
@@ -167,7 +170,8 @@ def test_method_with_input(matrix: List[List[int]], expected: List[int],
                 for o, e in zip(line_out, line_exp)]
                for line_out, line_exp in zip(code.matrix, matrix))
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 
