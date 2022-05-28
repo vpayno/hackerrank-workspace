@@ -1,0 +1,12 @@
+pylint ./src/challenge ./src/test
+************* Module challenge.main
+src/challenge/main.py:49:4: W0221: Number of parameters was 0 in 'Book.display' and is now 1 in overridden 'MyBook.display' method (arguments-differ)
+
+-------------------------------------------------------------------
+Your code has been rated at 9.90/10 (previous run: 10.00/10, -0.10)
+
+
+real	0m5.628s
+user	0m5.311s
+sys	0m0.304s
+

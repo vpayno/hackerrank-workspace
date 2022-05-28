@@ -1,0 +1,82 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-report=term-missing --cov-report=xml:.coverage.xml --cov-branch -p no:randomly
+============================= test session starts ==============================
+platform linux -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.4/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-13-abstract_classes/python3/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-13-abstract_classes/python3
+plugins: pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1, betamax-0.8.1, anyio-3.6.1, hypothesis-6.46.3, datafiles-2.0.1, xonsh-0.12.4
+collecting ... collected 6 items
+
+src/test/test_main.py::test_method_without_input[data0-expected0] PASSED [ 16%]
+src/test/test_main.py::test_method_without_input[data1-expected1] PASSED [ 33%]
+src/test/test_main.py::test_method_with_input[data0-expected0] PASSED    [ 50%]
+src/test/test_main.py::test_method_with_input[data1-expected1] PASSED    [ 66%]
+src/test/test_main.py::test_script[data0-expected0] PASSED               [ 83%]
+src/test/test_main.py::test_script[data1-expected1] PASSED               [100%]
+
+---------- coverage: platform linux, python 3.10.4-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          43      0     10      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          63      0     10      0   100%
+-----------------------------------------------------------------------
+TOTAL                         106      0     20      0   100%
+Coverage XML written to file .coverage.xml
+
+
+============================== 6 passed in 2.50s ===============================
+
+real	0m5.797s
+user	0m5.178s
+sys	0m0.968s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          43      0     10      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          63      0     10      0   100%
+-----------------------------------------------------------------------
+TOTAL                         106      0     20      0   100%
+
+real	0m0.353s
+user	0m0.281s
+sys	0m0.069s
+
+Running: coverage json --pretty-print -o .coverage.json
+Wrote JSON report to .coverage.json
+
+real	0m0.262s
+user	0m0.229s
+sys	0m0.035s
+
+Running: coverage report --show-missing
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          43      0     10      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          63      0     10      0   100%
+-----------------------------------------------------------------------
+TOTAL                         106      0     20      0   100%
+
+real	0m0.237s
+user	0m0.211s
+sys	0m0.028s
+
+Running: pycobertura show .coverage.xml
+Filename                     Stmts    Miss  Cover    Missing
+-------------------------  -------  ------  -------  ---------
+src/challenge/__init__.py        0       0  100.00%
+src/challenge/main.py           43       0  100.00%
+src/test/__init__.py             0       0  100.00%
+src/test/test_main.py           63       0  100.00%
+TOTAL                          106       0  100.00%
+
+real	0m0.265s
+user	0m0.217s
+sys	0m0.032s
+
