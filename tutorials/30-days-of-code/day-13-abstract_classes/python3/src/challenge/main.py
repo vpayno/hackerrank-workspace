@@ -16,7 +16,7 @@ install()
 class Book(metaclass=ABCMeta):
     """Book class consisting of a title and author."""
 
-    def __init__(self, title, author):
+    def __init__(self, title: str, author: str) -> None:
 
         self.title = title
         self.author = author
@@ -28,25 +28,27 @@ class Book(metaclass=ABCMeta):
 
     @staticmethod
     @abstractmethod
-    def display():
+    def display() -> None:
         """Abstract method."""
 
 
 class MyBook(Book):
     """MyBook extends Book and adds price."""
 
-    def __init__(self, title: str, author: str, price: int):
+    def __init__(self, title: str, author: str, price: int) -> None:
 
         super().__init__(title, author)
         self.price: int = price
 
-    def __str__(self) -> str:
+    # https://github.com/python/mypy/issues/1237
+    def __str__(self) -> str:  # type: ignore
         """Implements book.__str__()."""
 
         return (f"Title: {self.title}\n" + f"Author: {self.author}\n" +
                 f"Price: {self.price}\n")
 
-    def display(self):
+    # https://github.com/python/mypy/issues/1237
+    def display(self) -> None:  # type: ignore
         """Implements book.display()."""
 
         print(self)
@@ -57,7 +59,7 @@ class Challenge:
     Main challenge class.
     """
 
-    def __init__(self, mybook: Optional[MyBook] = None):
+    def __init__(self, mybook: Optional[MyBook] = None) -> None:
 
         self.mybook: Optional[MyBook]
 
@@ -66,7 +68,7 @@ class Challenge:
         else:
             self.mybook = None
 
-    def input_book(self):
+    def input_book(self) -> None:
         """
         Read inputs without a prompt to keep things interesting.
         """
@@ -84,7 +86,7 @@ class Challenge:
         else:
             pass
 
-    def print_results(self):
+    def print_results(self) -> None:
         """Print the results of the challenge."""
 
         if self.mybook is not None:
@@ -92,7 +94,7 @@ class Challenge:
         else:
             pass
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """

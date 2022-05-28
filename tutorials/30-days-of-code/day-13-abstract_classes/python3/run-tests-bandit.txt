@@ -4,16 +4,17 @@ Running: bandit --verbose --recursive --exclude ./src/test ./src
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.10.4
-Run started:2022-05-28 05:34:41.971823
+Run started:2022-05-28 05:50:06.599332
 Files in scope (2):
 	./src/challenge/__init__.py (score: {SEVERITY: 0, CONFIDENCE: 0})
 	./src/challenge/main.py (score: {SEVERITY: 0, CONFIDENCE: 0})
-Files excluded (7):
+Files excluded (8):
 	./src/challenge/__pycache__/__init__.cpython-310.pyc
 	./src/challenge/__pycache__/main.cpython-310.pyc
 	./src/test/__init__.py
 	./src/test/__pycache__/__init__.cpython-310.pyc
 	./src/test/__pycache__/test_main.cpython-310-pytest-7.1.1.pyc
+	./src/test/__pycache__/test_main.cpython-310-pytest-7.1.2.pyc
 	./src/test/__pycache__/test_main.cpython-310.pyc
 	./src/test/test_main.py
 
@@ -38,7 +39,7 @@ Run metrics:
 		High: 0
 Files skipped (0):
 
-real	0m0.352s
-user	0m0.302s
-sys	0m0.052s
+real	0m0.332s
+user	0m0.283s
+sys	0m0.048s
 

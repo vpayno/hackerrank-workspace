@@ -1,13 +1,7 @@
 mypy ./src
-src/challenge/main.py:43: error: Signature of "__str__" incompatible with supertype "Book"
-src/challenge/main.py:43: note:      Superclass:
-src/challenge/main.py:43: note:          @staticmethod
-src/challenge/main.py:43: note:          def __str__() -> str
-src/challenge/main.py:43: note:      Subclass:
-src/challenge/main.py:43: note:          def __str__(self) -> str
-Found 1 error in 1 file (checked 4 source files)
+Success: no issues found in 4 source files
 
-real	0m14.977s
-user	0m13.897s
-sys	0m0.858s
+real	0m1.686s
+user	0m1.456s
+sys	0m0.230s
 
