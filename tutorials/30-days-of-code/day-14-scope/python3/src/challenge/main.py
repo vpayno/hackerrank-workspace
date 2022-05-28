@@ -17,7 +17,7 @@ class Difference:
     Day 14 - Scope
     """
 
-    def __init__(self, numbers: List[int]):
+    def __init__(self, numbers: List[int]) -> None:
         self.numbers: List[int] = numbers
         self.maximum_difference: int = 0
 
@@ -26,7 +26,7 @@ class Difference:
 
         return f"Largest difference in {self.numbers} is {self.maximum_difference}\n"
 
-    def compute_difference(self):
+    def compute_difference(self) -> None:
         """Finds the maximum absolute difference between any  numbers in a list of numbers."""
 
         diff: int
@@ -45,7 +45,7 @@ class Challenge:
 
     def __init__(self,
                  quantity: Optional[int] = None,
-                 numbers: Optional[List[int]] = None):
+                 numbers: Optional[List[int]] = None) -> None:
 
         self.quantity: int = 0
         self.numbers: List[int] = []
@@ -62,7 +62,7 @@ class Challenge:
         else:
             self.numbers = []
 
-    def input_quantity(self):
+    def input_quantity(self) -> None:
         """
         Read an int without a prompt to keep things interesting.
         """
@@ -72,7 +72,7 @@ class Challenge:
         else:
             pass
 
-    def input_numbers(self):
+    def input_numbers(self) -> None:
         """
         Read a list of ints without a prompt to keep things interesting.
         """
@@ -84,7 +84,7 @@ class Challenge:
         else:
             pass
 
-    def solve(self):
+    def solve(self) -> None:
         """Solves the challenge."""
 
         code = Difference(self.numbers)
@@ -92,12 +92,12 @@ class Challenge:
 
         self.output = code.maximum_difference
 
-    def print_results(self):
+    def print_results(self) -> None:
         """Print the results of the challenge."""
 
         print(self.output)
 
-    def main(self):
+    def main(self) -> None:
         """
         Challenge steps.
         """

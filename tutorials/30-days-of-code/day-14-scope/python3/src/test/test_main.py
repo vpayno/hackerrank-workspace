@@ -8,10 +8,11 @@ Challenge Tests
 import os.path
 import subprocess
 import sys
-from typing import List
+from typing import Any, List
 from unittest.mock import patch
 
 import pytest
+from _pytest.capture import CaptureFixture, CaptureResult
 
 # Our Project
 from challenge import main
@@ -28,7 +29,7 @@ integration_test_data = unit_test_data
 
 @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
 def test_difference_class(quantity: int, numbers: List[int],
-                          expected: List[int]):
+                          expected: List[int]) -> None:
     """Runs the class methods against all of our test data."""
 
     code: Difference = Difference(numbers)
@@ -49,7 +50,8 @@ def test_difference_class(quantity: int, numbers: List[int],
 
 @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
 def test_method_without_input(quantity: int, numbers: List[int],
-                              expected: List[int], capsys):
+                              expected: List[int],
+                              capsys: CaptureFixture) -> None:
     """Runs the class methods against all of our test data."""
 
     captured_out: List[str]
@@ -70,7 +72,8 @@ def test_method_without_input(quantity: int, numbers: List[int],
 
     code.solve()
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 
@@ -83,7 +86,7 @@ def test_method_without_input(quantity: int, numbers: List[int],
 
 @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
 def test_method_with_input(quantity: int, numbers: List[int],
-                           expected: List[int], capsys):
+                           expected: List[int], capsys: CaptureFixture) -> None:
     """Runs the class methods against all of our test data."""
 
     captured_out: List[str]
@@ -104,7 +107,8 @@ def test_method_with_input(quantity: int, numbers: List[int],
 
     code.solve()
 
-    # captured = capsys.readouterr()  # discard previous output
+    # discard previous output
+    captured: CaptureResult[Any] = capsys.readouterr()
     code.print_results()
     captured = capsys.readouterr()  # capture new output
 
@@ -116,7 +120,7 @@ def test_method_with_input(quantity: int, numbers: List[int],
 
 
 @pytest.mark.parametrize("quantity,numbers,expected", unit_test_data)
-def test_script(quantity: int, numbers: List[int], expected: List[int]):
+def test_script(quantity: int, numbers: List[int], expected: List[int]) -> None:
     """Runs the main script against all of our test data."""
 
     program_input: bytes = bytes(f"{quantity}\n", "utf8")
