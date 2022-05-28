@@ -1,0 +1,88 @@
+Running: pytest --verbose --cov-report term --cov=. --cov-report=term-missing --cov-report=xml:.coverage.xml --cov-branch -p no:randomly
+============================= test session starts ==============================
+platform linux -- Python 3.10.4, pytest-7.1.2, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.4/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-14-scope/python3/.hypothesis/examples')
+rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-14-scope/python3
+plugins: pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1, betamax-0.8.1, anyio-3.6.1, hypothesis-6.46.3, datafiles-2.0.1, xonsh-0.12.4
+collecting ... collected 12 items
+
+src/test/test_main.py::test_difference_class[3-numbers0-expected0] PASSED [  8%]
+src/test/test_main.py::test_difference_class[5-numbers1-expected1] PASSED [ 16%]
+src/test/test_main.py::test_difference_class[5-numbers2-expected2] PASSED [ 25%]
+src/test/test_main.py::test_method_without_input[3-numbers0-expected0] PASSED [ 33%]
+src/test/test_main.py::test_method_without_input[5-numbers1-expected1] PASSED [ 41%]
+src/test/test_main.py::test_method_without_input[5-numbers2-expected2] PASSED [ 50%]
+src/test/test_main.py::test_method_with_input[3-numbers0-expected0] PASSED [ 58%]
+src/test/test_main.py::test_method_with_input[5-numbers1-expected1] PASSED [ 66%]
+src/test/test_main.py::test_method_with_input[5-numbers2-expected2] PASSED [ 75%]
+src/test/test_main.py::test_script[3-numbers0-expected0] PASSED          [ 83%]
+src/test/test_main.py::test_script[5-numbers1-expected1] PASSED          [ 91%]
+src/test/test_main.py::test_script[5-numbers2-expected2] PASSED          [100%]
+
+---------- coverage: platform linux, python 3.10.4-final-0 -----------
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          44      0     12      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          71      0     26      0   100%
+-----------------------------------------------------------------------
+TOTAL                         115      0     38      0   100%
+Coverage XML written to file .coverage.xml
+
+
+============================== 12 passed in 2.62s ==============================
+
+real	0m6.056s
+user	0m5.778s
+sys	0m1.015s
+
+Running: spackle
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          44      0     12      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          71      0     26      0   100%
+-----------------------------------------------------------------------
+TOTAL                         115      0     38      0   100%
+
+real	0m0.249s
+user	0m0.217s
+sys	0m0.033s
+
+Running: coverage json --pretty-print -o .coverage.json
+Wrote JSON report to .coverage.json
+
+real	0m0.198s
+user	0m0.175s
+sys	0m0.023s
+
+Running: coverage report --show-missing
+Name                        Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------
+src/challenge/__init__.py       0      0      0      0   100%
+src/challenge/main.py          44      0     12      0   100%
+src/test/__init__.py            0      0      0      0   100%
+src/test/test_main.py          71      0     26      0   100%
+-----------------------------------------------------------------------
+TOTAL                         115      0     38      0   100%
+
+real	0m0.240s
+user	0m0.199s
+sys	0m0.042s
+
+Running: pycobertura show .coverage.xml
+Filename                     Stmts    Miss  Cover    Missing
+-------------------------  -------  ------  -------  ---------
+src/challenge/__init__.py        0       0  100.00%
+src/challenge/main.py           44       0  100.00%
+src/test/__init__.py             0       0  100.00%
+src/test/test_main.py           71       0  100.00%
+TOTAL                          115       0  100.00%
+
+real	0m0.213s
+user	0m0.188s
+sys	0m0.021s
+

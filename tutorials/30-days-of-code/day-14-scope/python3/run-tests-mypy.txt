@@ -1,0 +1,50 @@
+mypy --install-types --show-error-context --show-column-numbers --show-error-codes --strict-equality --no-implicit-optional --check-untyped-defs --warn-return-any --disallow-untyped-calls --disallow-untyped-defs --check-untyped-defs --disallow-untyped-decorators ./src
+src/challenge/main.py: note: In member "compute_difference" of class "Difference":
+src/challenge/main.py:29:5: error: Function is missing a return type annotation  [no-untyped-def]
+src/challenge/main.py:29:5: note: Use "-> None" if function does not return a value
+src/challenge/main.py: note: In member "input_quantity" of class "Challenge":
+src/challenge/main.py:65:5: error: Function is missing a return type annotation  [no-untyped-def]
+src/challenge/main.py:65:5: note: Use "-> None" if function does not return a value
+src/challenge/main.py: note: In member "input_numbers" of class "Challenge":
+src/challenge/main.py:75:5: error: Function is missing a return type annotation  [no-untyped-def]
+src/challenge/main.py:75:5: note: Use "-> None" if function does not return a value
+src/challenge/main.py: note: In member "solve" of class "Challenge":
+src/challenge/main.py:87:5: error: Function is missing a return type annotation  [no-untyped-def]
+src/challenge/main.py:87:5: note: Use "-> None" if function does not return a value
+src/challenge/main.py:91:9: error: Call to untyped function "compute_difference" in typed context  [no-untyped-call]
+src/challenge/main.py: note: In member "print_results" of class "Challenge":
+src/challenge/main.py:95:5: error: Function is missing a return type annotation  [no-untyped-def]
+src/challenge/main.py:95:5: note: Use "-> None" if function does not return a value
+src/challenge/main.py: note: In member "main" of class "Challenge":
+src/challenge/main.py:100:5: error: Function is missing a return type annotation  [no-untyped-def]
+src/challenge/main.py:100:5: note: Use "-> None" if function does not return a value
+src/challenge/main.py:105:9: error: Call to untyped function "input_quantity" in typed context  [no-untyped-call]
+src/challenge/main.py:107:9: error: Call to untyped function "input_numbers" in typed context  [no-untyped-call]
+src/challenge/main.py:109:9: error: Call to untyped function "solve" in typed context  [no-untyped-call]
+src/challenge/main.py:111:9: error: Call to untyped function "print_results" in typed context  [no-untyped-call]
+src/challenge/main.py: note: At top level:
+src/challenge/main.py:118:5: error: Call to untyped function "main" in typed context  [no-untyped-call]
+src/test/test_main.py: note: In function "test_difference_class":
+src/test/test_main.py:30:1: error: Function is missing a return type annotation  [no-untyped-def]
+src/test/test_main.py:36:5: error: Call to untyped function "compute_difference" in typed context  [no-untyped-call]
+src/test/test_main.py: note: In function "test_method_without_input":
+src/test/test_main.py:51:1: error: Function is missing a return type annotation  [no-untyped-def]
+src/test/test_main.py:51:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+src/test/test_main.py:64:9: error: Call to untyped function "input_quantity" in typed context  [no-untyped-call]
+src/test/test_main.py:65:9: error: Call to untyped function "input_numbers" in typed context  [no-untyped-call]
+src/test/test_main.py:71:5: error: Call to untyped function "solve" in typed context  [no-untyped-call]
+src/test/test_main.py:74:5: error: Call to untyped function "print_results" in typed context  [no-untyped-call]
+src/test/test_main.py: note: In function "test_method_with_input":
+src/test/test_main.py:85:1: error: Function is missing a return type annotation  [no-untyped-def]
+src/test/test_main.py:85:1: error: Function is missing a type annotation for one or more arguments  [no-untyped-def]
+src/test/test_main.py:98:9: error: Call to untyped function "input_quantity" in typed context  [no-untyped-call]
+src/test/test_main.py:99:9: error: Call to untyped function "input_numbers" in typed context  [no-untyped-call]
+src/test/test_main.py:105:5: error: Call to untyped function "solve" in typed context  [no-untyped-call]
+src/test/test_main.py:108:5: error: Call to untyped function "print_results" in typed context  [no-untyped-call]
+src/test/test_main.py: note: In function "test_script":
+src/test/test_main.py:119:1: error: Function is missing a return type annotation  [no-untyped-def]
+Found 27 errors in 2 files (checked 4 source files)
+
+real    0m1.718s
+user    0m1.453s
+sys     0m0.273s
