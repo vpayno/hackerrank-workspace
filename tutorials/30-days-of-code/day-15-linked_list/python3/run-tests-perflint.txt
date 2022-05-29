@@ -1,0 +1,16 @@
+perflint ./src
+************* Module challenge.main
+src/challenge/main.py:161:8: W8402: Use a list copy instead of a for-loop (use-list-copy)
+************* Module test.test_main
+src/test/test_main.py:64:19: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+src/test/test_main.py:81:4: W8402: Use a list copy instead of a for-loop (use-list-copy)
+src/test/test_main.py:21:17: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+
+------------------------------------------------------------------
+Your code has been rated at 9.78/10 (previous run: 9.78/10, +0.00)
+
+
+real	0m1.942s
+user	0m1.827s
+sys	0m0.125s
+
