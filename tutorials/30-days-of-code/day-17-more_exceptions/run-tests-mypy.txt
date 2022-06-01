@@ -1,8 +1,0 @@
-mypy ./src
-src/test/test_main.py:160: error: "int" has no attribute "__iter__"; maybe "__str__", "__int__", or "__invert__"? (not iterable)
-Found 1 error in 1 file (checked 4 source files)
-
-real	0m1.488s
-user	0m1.276s
-sys	0m0.212s
-

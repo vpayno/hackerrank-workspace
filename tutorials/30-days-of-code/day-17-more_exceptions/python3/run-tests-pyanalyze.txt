@@ -1,11 +1,11 @@
 PYTHONPATH=src pyanalyze --verbose --enable-all ./src
-Checking file: ('./src/challenge/__init__.py', 3612)
+Checking file: ('./src/challenge/__init__.py', 5033)
 ./src/challenge/__init__.py took 0.00 s
-Checking file: ('./src/challenge/main.py', 3612)
-./src/challenge/main.py took 0.36 s
-Checking file: ('./src/test/__init__.py', 3612)
+Checking file: ('./src/challenge/main.py', 5033)
+./src/challenge/main.py took 0.22 s
+Checking file: ('./src/test/__init__.py', 5033)
 ./src/test/__init__.py took 0.00 s
-Checking file: ('./src/test/test_main.py', 3612)
+Checking file: ('./src/test/test_main.py', 5033)
 
 int is not iterable (code: unsupported_operation)
   int has no attribute '__iter__'
@@ -19,9 +19,9 @@ In ./src/test/test_main.py at line 160
  161:     ]
  162: 
  163:     # this line confuses mypy
-./src/test/test_main.py took 0.20 s
+./src/test/test_main.py took 0.35 s
 
-real	0m1.492s
-user	0m1.363s
-sys	0m0.125s
+real	0m1.662s
+user	0m1.527s
+sys	0m0.121s
 

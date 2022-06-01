@@ -1,0 +1,57 @@
+Running: pyright --stats ./src/challenge
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+0 errors, 0 warnings, 0 informations 
+Completed in 1.724sec
+
+Analysis stats
+Total files parsed and bound: 79
+Total files checked: 2
+
+Timing stats
+Find Source Files:    0.01sec
+Read Source Files:    0.02sec
+Tokenize:             0.16sec
+Parse:                0.33sec
+Resolve Imports:      0.19sec
+Bind:                 0.35sec
+Check:                0.28sec
+Detect Cycles:        0sec
+
+real	0m4.060s
+user	0m5.177s
+sys	0m0.570s
+
+Running: pyright --stats ./src/test
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-17-more_exceptions/python3/src/test/test_main.py
+  /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-17-more_exceptions/python3/src/test/test_main.py:160:36 - error: "int" is not iterable
+    "__iter__" method not defined (reportGeneralTypeIssues)
+1 error, 0 warnings, 0 informations 
+Completed in 2.271sec
+
+Analysis stats
+Total files parsed and bound: 99
+Total files checked: 2
+
+Timing stats
+Find Source Files:    0.01sec
+Read Source Files:    0.02sec
+Tokenize:             0.23sec
+Parse:                0.43sec
+Resolve Imports:      0.3sec
+Bind:                 0.37sec
+Check:                0.55sec
+Detect Cycles:        0sec
+
+real	0m4.179s
+user	0m6.687s
+sys	0m0.632s
+
