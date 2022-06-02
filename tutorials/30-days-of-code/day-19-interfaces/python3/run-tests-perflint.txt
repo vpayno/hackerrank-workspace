@@ -1,0 +1,16 @@
+perflint ./src
+************* Module challenge.main
+src/challenge/main.py:40:8: W8401: Use a list comprehension instead of a for-loop (use-list-comprehension)
+************* Module test.test_main
+src/test/test_main.py:83:19: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+src/test/test_main.py:112:19: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+src/test/test_main.py:21:17: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+
+------------------------------------------------------------------
+Your code has been rated at 9.62/10 (previous run: 9.62/10, +0.00)
+
+
+real	0m2.383s
+user	0m2.242s
+sys	0m0.146s
+
