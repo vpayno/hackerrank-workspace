@@ -1,7 +1,7 @@
 PYTHONPATH=src pyanalyze --verbose --enable-all ./src
-Checking file: ('./src/challenge/__init__.py', 17764)
+Checking file: ('./src/challenge/__init__.py', 10092)
 ./src/challenge/__init__.py took 0.00 s
-Checking file: ('./src/challenge/main.py', 17764)
+Checking file: ('./src/challenge/main.py', 10092)
 exception calling: (KnownValue(val=<method '__getitem__' of 'list' objects>), IndexError('list index out of range'))
 exception calling: (KnownValue(val=<method '__getitem__' of 'list' objects>), IndexError('list index out of range'))
 exception calling: (KnownValue(val=<method '__getitem__' of 'list' objects>), IndexError('list index out of range'))
@@ -10,13 +10,13 @@ exception calling: (KnownValue(val=<method '__getitem__' of 'list' objects>), In
 exception calling: (KnownValue(val=<method '__getitem__' of 'list' objects>), IndexError('list index out of range'))
 exception calling: (KnownValue(val=<method '__getitem__' of 'list' objects>), IndexError('list index out of range'))
 exception calling: (KnownValue(val=<method '__getitem__' of 'list' objects>), IndexError('list index out of range'))
-./src/challenge/main.py took 0.35 s
-Checking file: ('./src/test/__init__.py', 17764)
+./src/challenge/main.py took 0.30 s
+Checking file: ('./src/test/__init__.py', 10092)
 ./src/test/__init__.py took 0.00 s
-Checking file: ('./src/test/test_main.py', 17764)
-./src/test/test_main.py took 0.16 s
+Checking file: ('./src/test/test_main.py', 10092)
+./src/test/test_main.py took 0.22 s
 
-real	0m1.467s
-user	0m1.346s
-sys	0m0.119s
+real	0m1.693s
+user	0m1.548s
+sys	0m0.133s
 
