@@ -1,0 +1,10 @@
+Running tests (3)
+
+[test-01]: pass
+
+[test-02]: pass
+
+[test-03]: pass
+
+Passed Tests: 3
+Failed Tests: 0
