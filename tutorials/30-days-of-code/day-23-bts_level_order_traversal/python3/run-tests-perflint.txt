@@ -1,0 +1,17 @@
+perflint ./src
+************* Module challenge.main
+src/challenge/main.py:89:12: R8203: Try..except blocks have an overhead. Avoid using them inside a loop unless you're using them for control-flow. (loop-try-except-usage)
+src/challenge/main.py:94:22: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+************* Module test.test_main
+src/test/test_main.py:51:4: W8402: Use a list copy instead of a for-loop (use-list-copy)
+src/test/test_main.py:94:4: W8402: Use a list copy instead of a for-loop (use-list-copy)
+src/test/test_main.py:20:17: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+
+------------------------------------------------------------------
+Your code has been rated at 9.67/10 (previous run: 9.82/10, -0.15)
+
+
+real	0m4.400s
+user	0m4.074s
+sys	0m0.340s
+
