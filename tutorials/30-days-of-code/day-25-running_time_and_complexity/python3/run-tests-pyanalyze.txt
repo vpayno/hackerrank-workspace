@@ -1,0 +1,18 @@
+renamed './src/challenge/__main__.py' -> './src/challenge/__main__.py~'
+
+PYTHONPATH=src pyanalyze --verbose --enable-all ./src
+Checking file: ('./src/challenge/__init__.py', 14556)
+./src/challenge/__init__.py took 0.00 s
+Checking file: ('./src/challenge/main.py', 14556)
+./src/challenge/main.py took 0.23 s
+Checking file: ('./src/test/__init__.py', 14556)
+./src/test/__init__.py took 0.00 s
+Checking file: ('./src/test/test_main.py', 14556)
+./src/test/test_main.py took 0.34 s
+
+real	0m1.945s
+user	0m2.077s
+sys	0m0.294s
+
+renamed './src/challenge/__main__.py~' -> './src/challenge/__main__.py'
+

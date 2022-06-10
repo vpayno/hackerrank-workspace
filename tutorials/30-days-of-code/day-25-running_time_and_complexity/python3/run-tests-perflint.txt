@@ -1,0 +1,17 @@
+perflint ./src
+************* Module challenge.main
+src/challenge/main.py:122:12: W8402: Use a list copy instead of a for-loop (use-list-copy)
+src/challenge/main.py:190:25: W8102: Incorrect iterator method for dictionary, use keys(). (incorrect-dictionary-iterator)
+************* Module test.test_main
+src/test/test_main.py:117:4: W8402: Use a list copy instead of a for-loop (use-list-copy)
+src/test/test_main.py:160:4: W8402: Use a list copy instead of a for-loop (use-list-copy)
+src/test/test_main.py:23:17: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+
+------------------------------------------------------------------
+Your code has been rated at 9.77/10 (previous run: 9.76/10, +0.02)
+
+
+real	0m2.482s
+user	0m2.345s
+sys	0m0.145s
+
