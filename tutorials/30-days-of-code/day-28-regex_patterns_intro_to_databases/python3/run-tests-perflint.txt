@@ -1,0 +1,18 @@
+perflint ./src
+************* Module challenge.main
+src/challenge/main.py:56:16: W8201: Consider moving this expression outside of the loop. (loop-invariant-statement)
+src/challenge/main.py:56:16: W8201: Consider moving this expression outside of the loop. (loop-invariant-statement)
+************* Module test.test_main
+src/test/test_main.py:55:8: W8201: Consider moving this expression outside of the loop. (loop-invariant-statement)
+src/test/test_main.py:55:8: W8201: Consider moving this expression outside of the loop. (loop-invariant-statement)
+src/test/test_main.py:55:8: W8201: Consider moving this expression outside of the loop. (loop-invariant-statement)
+src/test/test_main.py:20:17: W8301: Use tuple instead of list for a non-mutated sequence (use-tuple-over-list)
+
+------------------------------------------------------------------
+Your code has been rated at 9.48/10 (previous run: 9.59/10, -0.11)
+
+
+real	0m4.378s
+user	0m4.216s
+sys	0m0.183s
+

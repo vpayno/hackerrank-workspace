@@ -1,0 +1,7 @@
+mypy --install-types --non-interactive --show-error-context --show-column-numbers --show-error-codes --strict-equality --no-implicit-optional --check-untyped-defs --warn-return-any --disallow-untyped-calls --disallow-untyped-defs --check-untyped-defs --disallow-untyped-decorators ./src
+Success: no issues found in 4 source files
+
+real	0m15.819s
+user	0m14.917s
+sys	0m0.826s
+

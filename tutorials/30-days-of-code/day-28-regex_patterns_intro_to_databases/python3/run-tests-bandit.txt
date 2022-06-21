@@ -4,7 +4,7 @@ Running: bandit --verbose --recursive --exclude ./src/test ./src
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.10.4
-Run started:2022-04-12 05:33:25.890690
+Run started:2022-06-14 03:12:32.356345
 Files in scope (2):
 	./src/challenge/__init__.py (score: {SEVERITY: 0, CONFIDENCE: 0})
 	./src/challenge/main.py (score: {SEVERITY: 0, CONFIDENCE: 0})
@@ -38,7 +38,7 @@ Run metrics:
 		High: 0
 Files skipped (0):
 
-real	0m0.587s
-user	0m0.516s
-sys	0m0.070s
+real	0m0.427s
+user	0m0.347s
+sys	0m0.056s
 
