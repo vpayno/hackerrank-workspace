@@ -1,0 +1,16 @@
+PYTHONPATH=src pyanalyze --verbose --enable-all ./src
+Checking file: ('./src/challenge/__init__.py', 31541)
+./src/challenge/__init__.py took 0.00 s
+Checking file: ('./src/challenge/main.py', 31541)
+exception calling: (KnownValue(val=<function _Environ.__getitem__ at 0x7f08d826feb0>), KeyError('OUTPUT_PATH'))
+exception calling: (KnownValue(val=<function _Environ.__getitem__ at 0x7f08d826feb0>), KeyError('OUTPUT_PATH'))
+./src/challenge/main.py took 0.27 s
+Checking file: ('./src/test/__init__.py', 31541)
+./src/test/__init__.py took 0.00 s
+Checking file: ('./src/test/test_main.py', 31541)
+./src/test/test_main.py took 0.35 s
+
+real	0m2.193s
+user	0m1.764s
+sys	0m0.190s
+

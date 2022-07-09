@@ -1,0 +1,68 @@
+Running: pyright --stats ./src/challenge
+ * Install prebuilt node (18.5.0) ..... done.
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+pyright 1.1.254
+0 errors, 0 warnings, 0 informations 
+Completed in 3.077sec
+
+Analysis stats
+Total files parsed and bound: 83
+Total files checked: 2
+
+Timing stats
+Find Source Files:    0.02sec
+Read Source Files:    0.08sec
+Tokenize:             0.3sec
+Parse:                0.58sec
+Resolve Imports:      0.33sec
+Bind:                 0.54sec
+Check:                0.4sec
+Detect Cycles:        0sec
+npm notice 
+npm notice New minor version of npm available! 8.12.1 -> 8.13.2
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v8.13.2>
+npm notice Run `npm install -g npm@8.13.2` to update!
+npm notice 
+WARNING: there is a new pyright version available (v1.1.257).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+
+real	0m19.918s
+user	0m14.635s
+sys	0m4.595s
+
+Running: pyright --stats ./src/test
+No configuration file found.
+No pyproject.toml file found.
+Assuming Python platform Linux
+Searching for source files
+Found 2 source files
+pyright 1.1.254
+0 errors, 0 warnings, 0 informations 
+Completed in 3.399sec
+
+Analysis stats
+Total files parsed and bound: 101
+Total files checked: 2
+
+Timing stats
+Find Source Files:    0.02sec
+Read Source Files:    0.03sec
+Tokenize:             0.37sec
+Parse:                0.58sec
+Resolve Imports:      0.47sec
+Bind:                 0.57sec
+Check:                0.75sec
+Detect Cycles:        0sec
+WARNING: there is a new pyright version available (v1.1.257).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+
+real	0m6.598s
+user	0m10.186s
+sys	0m0.985s
+
