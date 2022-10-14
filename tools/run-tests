@@ -247,6 +247,46 @@ go_vet()
 	printf "\n"
 } # go_vet()
 
+go_gocyclo()
+{
+	echo Running: gocyclo -over 15 .
+	time gocyclo -over 15 .
+	printf "\n"
+} # go_gocyclo()
+
+go_ineffassign() {
+	echo Running: ineffassign ./...
+	time ineffassign ./...
+} # go_ineffassign()
+
+go_consistent()
+{
+	echo Running: go-consistent -v ./...
+	time go-consistent -v ./...
+	printf "\n"
+} # go_consistent()
+
+go_critic()
+{
+	echo Running: gocritic check -enableAll ./...
+	time gocritic check -enableAll ./...
+	printf "\n"
+} # go_critic()
+
+go_staticcheck()
+{
+	echo Running: staticcheck ./...
+	time staticcheck ./...
+	printf "\n"
+} # go_staticcheck()
+
+go_golangci_lint()
+{
+	echo Running: golangci-lint run --out-format=line-number ./...
+	time golangci-lint run --out-format=line-number ./...
+	printf "\n"
+} # go_golangci_lint()
+
 go_test()
 {
 	echo Running: go test -v -cover
@@ -403,8 +443,14 @@ main()
 		printf "\nRunning Go Checks and Tests...\n\n"
 
 		go_clean
-		go_build |& tee run-tests-build.txt || exit 1
-		go_vet |& tee run-tests-vet.txt || exit 1
+		go_build |& tee run-tests-build.txt
+		go_vet |& tee run-tests-vet.txt
+		go_gocyclo |& tee run-tests-gocyclo.txt
+		go_consistent |& tee run-tests-consistent.txt
+		go_critic |& tee run-tests-critic.txt
+		go_consistent |& tee run-tests-consistent.txt
+		go_staticcheck |& tee run-tests-staticcheck.txt
+		go_golangci_lint |& tee run-tests-golangci_lint.txt
 		go_test |& tee run-tests-test.txt
 		go_sec |& tee run-tests-sec.txt
 
