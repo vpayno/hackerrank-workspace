@@ -219,6 +219,13 @@ rust_audit()
 	printf "\n"
 } # rust_audit()
 
+rust_upgrade()
+{
+	echo Running: cargo upgrade
+	time cargo upgrade
+	printf "\n"
+} # rust_upgrade()
+
 go_clean()
 {
 	echo Running: go clean
@@ -386,6 +393,7 @@ main()
 		printf "\nRunning Rust Checks and Tests...\n\n"
 
 		rust_clean
+		rust_upgrade |& tee run-tests-upgrade.txt
 		rust_check |& tee run-tests-check.txt || exit 1
 		rust_clippy |& tee run-tests-clippy.txt
 		rust_test |& tee run-tests-test.txt
