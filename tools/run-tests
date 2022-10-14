@@ -32,21 +32,21 @@ printf "\n"
 
 python_pylint()
 {
-	echo pylint ./src/*
+	echo Running: pylint ./src/*
 	time pylint ./src/*
 	printf "\n"
 } # python_pylint()
 
 python_perflint()
 {
-	echo perflint ./src
+	echo Running: perflint ./src
 	time perflint ./src
 	printf "\n"
 } # python_perflint()
 
 python_mypy()
 {
-	echo mypy ./src
+	echo Running: mypy ./src
 	time mypy ./src
 	printf "\n"
 } # python_mypy()
@@ -101,7 +101,7 @@ python_pyanalyze()
 		printf "\n"
 	fi
 
-	echo PYTHONPATH="${directory}" pyanalyze --verbose --enable-all ./"${directory}"
+	echo Running: PYTHONPATH="${directory}" pyanalyze --verbose --enable-all ./"${directory}"
 	time { PYTHONPATH="${directory}" pyanalyze --verbose --enable-all ./"${directory}"; }
 	printf "\n"
 
@@ -115,7 +115,7 @@ python_flake8()
 {
 	local directory="src"
 
-	echo PYTHONPATH="${directory}" flake8 ./"${directory}"
+	echo Running: PYTHONPATH="${directory}" flake8 ./"${directory}"
 	time { PYTHONPATH="${directory}" flake8 ./"${directory}"; }
 	printf "\n"
 } # python_flake8()
@@ -167,20 +167,27 @@ python_pytest()
 	printf "\n"
  } # python_pytest()
 
+python_refurb()
+{
+	echo Running: refurb ./src/
+	time refurb ./src/
+	printf "\n"
+} # python_refurb()
+
 rust_clean()
 {
-	echo cargo clean
+	echo Running: cargo clean
 	time cargo clean
 	printf "\n"
 
-	echo cargo clean --release
+	echo Running: cargo clean --release
 	time cargo clean --release
 	printf "\n"
 } # rust_clean()
 
 rust_check()
 {
-	echo cargo check --release
+	echo Running: cargo check --release
 	time cargo check --release
 	printf "\n"
 } # rust_check()
@@ -189,60 +196,60 @@ rust_clippy()
 {
 	# cargo clippy --release --fix --allow-dirty --allow-staged
 
-	echo cargo clippy --release
+	echo Running: cargo clippy --release
 	time cargo clippy --release
 	printf "\n"
 } # rust_clippy()
 
 rust_test()
 {
-	echo cargo test --release
+	echo Running: cargo test --release
 	time cargo test --release
 	printf "\n"
 
-	echo cargo tarpaulin --release --timeout=300 --bins --verbose
+	echo Running: cargo tarpaulin --release --timeout=300 --bins --verbose
 	time cargo tarpaulin --release --timeout=300 --bins --verbose
 	printf "\n"
 } # rust_test()
 
 rust_audit()
 {
-	echo cargo audit
+	echo Running: cargo audit
 	time cargo audit
 	printf "\n"
 } # rust_audit()
 
 go_clean()
 {
-	echo go clean
+	echo Running: go clean
 	time go clean
 	printf "\n"
 } # go_clean()
 
 go_build()
 {
-	echo go build
-	time go build
+	echo Running: go build ./...
+	time go build ./...
 	printf "\n"
 } # go_build()
 
 go_vet()
 {
-	echo go vet
-	time go vet
+	echo Running: go vet ./...
+	time go vet ./...
 	printf "\n"
 } # go_vet()
 
 go_test()
 {
-	echo go test -v -cover
+	echo Running: go test -v -cover
 	time go test -v -cover
 	printf "\n"
 } # go_test()
 
 go_sec()
 {
-	echo gosec -tests ./...
+	echo Running: gosec -tests ./...
 	time gosec -tests ./...
 	printf "\n"
 } # go_sec()
@@ -255,21 +262,21 @@ mvn_maintenance()
 
 mvn_update_versions()
 {
-	echo mvn versions:use-latest-releases
+	echo Running: mvn versions:use-latest-releases
 	time mvn versions:use-latest-releases
 	printf "\n"
 } # mvn_update_versions()
 
 mvn_clean()
 {
-	echo mvn clean
+	echo Running: mvn clean
 	time mvn clean
 	printf "\n"
 } # mvn_clean()
 
 mvn_sort_pom()
 {
-	echo mvn com.github.ekryd.sortpom:sortpom-maven-plugin:sort -Dsort.keepBlankLines -Dsort.predefinedSortOrder=custom_1
+	echo Running: mvn com.github.ekryd.sortpom:sortpom-maven-plugin:sort -Dsort.keepBlankLines -Dsort.predefinedSortOrder=custom_1
 	time mvn com.github.ekryd.sortpom:sortpom-maven-plugin:sort -Dsort.keepBlankLines -Dsort.predefinedSortOrder=custom_1
 	printf "\n"
 } # mvn_sort_pom()
@@ -282,7 +289,7 @@ mvn_get_coverage()
 
 mvn_test()
 {
-	echo mvn clean jacoco:prepare-agent verify jacoco:report
+	echo Running: mvn clean jacoco:prepare-agent verify jacoco:report
 	time mvn clean jacoco:prepare-agent verify jacoco:report
 	printf "\n"
 
@@ -291,7 +298,7 @@ mvn_test()
 
 mvn_dep_check()
 {
-	echo mvn verify -Powasp-dependency-check
+	echo Running: mvn verify -Powasp-dependency-check
 	time mvn verify -Powasp-dependency-check
 	printf "\n"
 } # mvn_dep_check()
