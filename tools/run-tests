@@ -289,8 +289,32 @@ go_golangci_lint()
 
 go_test()
 {
-	echo Running: go test -v -cover
-	time go test -v -cover
+	rm -fv coverage*
+
+	echo Running: gotest -v -covermode=count -coverprofile=./coverage.out ./...
+	time gotest -v -covermode=count -coverprofile=./coverage.out ./...
+	printf "\n"
+
+	echo Running: go tool cover -func=./coverage.out | tee ./coverage.txt
+	time go tool cover -func=./coverage.out | tee ./coverage.txt
+	printf "\n"
+
+	echo Running: go tool cover -html=./coverage.out -o=./coverage.html
+	time go tool cover -html=./coverage.out -o=./coverage.html
+	printf "\n"
+
+	echo Running: gocov convert ./coverage.out | gocov annotate -ceiling=100 -color - | tee ./coverage-annotations.txt
+	time gocov convert ./coverage.out | gocov annotate -ceiling=100 -color - | tee ./coverage-annotations.txt
+	printf "\n"
+
+	echo Running: gocov convert ./coverage.out | gocov report | tee ./coverage-summary.txt
+	time gocov convert ./coverage.out | gocov report | tee ./coverage-summary.txt
+	printf "\n"
+
+	tail -v ./coverage-summary.txt
+	printf "\n"
+
+	tail -v ./coverage-annotations.txt
 	printf "\n"
 } # go_test()
 
