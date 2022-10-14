@@ -1,0 +1,6 @@
+Running: go build ./...
+
+real	0m0.504s
+user	0m0.528s
+sys	0m0.354s
+

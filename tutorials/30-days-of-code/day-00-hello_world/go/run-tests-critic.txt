@@ -1,0 +1,7 @@
+Running: gocritic check -enableAll ./...
+./cmd/hr/main.go:32:3: commentFormatting: put a space between `//` and comment text
+
+real	0m2.737s
+user	0m4.418s
+sys	0m1.250s
+
