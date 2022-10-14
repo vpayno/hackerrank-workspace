@@ -1,8 +1,8 @@
-cargo clippy --release
+Running: cargo clippy --release
     Checking rust v0.1.0 (/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/rust)
-    Finished release [optimized] target(s) in 0.57s
+    Finished release [optimized] target(s) in 0.60s
 
-real	0m1.210s
-user	0m1.005s
-sys	0m0.261s
+real	0m1.089s
+user	0m0.848s
+sys	0m0.212s
 

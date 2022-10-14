@@ -1,0 +1,8 @@
+Running: cargo upgrade
+    Updating 'https://github.com/rust-lang/crates.io-index' index
+rust:
+
+real	7m41.067s
+user	7m11.687s
+sys	0m18.379s
+

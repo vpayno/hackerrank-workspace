@@ -1,4 +1,4 @@
-cargo check --release
+Running: cargo check --release
    Compiling proc-macro2 v1.0.37
    Compiling unicode-xid v0.2.2
    Compiling libc v0.2.124
@@ -6,31 +6,31 @@ cargo check --release
    Compiling syn v1.0.91
    Compiling cc v1.0.73
     Checking adler v1.0.2
-   Compiling serde v1.0.136
     Checking gimli v0.26.1
    Compiling failure_derive v0.1.8
-   Compiling serde_json v1.0.79
+   Compiling serde v1.0.136
     Checking cfg-if v1.0.0
     Checking rustc-demangle v0.1.21
-    Checking itoa v1.0.1
-    Checking lazy_static v1.4.0
+   Compiling serde_json v1.0.79
     Checking ryu v1.0.9
+    Checking lazy_static v1.4.0
+    Checking itoa v1.0.1
     Checking environment v0.1.1
     Checking difference v2.0.0
     Checking miniz_oxide v0.5.1
    Compiling backtrace v0.3.65
     Checking object v0.28.3
-    Checking atty v0.2.14
    Compiling quote v1.0.18
+    Checking atty v0.2.14
     Checking addr2line v0.17.0
     Checking colored v1.9.3
    Compiling synstructure v0.12.6
     Checking failure v0.1.8
     Checking assert_cli v0.6.3
     Checking rust v0.1.0 (/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/rust)
-    Finished release [optimized] target(s) in 44.89s
+    Finished release [optimized] target(s) in 38.08s
 
-real	0m45.082s
-user	2m8.921s
-sys	0m20.508s
+real	0m38.243s
+user	1m47.619s
+sys	0m12.326s
 

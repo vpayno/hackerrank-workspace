@@ -1,6 +1,6 @@
-cargo audit
+Running: cargo audit
 [0m[0m[1m[32m    Fetching[0m advisory database from `https://github.com/RustSec/advisory-db.git`
-[0m[0m[1m[32m      Loaded[0m 415 security advisories (from /home/vpayno/.cargo/advisory-db)
+[0m[0m[1m[32m      Loaded[0m 461 security advisories (from /home/vpayno/.cargo/advisory-db)
 [0m[0m[1m[32m    Updating[0m crates.io index
 [0m[0m[1m[32m    Scanning[0m Cargo.lock for vulnerabilities (33 crate dependencies)
 [0m[0m[1m[33mCrate:        [0m difference
@@ -29,7 +29,7 @@ failure 0.1.8
 
 [0m[0m[1m[33mwarning:[0m 2 allowed warnings found
 
-real	0m4.382s
-user	0m1.515s
-sys	0m1.787s
+real	0m38.883s
+user	0m22.405s
+sys	0m11.873s
 
