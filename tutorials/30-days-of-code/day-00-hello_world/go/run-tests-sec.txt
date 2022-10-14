@@ -1,0 +1,10 @@
+Running: gosec -tests ./...
+[gosec] 2022/10/13 22:16:55 Including rules: default
+[gosec] 2022/10/13 22:16:55 Excluding rules: default
+[gosec] 2022/10/13 22:16:55 Import directory: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr
+2022/10/13 22:16:56 internal error: package "bufio" without types was imported from "command-line-arguments"
+
+real	0m0.687s
+user	0m0.826s
+sys	0m0.553s
+

@@ -1,0 +1,7 @@
+Running: staticcheck ./...
+cmd/hr/main.go:31:2: empty branch (SA9003)
+
+real	0m0.587s
+user	0m0.687s
+sys	0m0.519s
+

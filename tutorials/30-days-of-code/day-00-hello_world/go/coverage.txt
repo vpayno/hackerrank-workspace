@@ -1,0 +1,5 @@
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go:13:	init		100.0%
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go:17:	main		100.0%
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go:22:	ShowMessage	100.0%
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go:27:	PromptUser	100.0%
+total:														(statements)	100.0%

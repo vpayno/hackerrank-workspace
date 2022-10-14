@@ -1,0 +1,7 @@
+Running: go-consistent -v ./...
+	info: check "./cmd/hr"
+
+real	0m0.444s
+user	0m0.534s
+sys	0m0.455s
+

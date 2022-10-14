@@ -1,0 +1,8 @@
+
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 PromptUser	 100.00% (5/5)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 main		 100.00% (2/2)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 ShowMessage	 100.00% (2/2)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 init		 100.00% (1/1)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr		 -----------	 100.00% (10/10)
+
+Total Coverage: 100.00% (10/10)

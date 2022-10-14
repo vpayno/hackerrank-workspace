@@ -1,0 +1,81 @@
+removed 'coverage-annotations.txt'
+removed 'coverage.html'
+removed 'coverage.out'
+removed 'coverage-summary.txt'
+removed 'coverage.txt'
+Running: gotest -v -covermode=count -coverprofile=./coverage.out ./...
+=== RUN   TestHelloWorld
+--- PASS: TestHelloWorld (0.00s)
+=== RUN   TestPromptUser
+    main_test.go:74: 
+        	Error Trace:	/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main_test.go:74
+        	Error:      	Not equal: 
+        	            	expected: "Welcome to 30 Days of Code!"
+        	            	actual  : ""
+        	            	
+        	            	Diff:
+        	            	--- Expected
+        	            	+++ Actual
+        	            	@@ -1 +1 @@
+        	            	-Welcome to 30 Days of Code!
+        	            	+
+        	Test:       	TestPromptUser
+--- FAIL: TestPromptUser (0.00s)
+FAIL
+coverage: 100.0% of statements
+FAIL	github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr	0.020s
+FAIL
+
+real	0m0.905s
+user	0m0.964s
+sys	0m0.665s
+
+Running: go tool cover -func=./coverage.out
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go:13:	init		100.0%
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go:17:	main		100.0%
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go:22:	ShowMessage	100.0%
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go:27:	PromptUser	100.0%
+total:														(statements)	100.0%
+
+real	0m0.384s
+user	0m0.332s
+sys	0m0.412s
+
+Running: go tool cover -html=./coverage.out -o=coverage.html
+
+real	0m0.265s
+user	0m0.254s
+sys	0m0.281s
+
+failed to unmarshal coverage data: invalid character 'R' looking for beginning of value
+
+real	0m0.117s
+user	0m0.092s
+sys	0m0.127s
+
+failed to unmarshal coverage data: invalid character 'R' looking for beginning of value
+
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 PromptUser	 100.00% (5/5)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 main		 100.00% (2/2)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 ShowMessage	 100.00% (2/2)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 init		 100.00% (1/1)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr		 -----------	 100.00% (10/10)
+
+Total Coverage: 100.00% (10/10)
+
+real	0m0.122s
+user	0m0.091s
+sys	0m0.141s
+
+==> coverage-summary.txt <==
+
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 PromptUser	 100.00% (5/5)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 main		 100.00% (2/2)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 ShowMessage	 100.00% (2/2)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr/main.go	 init		 100.00% (1/1)
+github.com/vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/go/cmd/hr		 -----------	 100.00% (10/10)
+
+Total Coverage: 100.00% (10/10)
+
+==> coverage-annotations.txt <==
+

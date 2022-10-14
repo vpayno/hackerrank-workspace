@@ -1,0 +1,9 @@
+Running: golangci-lint run --out-format=line-number ./...
+cmd/hr/main.go:31:2: SA9003: empty branch (staticcheck)
+	if err == nil {
+	^
+
+real	0m10.414s
+user	0m21.126s
+sys	0m3.618s
+
