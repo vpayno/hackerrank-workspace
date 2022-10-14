@@ -1,10 +1,15 @@
-pylint ./src/challenge ./src/test
+Running: pylint ./src/challenge ./src/test
+************* Module test.test_hello_world
+src/test/test_hello_world.py:50:11: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
+src/test/test_hello_world.py:51:11: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
+src/test/test_hello_world.py:62:11: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
+src/test/test_hello_world.py:73:11: C2801: Unnecessarily calls dunder method __str__. Use str built-in function. (unnecessary-dunder-call)
 
---------------------------------------------------------------------
-Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
+-----------------------------------
+Your code has been rated at 9.32/10
 
 
-real	0m9.568s
-user	0m8.701s
-sys	0m0.624s
+real	0m5.200s
+user	0m4.797s
+sys	0m0.226s
 

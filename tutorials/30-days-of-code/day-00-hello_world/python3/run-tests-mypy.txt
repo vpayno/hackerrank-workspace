@@ -1,7 +1,7 @@
-mypy ./src
+Running: mypy --install-types --non-interactive --show-error-context --show-column-numbers --show-error-codes --strict-equality --no-implicit-optional --check-untyped-defs --warn-return-any --disallow-untyped-calls --disallow-untyped-defs --check-untyped-defs --disallow-untyped-decorators ./src
 Success: no issues found in 4 source files
 
-real	0m5.172s
-user	0m3.464s
-sys	0m0.817s
+real	0m24.259s
+user	0m23.293s
+sys	0m0.797s
 

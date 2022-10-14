@@ -1,10 +1,10 @@
 Running: pytest --verbose --cov-report term --cov=. --cov-report=term-missing --cov-report=xml:.coverage.xml --cov-branch -p no:randomly
 ============================= test session starts ==============================
-platform linux -- Python 3.10.4, pytest-7.1.1, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.4/bin/python3.10
+platform linux -- Python 3.10.6, pytest-7.1.3, pluggy-1.0.0 -- /home/vpayno/.pyenv/versions/3.10.6/bin/python3.10
 cachedir: .pytest_cache
 hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/python3/.hypothesis/examples')
 rootdir: /home/vpayno/git_vpayno/hackerrank-workspace/tutorials/30-days-of-code/day-00-hello_world/python3
-plugins: anyio-3.5.0, hypothesis-6.41.0, pylama-8.3.8, typeguard-2.13.3, cov-3.0.0, subprocess-1.4.1, betamax-0.8.1, datafiles-2.0, xonsh-0.12.2
+plugins: anyio-3.6.1, betamax-0.8.1, typeguard-2.13.3, datafiles-2.0.1, hypothesis-6.56.2, libtmux-0.15.8, pylama-8.4.1, cov-4.0.0, docker-1.0.1, subprocess-1.4.2, xonsh-0.13.3
 collecting ... collected 5 items
 
 src/test/test_hello_world.py::test_class_init PASSED                     [ 20%]
@@ -13,7 +13,7 @@ src/test/test_hello_world.py::test_method_without_input[Hello pytest!-Let's run 
 src/test/test_hello_world.py::test_method_with_input[Hello pytest!-Let's run some tests!-expected0] PASSED [ 80%]
 src/test/test_hello_world.py::test_script[Let's run some tests!-expected0] PASSED [100%]
 
----------- coverage: platform linux, python 3.10.4-final-0 -----------
+---------- coverage: platform linux, python 3.10.6-final-0 -----------
 Name                           Stmts   Miss Branch BrPart  Cover   Missing
 --------------------------------------------------------------------------
 src/challenge/__init__.py          0      0      0      0   100%
@@ -25,11 +25,11 @@ TOTAL                             59      0     11      0   100%
 Coverage XML written to file .coverage.xml
 
 
-============================== 5 passed in 3.17s ===============================
+============================== 5 passed in 3.54s ===============================
 
-real	0m9.929s
-user	0m7.888s
-sys	0m1.758s
+real	0m12.151s
+user	0m10.369s
+sys	0m1.547s
 
 Running: spackle
 Name                           Stmts   Miss Branch BrPart  Cover   Missing
@@ -41,16 +41,16 @@ src/test/test_hello_world.py      40      0      7      0   100%
 --------------------------------------------------------------------------
 TOTAL                             59      0     11      0   100%
 
-real	0m0.644s
-user	0m0.189s
-sys	0m0.047s
+real	0m0.512s
+user	0m0.082s
+sys	0m0.025s
 
 Running: coverage json --pretty-print -o .coverage.json
 Wrote JSON report to .coverage.json
 
-real	0m0.491s
-user	0m0.412s
-sys	0m0.074s
+real	0m0.256s
+user	0m0.221s
+sys	0m0.033s
 
 Running: coverage report --show-missing
 Name                           Stmts   Miss Branch BrPart  Cover   Missing
@@ -62,9 +62,9 @@ src/test/test_hello_world.py      40      0      7      0   100%
 --------------------------------------------------------------------------
 TOTAL                             59      0     11      0   100%
 
-real	0m0.435s
-user	0m0.383s
-sys	0m0.052s
+real	0m0.333s
+user	0m0.294s
+sys	0m0.040s
 
 Running: pycobertura show .coverage.xml
 Filename                        Stmts    Miss  Cover    Missing
@@ -75,7 +75,7 @@ src/test/__init__.py                0       0  100.00%
 src/test/test_hello_world.py       40       0  100.00%
 TOTAL                              59       0  100.00%
 
-real	0m0.750s
-user	0m0.477s
-sys	0m0.123s
+real	0m0.374s
+user	0m0.275s
+sys	0m0.053s
 

@@ -1,14 +1,174 @@
-PYTHONPATH=src pyanalyze --verbose --enable-all ./src
-Checking file: ('./src/challenge/__init__.py', 21033)
+Running: PYTHONPATH=src pyanalyze --verbose --enable-all ./src
+Checking file: ('./src/challenge/__init__.py', 20048)
 ./src/challenge/__init__.py took 0.00 s
-Checking file: ('./src/challenge/hello_world.py', 21033)
-./src/challenge/hello_world.py took 0.31 s
-Checking file: ('./src/test/__init__.py', 21033)
-./src/test/__init__.py took 0.00 s
-Checking file: ('./src/test/test_hello_world.py', 21033)
-./src/test/test_hello_world.py took 0.30 s
+Checking file: ('./src/challenge/hello_world.py', 20048)
 
-real	0m2.608s
-user	0m2.135s
-sys	0m0.195s
+Inferred value contains Any: Annotated[Any[inference], <+__name__ predicate EqualsPredicate(pattern_val='__main__', ctx=<pyanalyze.name_check_visitor.NameCheckVisitor object at 0x7db6391123b0>, use_is=False)>] (code: implicit_any)
+In ./src/challenge/hello_world.py at line 60
+  57:         return [self.greeting, self.input_string]
+  58: 
+  59: 
+  60: if __name__ == "__main__":  # pragma: no cover
+         ^
+  61: 
+  62:     user_input: Optional[str] = None if sys.argv[1] is None else sys.argv[1]
+  63: 
+./src/challenge/hello_world.py took 0.18 s
+Checking file: ('./src/test/__init__.py', 20048)
+./src/test/__init__.py took 0.00 s
+Checking file: ('./src/test/test_hello_world.py', 20048)
+
+Inferred value contains Any: Any[inference] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 45
+  42:     expected_output: List[str] = ["greeting text", "user input"]
+  43:     program_output: List[str] = program.hello_world(input_string="user input")
+  44:     # assert len(expected_output) == len(program_output)
+  45:     assert all(e == o for e, o in zip(expected_output, program_output))
+                     ^
+  46: 
+  47: 
+  48: def test_class_str() -> None:
+
+Inferred value contains Any: generator[Any[inference], None, None] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 45
+  42:     expected_output: List[str] = ["greeting text", "user input"]
+  43:     program_output: List[str] = program.hello_world(input_string="user input")
+  44:     # assert len(expected_output) == len(program_output)
+  45:     assert all(e == o for e, o in zip(expected_output, program_output))
+                    ^
+  46: 
+  47: 
+  48: def test_class_str() -> None:
+
+Inferred value contains Any: Any[inference] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 50
+  47: 
+  48: def test_class_str() -> None:
+  49:     """test for the __str__ method that was added because pylint loves to complain"""
+  50:     assert hello_world.Challenge().__str__() == "Hello, World."
+                 ^
+  51:     assert hello_world.Challenge(
+  52:         greeting="Hello pytest!").__str__() == "Hello pytest!"
+  53: 
+
+Inferred value contains Any: Any[inference] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 51
+  48: def test_class_str() -> None:
+  49:     """test for the __str__ method that was added because pylint loves to complain"""
+  50:     assert hello_world.Challenge().__str__() == "Hello, World."
+  51:     assert hello_world.Challenge(
+                 ^
+  52:         greeting="Hello pytest!").__str__() == "Hello pytest!"
+  53: 
+  54: 
+
+Inferred value contains Any: Any[from_another] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 55
+  52:         greeting="Hello pytest!").__str__() == "Hello pytest!"
+  53: 
+  54: 
+  55: @pytest.mark.parametrize("greeting,input_string,expected", unit_test_data)
+       ^
+  56: def test_method_without_input(greeting: str, input_string: str,
+  57:                               expected: List[str]) -> None:
+  58:     """Runs the hello_world class method against all of our test data."""
+
+Inferred value contains Any: Any[inference] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 61
+  58:     """Runs the hello_world class method against all of our test data."""
+  59:     code: hello_world.Challenge = hello_world.Challenge(greeting)
+  60:     result: List[str] = code.hello_world(input_string)
+  61:     assert result == expected
+                 ^
+  62:     assert code.__str__() == " ".join(expected)
+  63: 
+  64: 
+
+Inferred value contains Any: Any[inference] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 62
+  59:     code: hello_world.Challenge = hello_world.Challenge(greeting)
+  60:     result: List[str] = code.hello_world(input_string)
+  61:     assert result == expected
+  62:     assert code.__str__() == " ".join(expected)
+                 ^
+  63: 
+  64: 
+  65: @pytest.mark.parametrize("greeting,input_string,expected", unit_test_data)
+
+Inferred value contains Any: Any[from_another] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 65
+  62:     assert code.__str__() == " ".join(expected)
+  63: 
+  64: 
+  65: @pytest.mark.parametrize("greeting,input_string,expected", unit_test_data)
+       ^
+  66: def test_method_with_input(greeting: str, input_string: str,
+  67:                            expected: List[str]) -> None:
+  68:     """Runs the hello_world class method against all of our test data."""
+
+Inferred value contains Any: Any[unannotated] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 70
+  67:                            expected: List[str]) -> None:
+  68:     """Runs the hello_world class method against all of our test data."""
+  69:     code: hello_world.Challenge = hello_world.Challenge(greeting)
+  70:     with mock.patch.object(builtins, "input", lambda: input_string):
+               ^
+  71:         result: List[str] = code.hello_world()
+  72:     assert result == expected
+  73:     assert code.__str__() == " ".join(expected)
+Ignoring duplicate error (<ast.Call object at 0x7db638ed15a0>, <ErrorCode.implicit_any: 77>)
+
+Inferred value contains Any: Any[inference] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 72
+  69:     code: hello_world.Challenge = hello_world.Challenge(greeting)
+  70:     with mock.patch.object(builtins, "input", lambda: input_string):
+  71:         result: List[str] = code.hello_world()
+  72:     assert result == expected
+                 ^
+  73:     assert code.__str__() == " ".join(expected)
+  74: 
+  75: 
+
+Inferred value contains Any: Any[inference] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 73
+  70:     with mock.patch.object(builtins, "input", lambda: input_string):
+  71:         result: List[str] = code.hello_world()
+  72:     assert result == expected
+  73:     assert code.__str__() == " ".join(expected)
+                 ^
+  74: 
+  75: 
+  76: @pytest.mark.parametrize("input_string,expected", integration_test_data)
+
+Inferred value contains Any: Any[from_another] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 76
+  73:     assert code.__str__() == " ".join(expected)
+  74: 
+  75: 
+  76: @pytest.mark.parametrize("input_string,expected", integration_test_data)
+       ^
+  77: def test_script(input_string: str, expected: List[str]) -> None:
+  78:     """Runs the hello_world script against all of our test data."""
+  79:     process = subprocess.run(
+
+Inferred value contains Any: Any[inference] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 92
+  89:     program_output: str = process.stdout.decode("utf-8")
+  90:     assert expected[0] in program_output
+  91:     assert expected[1] in program_output
+  92:     assert all(e == o for e, o in zip(expected, program_output.split("\n")))
+                     ^
+
+Inferred value contains Any: generator[Any[inference], None, None] (code: implicit_any)
+In ./src/test/test_hello_world.py at line 92
+  89:     program_output: str = process.stdout.decode("utf-8")
+  90:     assert expected[0] in program_output
+  91:     assert expected[1] in program_output
+  92:     assert all(e == o for e, o in zip(expected, program_output.split("\n")))
+                    ^
+./src/test/test_hello_world.py took 0.28 s
+
+real	0m1.897s
+user	0m1.440s
+sys	0m0.170s
 
