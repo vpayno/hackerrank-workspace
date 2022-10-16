@@ -228,8 +228,14 @@ rust_audit()
 
 rust_upgrade()
 {
-	echo Running: cargo upgrade
-	time cargo upgrade
+	find . -name Cargo.lock -mtime 31 -delete
+
+	if [[ ! -f Cargo.lock ]]; then
+		echo Running: cargo upgrade
+		time cargo upgrade
+	else
+		printf "Cargo.lock is less than 31 days old, skipping cargo upgrade.\n"
+	fi
 	printf "\n"
 } # rust_upgrade()
 
